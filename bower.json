@@ -1,0 +1,20 @@
+{
+  "name": "New Earth Portal",
+  "version": "0.0.0",
+  "authors": [
+    "*"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.0.0"
+  }
+}

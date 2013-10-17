@@ -8,15 +8,18 @@ gem 'mysql2'
 
 gem 'puma'
 
-# Use SCSS for stylesheets
+
+# -------- Assets ----------
+gem 'haml-rails'
 gem 'sass-rails', '~> 4.0.0'
-
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-
 gem 'haml_coffee_assets'
+
+gem 'bourbon'
+gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
+gem 'font-awesome-rails'
+# --------------------------
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
@@ -29,10 +32,10 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-gem 'pry-rails'
+group :development do
+  gem 'capistrano'
+  gem 'pry-rails'
+end
 
 group :test do
   gem 'fuubar'

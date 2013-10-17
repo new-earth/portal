@@ -1,0 +1,32 @@
+!!!
+%html
+  %head
+    %title Portal
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+
+  %body
+    %header
+      .top-strip
+        .dropdown 
+          new earth locations
+          %i.icon-chevron-sign-down
+
+      .logo-wrapper
+        .logo
+          .logo-image
+          new earth project
+
+      .title-bar
+        .title locations
+      %ul.menu-bar
+        %li world map
+        %li about
+        %li retreats
+      .breadcrumbs
+        you are here > home > about
+
+    = yield
+
+    %footer

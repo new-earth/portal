@@ -1,7 +1,9 @@
 Portal::Application.routes.draw do
   root 'locations#index'
+  
   get 'locations' => 'locations#index'
-
+  get 'users' => 'users#index'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

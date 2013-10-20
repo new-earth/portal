@@ -10,8 +10,8 @@
 header
   $header-height: 350px
   $logo-diameter: 170px
-  $logo-offset: 16px
-  $title-row-height: ($logo-diameter / 2) + $logo-offset
+  $logo-offset: 14px
+  $title-row-height: ($logo-diameter / 2) + $logo-offset + 5px
   $nav-height: 50px
   $breadcrumbs-height: 20px
 
@@ -32,7 +32,7 @@ header
       text-align: right
       font-size: $heading-font-size
       vertical-align: bottom
-      margin-top: ($title-row-height - $heading-font-size - 2px)
+      margin-top: ($title-row-height - $heading-font-size - 5px)
 
     .logo-wrapper
       +make-xs-column(6)
@@ -45,17 +45,17 @@ header
         top: $logo-offset
         
         border-radius: 50%
-        +radial-gradient(circle at 50% 50%, $light-blue 10%, $dark-blue)
+        +radial-gradient(circle at 50% 50%, $light-blue 30%, $dark-blue)
         
         text-align: center
         font-size: 22px
         font-weight: lighter
 
       .logo-image
-        background: image-url('logo-small.png') center no-repeat
-        width: 90px
-        height: 90px
-        margin: 0 auto -10px auto
+        background: image-url('logo-transparent-small.png') center no-repeat
+        width: 120px
+        height: 120px
+        margin: -5px auto -15px auto
 
   .spacer
     height: $header-height - $title-row-height - $nav-height - $breadcrumbs-height

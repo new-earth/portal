@@ -1,7 +1,14 @@
 Portal::Application.routes.draw do
   root 'home#test'
   get 'locations' => 'locations#index'
-  get 'institute' => 'institute#index'
+  resource 'institute', only: :index do
+    member do
+      get 'about'
+      get 'live_stage'
+      get 'library'
+      get 'community'
+    end
+  end
   
 
   # The priority is based upon order of creation: first created -> highest priority.

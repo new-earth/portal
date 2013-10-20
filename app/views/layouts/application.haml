@@ -12,7 +12,7 @@
       %ul.nav.navbar-nav
         %li.dropdown
           %a.dropdown-toggle.open{href: '#', 'data-toggle' => 'dropdown'} 
-            new earth locations
+            new earth institute
             %i.icon-chevron-sign-down
           %ul.dropdown-menu
             %li
@@ -22,7 +22,7 @@
 
     %header
       .title-row
-        .title locations
+        .title= @title
 
         .logo-wrapper
           .logo
@@ -30,33 +30,20 @@
             new earth project
 
         .section
-          %span.section-text institute
+          %span.section-text= @section
           %i.institute-icon
 
 
       .spacer
 
       %nav.navbar-wrapper
-        .container
-              
-          .navbar-collapse
-            %ul.nav.navbar-nav
+        .navbar-collapse
+          %ul.nav.navbar-nav
+            - menu_for(@title).each do |menu_name, url|
               %li
-                %a{href: '#'} world map
-              %li
-                %a{href: '#'} about
-              %li
-                %a{href: '#'} retreats
+                %a{href: url}= menu_name
 
-              %li.dropdown{style: 'display: none'}
-                %a.dropdown-toggle{href: '#', 'data-toggle' => 'dropdown'}
-                  Drop Down
-                  %i.icon-chevron-sign-down
-                %ul.dropdown-menu
-                  %li.active 
-                    %a{href: '#'} something
-                  %li
-                    %a{href: '#'} else
+
         .clearfix
 
       .breadcrumbs

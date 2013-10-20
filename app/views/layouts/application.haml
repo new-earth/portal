@@ -1,32 +1,64 @@
 !!!
 %html
   %head
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
     %title Portal
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
 
   %body
+    .top-nav
+      %ul.nav.navbar-nav
+        %li.dropdown
+          %a.dropdown-toggle.open{href: '#', 'data-toggle' => 'dropdown'} 
+            new earth locations
+            %i.icon-chevron-sign-down
+          %ul.dropdown-menu
+            %li
+              %a{href: '#'} location1
+            %li
+              %a{href: '#'} location2
+
     %header
-      .top-strip
-        .dropdown 
-          new earth locations
-          %i.icon-chevron-sign-down
 
-      .logo-wrapper
-        .logo
-          .logo-image
-          new earth project
-
-      .title-bar
+      .title-row
         .title locations
-      %ul.menu-bar
-        %li world map
-        %li about
-        %li retreats
+
+        .logo-wrapper
+          .logo
+            .logo-image
+            new earth project
+
+      .spacer
+
+      %nav.navbar-wrapper
+        .container
+              
+          .navbar-collapse
+            %ul.nav.navbar-nav
+              %li
+                %a{href: '#'} world map
+              %li
+                %a{href: '#'} about
+              %li
+                %a{href: '#'} retreats
+
+              %li.dropdown{style: 'display: none'}
+                %a.dropdown-toggle{href: '#', 'data-toggle' => 'dropdown'}
+                  Drop Down
+                  %i.icon-chevron-sign-down
+                %ul.dropdown-menu
+                  %li.active 
+                    %a{href: '#'} something
+                  %li
+                    %a{href: '#'} else
+        .clearfix
+
       .breadcrumbs
         you are here > home > about
 
-    = yield
+    .container
+      = yield
 
     %footer

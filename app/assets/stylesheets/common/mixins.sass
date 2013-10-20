@@ -1,0 +1,36 @@
+
+=heading($font-size, $font-weight: normal)
+  text-rendering: optimizeLegibility
+  font-family: Bauhaus, $verdana
+  font-size: $font-size
+  font-weight: $font-weight
+
+$h1-font-size: 70px
+$h2-font-size: 60px
+$h3-font-size: 50px
+$h4-font-size: 40px
+$h5-font-size: 30px
+$h6-font-size: 24px
+$h7-font-size: 40px
+$h8-font-size: 30px
+$h9-font-size: 24px
+
+=h1
+  +heading($h1-font-size)
+=h2
+  +heading($h2-font-size)
+=h3
+  +heading($h3-font-size)
+=h4
+  +heading($h4-font-size)
+=h5
+  +heading($h5-font-size)
+=h6
+  +heading($h6-font-size)
+
+=h7
+  +heading($h7-font-size, bold)
+=h8
+  +heading($h8-font-size, bold)
+=h9
+  +heading($h9-font-size, bold)

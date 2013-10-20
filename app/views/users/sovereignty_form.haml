@@ -1,0 +1,37 @@
+%div.form
+  %div.panel.panel-info
+    %div.panel-heading
+      %h3
+        Declaration of Individual Sovereignty
+    
+    %div.panel-body
+      = render 'declaration_text'
+      %form.form-horizontal{ role: 'form' }
+        %div.form#sovereignty_form
+          %div.form-group.lead
+            %div.table-responsive
+              %table.table
+                %th
+                  By
+                %th
+                  Date
+                %th
+                  
+                %tr
+                  %td
+                    %input.form-control#full_name
+                  %td
+                    %input.form-control#date
+                  %td
+                    %button.btn-info.btn-lg#submit_sov_button
+                      Submit
+                  
+                
+              
+            
+            
+        
+      
+    
+    
+  

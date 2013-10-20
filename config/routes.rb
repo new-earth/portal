@@ -3,6 +3,7 @@ Portal::Application.routes.draw do
   
   get 'locations' => 'locations#index'
   get 'users' => 'users#index'
+  get 'users/sovereignty_form' => 'users#sovereignty_form'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

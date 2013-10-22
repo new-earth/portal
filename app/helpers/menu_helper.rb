@@ -11,7 +11,7 @@ module MenuHelper
     when 'users'
       {
         'index' => users_path,
-        'sovereignty_declaration' => sovereignty_declaration_users_path,
+        'declare' => sovereignty_declaration_users_path,
         'newsletter' => newsletter_users_path,
         'profile' => profile_users_path
       }

@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
   
   def sovereignty_declaration
-    @section = "sovereignty_declaration"
+    @section = "declare"
   end
   
   def newsletter

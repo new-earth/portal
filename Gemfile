@@ -33,7 +33,8 @@ end
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 group :development do
-  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
   gem 'pry-rails'
 end
 

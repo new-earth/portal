@@ -1,32 +1,55 @@
 !!!
 %html
   %head
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
     %title Portal
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
 
   %body
+    .top-nav
+      %ul.nav.navbar-nav
+        %li.dropdown
+          %a.dropdown-toggle.open{href: '#', 'data-toggle' => 'dropdown'} 
+            new earth institute
+            %i.icon-chevron-sign-down
+          %ul.dropdown-menu
+            %li
+              %a{href: '#'} location1
+            %li
+              %a{href: '#'} location2
+
     %header
-      .top-strip
-        .dropdown 
-          new earth locations
-          %i.icon-chevron-sign-down
+      .title-row
+        .title= @title
 
-      .logo-wrapper
-        .logo
-          .logo-image
-          new earth project
+        .logo-wrapper
+          .logo
+            .logo-image
+            new earth project
 
-      .title-bar
-        .title locations
-      %ul.menu-bar
-        %li world map
-        %li about
-        %li retreats
+        .section
+          %span.section-text= @section
+          %i.institute-icon
+
+
+      .spacer
+
+      %nav.navbar-wrapper
+        .navbar-collapse
+          %ul.nav.navbar-nav
+            - menu_for(@title).each do |menu_name, url|
+              %li
+                %a{href: url}= menu_name
+
+
+        .clearfix
+
       .breadcrumbs
         you are here > home > about
 
-    = yield
+    .container
+      = yield
 
     %footer

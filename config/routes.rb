@@ -1,9 +1,17 @@
 Portal::Application.routes.draw do
-  root 'locations#index'
-  
+  root 'home#test'
   get 'locations' => 'locations#index'
   get 'users' => 'users#index'
   get 'users/sovereignty_form' => 'users#sovereignty_form'
+    
+  resource 'institute', only: :index do
+    member do
+      get 'about'
+      get 'live_stage'
+      get 'library'
+      get 'community'
+    end
+  end
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

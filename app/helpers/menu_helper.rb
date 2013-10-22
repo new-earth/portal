@@ -10,9 +10,8 @@ module MenuHelper
       }
     when 'members'
       {
-        'index' => members_path,
-        'declare' => sovereignty_declaration_members_path,
-        'edit_profile' => edit_profile_members_path
+        'sovereignty declaration' => sovereignty_declaration_members_path,
+        'profile' => edit_profile_members_path
       }
     end
   end

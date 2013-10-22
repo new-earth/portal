@@ -8,12 +8,11 @@ module MenuHelper
         'library' => library_institute_path,
         'community' => community_institute_path
       }
-    when 'users'
+    when 'members'
       {
-        'index' => users_path,
-        'declare' => sovereignty_declaration_users_path,
-        'newsletter' => newsletter_users_path,
-        'profile' => profile_users_path
+        'index' => members_path,
+        'declare' => sovereignty_declaration_members_path,
+        'edit_profile' => edit_profile_members_path
       }
     end
   end

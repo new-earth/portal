@@ -11,12 +11,11 @@ Portal::Application.routes.draw do
     end
   end
 
-  resource 'users', only: :index do
+  resource 'members', only: :index do
     member do
-      get '/' => 'users#index'
+      get '/' => 'members#index'
       get 'sovereignty_declaration'
-      get 'newsletter'
-      get 'profile'
+      get 'edit_profile'
     end
   end
   

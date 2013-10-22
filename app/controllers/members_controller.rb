@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class MembersController < ApplicationController
   before_filter :set_title
   
   def index
@@ -13,13 +13,13 @@ class UsersController < ApplicationController
     @section = 'newsletter'
   end
   
-  def profile
+  def edit_profile
     @section = 'profile'
   end
   
   protected
   
   def set_title
-    @title = 'users'
+    @title = 'members'
   end
 end

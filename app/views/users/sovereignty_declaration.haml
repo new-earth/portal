@@ -1,0 +1,40 @@
+%div.user-top
+  %div.panel.panel-info
+    %div.panel-heading
+      %h3
+        Declaration of Individual Sovereignty
+      
+    
+    %form.form-horizontal{ role: "form" }
+      %div.panel-body
+        = render "declaration_text"
+        %table.table.table-responsive.lead#sovereignty_declaration_form    
+          %thead
+            %th
+              By
+            %th
+              Date
+            %th
+          
+        
+          %tbody        
+            %tr{ colspan: "3" }
+              %td
+                %input.form-control#full_name
+              %td
+                %input.form-control#date
+              %td
+                %button.btn-info.btn-md#submit_sov_button{ href: "#" }
+                  Submit                  
+            
+          
+            %tr
+              %td{ colspan: "3" }
+                = render "newsletter_signup"              
+              
+            
+          
+        
+      
+    
+  

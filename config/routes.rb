@@ -1,15 +1,22 @@
 Portal::Application.routes.draw do
   root 'home#test'
   get 'locations' => 'locations#index'
-  get 'users' => 'users#index'
-  get 'users/sovereignty_form' => 'users#sovereignty_form'
-    
+
   resource 'institute', only: :index do
     member do
       get 'about'
       get 'live_stage'
       get 'library'
       get 'community'
+    end
+  end
+
+  resource 'users', only: :index do
+    member do
+      get '/' => 'users#index'
+      get 'sovereignty_declaration'
+      get 'newsletter'
+      get 'profile'
     end
   end
   

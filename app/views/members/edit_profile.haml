@@ -1,2 +1,40 @@
 .member-top
   .h3 Edit Profile
+  %div#user_profile_form
+    %div.form-group
+      %label.control-label{ for: "first_name" }
+        First Name
+      
+      %input.form-control{ type: "text", placeholder: "First Name" } 
+      
+    .form-group
+      %label.control-label{ for: "password" }
+        Password
+      
+      %input.form-control{ type: "password", name: "password", placeholder: "Password" }  
+      
+      
+    .form-group
+      %label.control-label{ for: "confirm_password" }
+        Confirm Password
+      
+      %input.form-control{ type: "password", name: "confirm_password", placeholder: "Confirm Password" }  
+      
+    
+    .form-group
+      %label.control-label{ for: "country" }
+        Location</label>
+
+      %div
+        %select.form-control#country{ name: "location" }
+          %option
+            Please Select Your Location
+          %option{ value: "Afghanistan" }
+            Afghanistan
+          
+        
+        
+      
+    
+    = render 'skillset_checkboxes'
+  

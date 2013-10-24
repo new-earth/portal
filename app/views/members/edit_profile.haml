@@ -47,36 +47,32 @@
         .form-group
           %label.control-label{ for: "country" }
             Country
-        
-          %select.form-control#country{ name: "country" }
-            %option
-              Please Select Your Location
-            %option{ value: "Afghanistan" }
-              Afghanistan
-            
           
-        
-        
+          %br
+          = country_select("member", "country_code", [ "us", "ca", "id" ], iso_codes: true)
+          
         = render 'skillset_checkboxes'
         
         = render 'passion_checkboxes'
         
-        .form-group.hidden
-          %label.control-label{ for: "avatar" }
-            Member Photo / Avatar
+        %div.hidden-phone.hidden-tablet
+          .form-group
+            %label.control-label{ for: "avatar" }
+              Member Photo / Avatar
           
-          %input.form-control#avatar{ type: "file", name: "avatar" }
-        
-        %br
-        %br
+            %input.form-control#avatar{ type: "file", name: "avatar" }
+            
+          
+          %br
+          %br
         
         .form-group{ align: "center" }
           %a.btn.btn-success.btn-lg#newsletter_signup{ href: "#" }
             Save
           %a.btn.btn-info.btn-lg#newsletter_skip{ href: "#" }
             Skip
-          
         
+      
       
     
   

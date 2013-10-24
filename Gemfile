@@ -21,6 +21,8 @@ gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
 gem 'font-awesome-rails'
 # --------------------------
 
+gem 'country_select', '~> 1.2.0'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 

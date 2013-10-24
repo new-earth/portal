@@ -1,55 +1,58 @@
 %table.table.table-responsive
   %thead
     %th{ colspan: "3" }
-      %label.control-label{ for: "passions" }
+      %h5
         Passions
       
     
   
   %tbody
-    %tr
-      %td{ rowspan: "3" }
+    %tr{ rowspan: "3" }
+      %td
         %label.checkbox-inline
           %input{ type: "checkbox", name: "passions", value: "food" }
             Food
-
+          
+        
         %br
         %label.checkbox-inline
           %input{ type: "checkbox", name: "passions", value: "social" }
             Social
-
+          
         %br
         %label.checkbox-inline
           %input{ type: "checkbox", name: "passions", value: "creative" }
             Creative
           
-        
+        %br
       %td{ rowspan: "3" }
         %label.checkbox-inline
           %input{ type: "checkbox", name: "passions", value: "healing_arts" }
             Healing Arts
-
+          
+        
         %br
         %label.checkbox-inline
           %input{ type: "checkbox", name: "passions", value: "kinesiology" }
             NLP: Kinesiology
-
+          
+        
         %br
         %label.checkbox-inline
           %input{ type: "checkbox", name: "passions", value: "wellbeing" }
-            Wellbeing
           
+          Wellbeing
         
-      %td{ rowpan: "3" }
+        %br
+      %td{ rowspan: "3" }
         %label.checkbox-inline
           %input{ type: "checkbox", name: "passions", value: "enrichment" }
           
           Enrichment
-          
+        
         %br
         %label.checkbox-inline
-          &nbsp;
-        
+          
         
         %br
         %label.checkbox-inline
@@ -59,14 +62,14 @@
         
         %br
       
-    
     %tr
-      %td{ colspan: "4" }
-        %label
-          Other Passions
-        
-        %br
-        %input{ type: "text", name: "other_passions", placeholder: "Please Specify ( Comma delimited ) " }
+      %td{ colspan: "3" }
+        %div
+          %label.control-label
+            Other Passions
+          
+            %input{ type: "text", name: "other_passions", placeholder: "Please Specify ( Comma delimited )" }
+          
         
       
     

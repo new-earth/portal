@@ -1,22 +1,25 @@
 .member-top
-  %div.panel.panel-info
-    %div.panel-heading
-      .h3 Edit Profile
+
+%div.panel.panel-info
+  %div.panel-heading
+    .h3 Edit Profile
     
+  
+  %div.pane-body
     %form{ role: "form" } 
-      %div#edit_profile_form.member-container     
+      %div#edit_profile_form.member-container
         .form-group
           %label.control-label{ for: "first_name" }
             First Name
         
           %input.form-control{ type: "text", placeholder: "First Name" } 
-       
+        
         .form-group
           %label.control-label{ for: "middle_name" }
             Middle Name
-      
-          %input.form-control{ type: "text", placeholder: "Middle Name" } 
         
+          %input.form-control{ type: "text", placeholder: "Middle Name" } 
+      
         .form-group
           %label.control-label{ for: "last_name" }
             Last Name
@@ -32,20 +35,19 @@
         .form-group
           %label.control-label{ for: "password" }
             Password
-      
+        
           %input.form-control{ type: "password", name: "password", placeholder: "Password" }  
         
         .form-group
           %label.control-label{ for: "confirm_password" }
             Confirm Password
-          
+        
           %input.form-control{ type: "password", name: "confirm_password", placeholder: "Confirm Password" }  
-          
+        
         .form-group
           %label.control-label{ for: "country" }
             Country
-      
-        .form-group
+        
           %select.form-control#country{ name: "country" }
             %option
               Please Select Your Location
@@ -54,28 +56,28 @@
             
           
         
+        
         = render 'skillset_checkboxes'
+        
         = render 'passion_checkboxes'
         
-        %br
-        %span.visible-desktop.hidden-sm
-          .form-group{ align: "center" }
-            %label.control-label{ for: "avatar" }
-              %p.lead.help-block Member Photo / Avatar
-            
+        .form-group.hidden
+          %label.control-label{ for: "avatar" }
+            Member Photo / Avatar
           
-            %input.form-control#avatar{ type: "file", name: "avatar" }
-            
-          
+          %input.form-control#avatar{ type: "file", name: "avatar" }
         
         %br
+        %br
+        
         .form-group{ align: "center" }
           %a.btn.btn-success.btn-lg#newsletter_signup{ href: "#" }
             Save
-        
           %a.btn.btn-info.btn-lg#newsletter_skip{ href: "#" }
             Skip
+          
         
       
     
+  
   

@@ -1,71 +1,93 @@
 %br
-%div.container
-  %label.control-label{ for: "skills" }
-    Skills
-  
 %table.table.table-responsive
+  %thead
+    %th
+      %label.control-label{ for: "skills" }
+        Skills
+      
+    
   %tbody
     %tr
-      %td{ rowspan: "3", width: "33%" }
-        %label.checkbox-inline
-          %input{ type: "checkbox", name: "skills", value: "food" }
-            Food
+      %td{ colspan: "3" }
+        .checkbox
+          %label
+            Permaculture, Organic Farming
+            
+          %input{ type: "checkbox", value: "Permaculture, Organic Farming" }
+          
+        .checkbox
+          %label
+            Real Estate Development, Builder, Architect
+          
+          %input{ type: "checkbox", value: "Real Estate Development, Builder, Architect" }
+          
+        .checkbox
+          %label
+            Herbalist, medicine, nutrition, health and wellbeing
+          
+          %input{ type: "checkbox", value: "Herbalist, medicine, nutrition, health and wellbeing" }
+          
+        .checkbox
+          %label
+            Legal expertised
+          
+          %input{ type: "checkbox", value: "Legal expertisee" }
+          
+        .checkbox
+          %label
+            Administrative expertise
+          
+          %input{ type: "checkbox", value: "Administrative expertise" }
+                
+        .checkbox
+          %label
+            Sustainable Business Management
+          
+          %input{ type: "checkbox", value: "Sustainable Business Management" }
+              
+        .checkbox
+          %label
+            Artist, Musician, Designer
+  
+          %input{ type: "checkbox", value: "Artist, Musician, Designer" }
+    
 
-        %br
-        %label.checkbox-inline
-          %input{ type: "checkbox", name: "skills", value: "social" }
-            Social
+        .checkbox
+          %label
+            Education, Teacher
 
-        %br
-        %label.checkbox-inline
-          %input{ type: "checkbox", name: "skills", value: "creative" }
-            Creative
+          %input{ type: "checkbox", value: "Education, Teacher" }
+          
+        .checkbox
+          %label
+            Psychology, Communication 
+  
+          %input{ type: "checkbox", value: "Psychology, Communication " }
+          
+        .checkbox
+          %label
+            Information Technology, Web Designer, Webmaster
+
+          %input{ type: "checkbox", value: "Information Technology, Web Designer, Webmaster" }
+
+        .checkbox
+          %label
+            Green Technology, Engineer
+  
+          %input{ type: "checkbox", value: "Green Technology, Engineer" }
+          
         
       
     
-    %tr
-      %td{ rowspan: "3"}
-        %label.checkbox-inline
-          %input{ type: "checkbox", name: "skills", value: "healing_arts" }
-            Healing Arts
-
-        %br
-        %label.checkbox-inline
-          %input{ type: "checkbox", name: "skills", value: "kinesiology" }
-            NLP: Kinesiology
-
-        %br
-        %label.checkbox-inline
-          %input{ type: "checkbox", name: "skills", value: "wellbeing" }
-            Wellbeing
-        
-      
-    
-    %tr
-      %td{ rowpan: "3"}
-        %label.checkbox-inline
-          %input{ type: "checkbox", name: "skills", value: "healing_arts" }
-            Enrichment
-
-        %br
-        %label.checkbox-inline
-  
-
-        %br
-        %label.checkbox-inline
-          %input{ type: "checkbox", name: "skills", value: "outdoors" }
-            Outdoors
-  
-
-
     %tr
       %td{ colspan: "3" }
         %label
-          Other 
-      
+          Other Skills
+        
+        %br
         %input{ type: "text", name: "other_skills", placeholder: "Please Specify" }
-      
     
   
+
 
 

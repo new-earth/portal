@@ -1,41 +1,74 @@
 .member-top
-  .h3 Edit Profile
-  %div#user_profile_form
-    %div.form-group
-      %label.control-label{ for: "first_name" }
-        First Name
+  %div.panel.panel-info
+    %div.panel-heading
+      .h3 Edit Profile
+    
+    %div#edit_profile_form.member-container
+      .form-group
+        %label.control-label{ for: "first_name" }
+          First Name
       
-      %input.form-control{ type: "text", placeholder: "First Name" } 
+        %input.form-control{ type: "text", placeholder: "First Name" } 
       
-    .form-group
-      %label.control-label{ for: "password" }
-        Password
+      .form-group
+        %label.control-label{ for: "middle_name" }
+          Middle Name
       
-      %input.form-control{ type: "password", name: "password", placeholder: "Password" }  
+        %input.form-control{ type: "text", placeholder: "Middle Name" } 
+      
+      .form-group
+        %label.control-label{ for: "last_name" }
+          Last Name
+      
+        %input.form-control{ type: "text", placeholder: "Last Name" } 
+      
+      .form-group
+        %label.control-label{ for: "password" }
+          Password
+      
+        %input.form-control{ type: "password", name: "password", placeholder: "Password" }  
       
       
-    .form-group
-      %label.control-label{ for: "confirm_password" }
-        Confirm Password
+      .form-group
+        %label.control-label{ for: "confirm_password" }
+          Confirm Password
       
-      %input.form-control{ type: "password", name: "confirm_password", placeholder: "Confirm Password" }  
+        %input.form-control{ type: "password", name: "confirm_password", placeholder: "Confirm Password" }  
       
     
-    .form-group
-      %label.control-label{ for: "country" }
-        Location
-
-      %div
-        %select.form-control#country{ name: "location" }
+      .form-group
+        %label.control-label{ for: "country" }
+          Country
+      
+      .form-group
+        %select.form-control#country{ name: "country" }
           %option
             Please Select Your Location
           %option{ value: "Afghanistan" }
             Afghanistan
-          
         
+      
+      = render 'skillset_checkboxes'
+    
+      = render 'passion_checkboxes'
+      
+      %br
+      %span.visible-desktop.hidden-sm
+        .form-group{ align: "center" }
+          %label.control-label{ for: "avatar" }
+            %p.lead.help-block Member Photo / Avatar
+            
+          
+          %input#avatar{ type: "file", name: "avatar" }
+                    
+        %br
+        .form-group{ align: "center" }
+          %button.btn-success.btn-lg#newsletter_signup
+            Save
+        
+          %button.btn-info.btn-lg#newsletter_skip
+            Skip
         
       
     
-    = render 'skillset_checkboxes'
-    = render 'passion_checkboxes'
   

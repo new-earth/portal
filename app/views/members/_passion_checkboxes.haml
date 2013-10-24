@@ -1,9 +1,10 @@
-%br
-%div.container
-  %label.control-label{ for: "passions" }
-    Passions
-  
 %table.table.table-responsive
+  %thead
+    %th{ colspan: "3" }
+      %label{ for: "passions" }
+        Passions
+      
+    
   %tbody
     %tr
       %td{ rowspan: "3", width: "33%" }
@@ -20,11 +21,9 @@
         %label.checkbox-inline
           %input{ type: "checkbox", name: "passions", value: "creative" }
             Creative
+          
         
-      
-    
-    %tr
-      %td{ rowspan: "3"}
+      %td{ rowspan: "3", width: "33%"}
         %label.checkbox-inline
           %input{ type: "checkbox", name: "passions", value: "healing_arts" }
             Healing Arts
@@ -38,34 +37,35 @@
         %label.checkbox-inline
           %input{ type: "checkbox", name: "passions", value: "wellbeing" }
             Wellbeing
+          
         
-      
-    
-    %tr
-      %td{ rowpan: "3"}
+      %td{ rowpan: "3", width: "33%"}
         %label.checkbox-inline
-          %input{ type: "checkbox", name: "passions", value: "healing_arts" }
-            Enrichment
-
+          %input{ type: "checkbox", name: "passions", value: "enrichment" }
+          
+          Enrichment
+          
         %br
         %label.checkbox-inline
-  
-
+          &nbsp;
+        
+        
         %br
         %label.checkbox-inline
           %input{ type: "checkbox", name: "passions", value: "outdoors" }
-            Outdoors
-  
-
-
-    %tr
-      %td{ colspan: "3" }
-        %label
-          Other 
-      
-        %input{ type: "text", name: "other_skills", placeholder: "Please Specify" }
+          
+          Outdoors
+        
       
     
   
-
-
+  %thead
+    %th{ colspan: "3" }      
+      %label
+        Other Passions
+      
+      %br
+      %input{ type: "text", name: "other_passions", placeholder: "Please Specify ( Comma delimited ) " }
+      
+    
+  

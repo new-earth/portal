@@ -1,20 +1,24 @@
 %div.panel.panel-info.member-top
   %div.panel-heading
     .h3 Make your Declaration
-
+    
   %form.form-horizontal{ role: "form" }
     %div.panel-body
       = render "declaration_text"
-      %table.table.table-responsive.lead#sovereignty_declaration_form    
+        %div.small-text
+          Add your e-signature to a Declaration of Sovereignty
+        
+      %table.table.table-responsive.lead#sovereignty_declaration_form            
         %thead
           %th
             By
           %th
             Date
           %th
-  
+          
 
-        %tbody        
+
+        %tbody     
           %tr{ colspan: "3" }
             %td
               %input.form-control#full_name
@@ -28,8 +32,9 @@
           %tr
             %td{ colspan: "3" }
               = render "newsletter_signup"              
+            
+          
         
       
     
   
-

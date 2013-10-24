@@ -1,11 +1,12 @@
 %br
 %table.table.table-responsive
   %thead
-    %th
+    %th{ colspan: "3" }
       %label.control-label{ for: "skills" }
         Skills
       
     
+  
   %tbody
     %tr
       %td{ colspan: "3" }
@@ -50,8 +51,7 @@
             Artist, Musician, Designer
   
           %input{ type: "checkbox", value: "Artist, Musician, Designer" }
-    
-
+          
         .checkbox
           %label
             Education, Teacher
@@ -78,16 +78,16 @@
           
         
       
-    
     %tr
       %td{ colspan: "3" }
         %label
           Other Skills
         
         %br
-        %input{ type: "text", name: "other_skills", placeholder: "Please Specify" }
+        %input{ type: "text", name: "other_skills", placeholder: "Please Specify ( Comma Delimited )" }
+        
+      
     
   
 
-
-
+%br

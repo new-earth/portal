@@ -1,36 +1,35 @@
 %div#newsletter_signup_form
-  %br
-  %table.table-responsive.lead
+  %table.table-responsive
     %thead
-      %th{ colspan: "2" }
-        %h4
-          Newsletter Signup:
+      %th{ colspan: "3" }
+        %label
+          Sign up to our newsletter system by filling out the form below:
+          
+        %p.small-text
+          ( Keep me informed about: communities, retreats, institute, festival, everything )
         
       
     
-    %tbody{ align: "center" }
+    %tbody{ align: "center" }        
       %tr
-        %td
-          %div                         
-            %p.lead
-              Sign up to our newsletter system by filling out the form below:
-            %p.lead
-              ( Keep me informed about: communities, retreats, institute, festival, everything )
+        %td{ colspan: "3" }
+          %br
+          .form-group
+            %label.control-label{ for: "email" }
+              Email
             
+            %input.form-control{ type: "text", placeholder: "Email" }
             
-            %input.form-control#email{ placeholder: "Email" }
-            
+            %br
+            %br
+            %a.btn.btn-success.btn-lg#newsletter_signup{ href: "/members/edit_profile" }
+              Subscribe
           
-        
-      %tr
-        %td{ colspan: "2" }
-          %button.btn-success.btn-md#newsletter_signup
-            Subscribe
-          
-          %button.btn-info.btn-md#newsletter_skip
-            Skip
+            %a.btn.btn-info.btn-lg#newsletter_skip{ href: "/members/edit_profile" }
+              Skip
           
         
       
     
   
+

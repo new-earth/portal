@@ -8,6 +8,8 @@ module MenuHelper
         'library' => library_institute_path,
         'community' => community_institute_path
       }
+    else
+      {'institute' => about_institute_path}
     end
   end
 end

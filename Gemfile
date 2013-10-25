@@ -51,3 +51,7 @@ group :test do
   gem 'guard-rspec'
 end
 
+group :development, :test do
+  gem "capybara", "2.1.0"
+end
+

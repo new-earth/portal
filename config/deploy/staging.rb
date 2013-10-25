@@ -40,4 +40,4 @@ server '198.199.93.92', user: 'deploy', roles: %w{web app db}
 #   }
 # setting per server overrides global ssh_options
 
-# fetch(:default_env).merge!(rails_env: :staging)
+fetch(:default_env).merge!(rails_env: :staging)

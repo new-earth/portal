@@ -20,6 +20,6 @@ class MembersController < ApplicationController
   protected
   
   def set_title
-    @title = 'members'
+    @title ||= 'members'
   end
 end

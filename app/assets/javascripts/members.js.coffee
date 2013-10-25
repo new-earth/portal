@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
   $(this).on('click', "#submit_sov_button", (event) ->
-    $("#newsletter_signup_form").show('slow')
+    $("#newsletter_subscribe_form").show('slow')
     event.preventDefault()
     return false
   )

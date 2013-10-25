@@ -42,7 +42,6 @@ end
 
 group :test do
   gem 'fuubar'
-  gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem 'spork-rails', '~> 4.0'
@@ -51,7 +50,9 @@ group :test do
   gem 'guard-rspec'
 end
 
+# `rspec-rails` needs to be in the development group so that Rails generators work.
 group :development, :test do
+  gem 'rspec-rails' 
   gem "capybara", "2.1.0"
 end
 

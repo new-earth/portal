@@ -7,6 +7,8 @@
 # Ignore bundler config.
 /.bundle
 
+Guardfile
+
 # Ignore the default SQLite database.
 /db/schema.rb
 /db/schema.intranet.rb

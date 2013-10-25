@@ -47,3 +47,4 @@ intranet:
   username: root
   password:
   socket: /tmp/mysql.sock
+

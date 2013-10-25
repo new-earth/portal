@@ -8,7 +8,6 @@ class MembersController < ApplicationController
   
   def create
     user = Intranet::User.new()
-    binding.pry if pry
     Intranet::Member.create(member_params)
   end
   

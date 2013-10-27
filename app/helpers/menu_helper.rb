@@ -13,6 +13,8 @@ module MenuHelper
         'sovereignty declaration' => sovereignty_declaration_members_path,
         'profile' => edit_profile_members_path
       }
+    else
+      {'institute' => about_institute_path}
     end
   end
 end

@@ -1,21 +1,19 @@
 
-
-
 set :application, "portal"
-set :repo_url, "git@newearth1.new-earth-project.org"
+set :repo_url, "git@newearth1.new-earth-project.org:portal.git"
 
-ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
-# set :branch, "master"
+# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
+set :branch, "master"
 
-set :deploy_to, '/var/www/portal'
+set :deploy_to, '/srv/apps/portal'
 set :scm, :git
 
 set :format, :pretty
-# set :log_level, :debug
+set :log_level, :debug
 set :pty, true
 
-# set :linked_files, %w{config/database.yml}
-# set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_files, %w{config/database.yml}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 set :keep_releases, 5
@@ -34,8 +32,7 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      # Your restart mechanism here, for example:
-      # execute :touch, release_path.join('tmp/restart.txt')
+      execute :sh, shared_path.join('puma/puma_phased_restart.sh')
     end
   end
 
@@ -50,4 +47,20 @@ namespace :deploy do
 
   after :finishing, 'deploy:cleanup'
 
+  namespace :assets do
+    namespace :bower do
+      task :install do
+      on roles :web do
+        within release_path do
+          with rails_env: fetch(:rails_env) do
+            execute :bower, 'install'
+          end
+        end
+      end
+
+      end
+    end
+
+    before :precompile, 'bower:install'
+  end
 end

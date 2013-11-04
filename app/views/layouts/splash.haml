@@ -1,4 +1,5 @@
 !!!
+!!!
 %html
   %head
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
@@ -9,7 +10,8 @@
 
   %body
     = render partial: 'layouts/top_menu'
-    %header#main
+
+    %header#splash
       .title-row
         .title= @title
 
@@ -26,9 +28,6 @@
       .spacer
 
       = render partial: 'layouts/main_menu'
-
-      .breadcrumbs
-        you are here > home > about
 
     .container
       = yield

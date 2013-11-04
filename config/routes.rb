@@ -1,5 +1,7 @@
 Portal::Application.routes.draw do
-  root 'home#test'
+  root 'home#index'
+  get 'test' => 'home#test'
+
   get 'locations' => 'locations#index'
 
   resource 'institute', only: :index do
@@ -11,11 +13,9 @@ Portal::Application.routes.draw do
     end
   end
 
-  resource 'members', only: :index do
-    member do
-      get '/' => 'members#index'
-      get 'sovereignty_declaration'
-      get 'edit_profile'
+  resources 'members' do
+    collection do
+      get 'declaration'
     end
   end
   

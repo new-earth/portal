@@ -7,32 +7,54 @@
   li > a
     padding: 2px 15px
 
+.breadcrumbs
+  height: 20px
+  font-size: 13px
+  background-color: $light-blue
+
+//
+// shared
+//
 header
+  background-size: cover
+  color: $light-foreground
+  .title-row
+    +linear-gradient(rgba($dark-blue, 0.4), rgba($light-blue, 0.4))
+
+    .logo-wrapper
+      +make-sm-column(2)
+      +h4
+
+      .logo
+        +container-fixed
+        text-align: center
+        position: relative
+        
+        border-radius: 50%
+        +radial-gradient(circle at 50% 50%, $light-blue 30%, $dark-blue)
+        box-shadow: 0 -5px 45px rgba(#eee, 0.6)
+
+//
+// main site
+//
+header#main
   $header-height: 350px
   $logo-diameter: 170px
   $logo-offset: 14px
   $title-row-height: ($logo-diameter / 2) + $logo-offset + 5px
-  $nav-height: 50px
-  $breadcrumbs-height: 20px
+  $menu-height: 50px
 
-  height: 350px
-  color: $light-foreground
-  background: image-url('header-temp.jpg') center center
-  background-size: cover
-  border: 1px solid black
-  margin-bottom: 25px
-
+  //height: $header-height
+  background-image: image-url('header-temp.jpg')
 
   .title-row
+    clear: both
     height: $title-row-height
-    +linear-gradient(rgba($dark-blue, 0.4), rgba($light-blue, 0.4))
 
     .title, .section
       +make-sm-column(5)
       +h3
       margin-top: ($title-row-height - $h3-font-size)
-
-    .title, .section-text
 
     .title
       text-align: right
@@ -45,23 +67,14 @@ header
       margin-right: 20px
 
     .logo-wrapper
-      +make-sm-column(2)
-      +h4
 
       .logo
         font-size: 0.8em
-        +container-fixed
-        text-align: center
         line-height: 30px
 
         width: $logo-diameter
         height: $logo-diameter
-        position: relative
         top: $logo-offset
-        
-        border-radius: 50%
-        +radial-gradient(circle at 50% 50%, $light-blue 30%, $dark-blue)
-        box-shadow: 0 -5px 45px rgba(#eee, 0.6)
         
       .logo-image
         background: image-url('logo-transparent-small.png') center no-repeat
@@ -70,17 +83,12 @@ header
         margin: -5px auto -12px auto
 
   .spacer
-    height: $header-height - $title-row-height - $nav-height - $breadcrumbs-height
+    height: $header-height - $title-row-height - $menu-height
 
-  nav
+  #main-menu
+    height: $menu-height
     background: rgba($dark-blue, 0.8)
     +h6
-
-
-  .breadcrumbs
-    height: $breadcrumbs-height
-    font-size: 13px
-    background-color: $light-blue
 
   .institute-icon
     height: 150px
@@ -92,3 +100,14 @@ header
     //display: inline-block
     //margin: -($title-row-height - $h3-font-size) 0 0 0
     //vertical-align: middle
+
+//
+// splash page
+//
+header#splash
+  .institute-icon
+    height: 320px
+    width: 320px
+    background: image-url('temp/logo-transparent-320.png') center no-repeat
+    position: absolute
+

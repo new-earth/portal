@@ -1,0 +1,9 @@
+%nav#main-menu.navbar-wrapper
+  .navbar-collapse
+    %ul.nav.navbar-nav
+      - menu_for(@title).each do |menu_name, url|
+        %li
+          %a{href: url}= menu_name
+
+
+  .clearfix

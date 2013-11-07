@@ -1,35 +1,33 @@
 class MembersController < ApplicationController
   before_filter :set_title
-  @use_pry = true
+  
+  # new declaration form & newsletter signup
+  def declaration
+    @section = "declaration"
+  end  
+  
+  def new
+    @section = 'profile'
+    @profile = Intranet::Member.new
+    
+    render 'new_profile'
+  end
+    
+  def create
+  end
   
   def index
     @section = 'index'
   end
-  
-  def create
-    user = Intranet::User.new()
-    Intranet::Member.create(member_params)
-  end
-  
-  def sovereignty_declaration
-    @section = "declaration"
-  end
-  
-  def edit_profile
-    @section = 'profile'
-  end
-  
-  
+
+   
   protected
   def set_title
     @title ||= 'members'
   end
   
   private
-  def pry
-    return @use_pry.blank? ? true : false
-  end
-  
+
   def member_params
     params.require(:first_name, :last_name, :email_address, :password, :country )
     params.require.permit(:middle_name, :password_confirm)

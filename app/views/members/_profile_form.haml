@@ -1,0 +1,74 @@
+.member-top
+
+%div.panel.panel-info
+  %div.panel-heading
+    .h3 Member Profile
+    
+  
+  %div.pane-body
+    = form_for @profile, as: :member, url: members_path(@profile) do |f|
+      %div#edit_profile_form.member-container
+        .form-group
+          %label.control-label{ for: "first_name" }
+            First Name
+          
+          = f.text_field :first_name, class: "form-control"
+        .form-group
+          %label.control-label{ for: "middle_name" }
+            Middle Name
+          
+          = f.text_field :middle_name, class: "form-control"
+        .form-group
+          %label.control-label{ for: "last_name" }
+            Last Name
+          
+          = f.text_field :last_name, class: "form-control"
+        
+        .form-group
+          %label.control-label{ for: "email" }
+            Email
+          
+          = f.text_field :email_address, class: "form-control"      
+        
+        .form-group
+          %label.control-label{ for: "password" }
+            Password
+          
+          = f.password_field :password, class: "form-control"
+          
+        .form-group
+          %label.control-label{ for: "confirm_password" }
+            Confirm Password
+          
+          = f.password_field :confirm_password, class: "form-control" 
+        
+        .form-group
+          %label.control-label{ for: "country" }
+            Country
+          
+          %br
+          = country_select("member", "country", [ "us", "ca", "id" ], iso_codes: true, class: "control-label" )
+          
+        = render 'skillset_checkboxes'
+        = render 'passion_checkboxes'
+        
+        %div.hidden-xs
+          .form-group
+            %label.control-label{ for: "avatar" }
+              Member Photo / Avatar
+            
+            = f.file_field :avatar, class: "form-control"
+          
+          %br
+          %br
+        
+        .form-group{ align: "center" }
+          = f.submit class: "btn btn-success btn-lg", value: "Save"
+          
+          %a.btn.btn-info.btn-lg{ href: "/" }
+            Skip
+          
+        
+      
+    
+  

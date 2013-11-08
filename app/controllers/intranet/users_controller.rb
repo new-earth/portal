@@ -20,8 +20,8 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:username, :password)
+    # params.require(:username, :password)
     # params.require(:member_attributes: [ :first_name, :last_name, :email_address, :country ])
-    params.require.permit(:member_attributes: [ :middle_name, :skills, :passions ])
+    params.permit(member_attributes: [ :middle_name, :skills, :passions ])
   end
 end

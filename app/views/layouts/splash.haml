@@ -1,9 +1,8 @@
 !!!
-!!!
 %html
   %head
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    %title New Earth Project - #{@title}
+    %title Welcome to the New Earth
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
@@ -13,23 +12,37 @@
 
     %header#splash
       .title-row
-        .title= @title
 
         .logo-wrapper
           .logo
             .logo-image
             new earth project
 
-        .section
-          %span.section-text= @section
-          %i.institute-icon
-
 
       .spacer
+        .video video!
+      
+      %nav#main-menu.navbar-wrapper
+        .navbar-collapse
+          %ul.nav.navbar-nav
+            %li.locations
+              %a{href: ""} locations
+            %li.institute
+              %a{href: ""} institute
+            %li.new-earth
+              %a{href: ""} enter new earth
+            %li.exchange
+              %a{href: ""} bank exchange
+            %li.festival
+              %a{href: ""} festival
 
-      = render partial: 'layouts/main_menu'
 
-    .container
-      = yield
 
-    %footer
+  = yield
+
+  %footer
+    %br
+    %br
+    %br
+    %br
+    %a{href: "/institute/about"} go to institute page

@@ -1,0 +1,24 @@
+
+#splash-content
+  +make-row
+  background: image-url('toroid-3d.png') center 30px no-repeat
+  height: 323px + 30px
+  position: relative
+
+  #main-quote
+    margin-top: 80px
+    +make-xs-column(3)
+    +make-sm-column-push(1)
+    +make-sm-column-pull(9)
+    text-align: center
+
+.upper-color-strip, .lower-color-strip
+  height: 65px
+  width: 100%
+  z-index: -5
+.upper-color-strip
+  background-color: #71c0eb
+  position: absolute
+  bottom: 0
+.lower-color-strip
+  background-color: #009ee0

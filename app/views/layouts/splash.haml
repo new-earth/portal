@@ -7,10 +7,10 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
 
-  %body
+  %body#splash
     = render partial: 'layouts/top_menu'
 
-    %header#splash
+    %header
       .title-row
 
         .logo-wrapper
@@ -38,11 +38,22 @@
 
 
 
-  = yield
+    = yield
 
-  %footer
-    %br
-    %br
-    %br
-    %br
-    %a{href: "/institute/about"} go to institute page
+    %ul#bottom-menu
+      %li.spacer
+      %li.locations
+        %a{href: '#'} locations 
+      %li.institute
+        %a{href: '#'} institute
+      %li.new-earth
+        %a{href: '#'} new earth
+      %li.exchange
+        %a{href: '#'} exchange
+      %li.festival
+        %a{href: '#'} festival
+      %li.spacer
+
+
+    %footer
+      © New Earth Project 2013

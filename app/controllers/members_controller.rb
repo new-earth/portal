@@ -8,9 +8,8 @@ class MembersController < ApplicationController
   
   def new
     @section = 'profile'
-    @profile = Intranet::Member.new
-    
-    render 'new_profile'
+    # @profile = Intranet::Member.new
+    @user = User.new
   end
     
   def create

@@ -2,6 +2,6 @@
 class Intranet::Value < Intranet::Base
   self.table_name = 'value'
 
-  scope :interests, -> { where(name: 'register_interests') }
-  scope :skills,    -> { where(name: 'register_skills') }
+  scope :interests, -> { where(name: 'register_interests').order(:order_by) }
+  scope :skills,    -> { where(name: 'register_skills').order(:order_by) }
 end

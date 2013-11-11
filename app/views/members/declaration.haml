@@ -6,42 +6,45 @@
     
   
   .panel-body
-    = render "declaration_text"
+    %p.lead
+      Be it known that I, (given name), do hereby declare myself to be a 
+      sovereign individual; a living breathing human being endowed by my creator with certain natural rights.
+
+    %p.lead
+      Recognizing that, regardless of whether the event of one’s birth was 
+      registered within a republic or monarchical system of government, 
+      governments derive their power to govern from the consent and will of 
+      the people, and that when such governments no longer serve the best 
+      interests of people and planet, it is the incumbent duty of all people 
+      of the world to declare such governments null and void and to declare 
+      themselves, each one, an individual sovereign entity beholden to no 
+      governance save for their own.
+
+    %p.lead
+      In accordance with these aims and purposes as stated herein, I hereby 
+      and herewith declare myself to be free of any and all governance by 
+      any governmental organisation and I hereby and herewith reserve all 
+      natural rights such as are recognized to be inherent conditions of 
+      human existence. 
+
+    %p.lead
+      Furthermore, and for the avoidance of doubt, I do hereby and herewith 
+      withdraw any express or implied consent to be recognised by or through 
+      any legal name or entity which any governmental organisation, or an 
+      agent thereof, may, by virtue of its registration under that 
+      governments jurisdiction, use against my will to exercise control or 
+      power over me. 
+
     %br
     %h6.lead
       Add your e-signature to a Declaration of Sovereignty:
     
-    %form{ role: "form" }
-      %table.table.table-responsive.lead#sovereignty_declaration_form          
-        %thead
-          %th
-            By
-       
-          %th
-            Date
-        
-          %th
-          
-        
-      
-        %tbody
-          %tr
-            %td
-              %input.form-control#full_name{ placeholder: "Name" }
-            
-            %td
-              %input.form-control#date{ placeholder: "dd/mm/yyyy" }
-            %td
-              %button.btn.btn-info.btn-md#submit_sov_button{ href: "#" }
-                Submit
-            
-          
-          %tr
-            %td{ colspan: "3" }
-              = render "newsletter_subscribe"
-      
-    
-  
+    %form#declaration-form{ role: "form" }
+      %label.lead.name-label{for: 'full_name'} By
+      %input.form-control#full_name{name: 'name', type: 'text', placeholder: "Name" }
+      %label.lead{for: 'date'} Date
+      %input.form-control#date{ name: 'date', type: 'date', placeholder: "dd/mm/yyyy" }
+      .submit
+        %button.btn.btn-info.btn-md#submit_sov_button{ href: "#" } Submit
 
-
-
+= render "newsletter_subscribe"

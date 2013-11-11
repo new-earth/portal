@@ -1,0 +1,20 @@
+
+#declaration-form
+  +make-row
+
+  .name-label // ideally first-child, but couldn't get it to work just now.
+    +make-md-column-offset(1)
+
+  label, input, .submit
+    display: inline-block
+    vertical-align: baseline
+
+  label
+    text-align: right
+    +make-sm-column(2)
+    +make-md-column(1)
+  .submit
+    +make-sm-column(1)
+
+  input
+    +make-sm-column(3)

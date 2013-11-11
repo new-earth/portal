@@ -23,13 +23,12 @@ class MembersController < ApplicationController
    
   protected
   def set_title
-    @title ||= 'members'
+    @title = 'members'
   end
   
   private
 
   def member_params
-    params.require(:first_name, :last_name, :email_address, :password, :country )
-    params.require.permit(:middle_name, :password_confirm)
+    params.require(:first_name, :last_name, :email_address, :password, :country ).permit(:middle_name, :password_confirm)
   end
 end

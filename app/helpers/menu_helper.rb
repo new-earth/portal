@@ -10,8 +10,8 @@ module MenuHelper
       }
     when 'members'
       {
-        'sovereignty declaration' => sovereignty_declaration_members_path,
-        'profile' => edit_profile_members_path
+        'declaration' => declaration_members_path,
+        'profile' => new_member_path
       }
     else
       {'institute' => about_institute_path}

@@ -16,4 +16,11 @@ class Intranet::Member < Intranet::Base
     self.status = 1
   end
 
+  def timestamp_attributes_for_create
+    super << :date_created
+  end
+  def timestamp_attributes_for_update
+    super << :date_updated
+  end
+
 end

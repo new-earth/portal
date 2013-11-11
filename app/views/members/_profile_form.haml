@@ -1,0 +1,54 @@
+.member-top
+
+.panel.panel-info
+  .panel-heading
+    .h3 Member Profile
+    
+  
+  .panel-body
+    = form_for @user, url: members_path(@user), html: { class: "member-container form-horizontal", id: "profile-form" } do |f|
+      .form-group
+        = f.label :first_name, class: "control-label"
+        = f.text_field :first_name, class: "form-control"
+
+      .form-group
+        = f.label :middle_name, class: "control-label"
+        = f.text_field :middle_name, class: "form-control"
+
+      .form-group
+        = f.label :last_name, class: "control-label"
+        = f.text_field :last_name, class: "form-control"
+      
+      .form-group
+        = f.label :email, class: "control-label"
+        = f.text_field :email, class: "form-control"      
+      
+      .form-group
+        = f.label :password, class: "control-label"
+        = f.password_field :password, class: "form-control"
+        
+      .form-group
+        = f.label :password_confirmation, class: "control-label"
+        = f.password_field :password_confirmation, class: "form-control" 
+      
+      .form-group
+        %label.control-label{ for: "country" } Country
+        = country_select("member", "country", [ "us", "ca", "id" ], iso_codes: true, class: "control-label" )
+
+      %h5 Skills
+      - Intranet::Value.skills.each do |skill|
+        - checkbox_id = "skill-checkbox-#{skill.value}"
+        .form-group.checkbox
+          %input{id: checkbox_id, type: 'checkbox', checked: 'checked'}
+          %label{for: checkbox_id}= skill.description
+
+      %h5 Interests
+      - Intranet::Value.skills.each do |skill|
+        - checkbox_id = "interest-checkbox-#{skill.value}"
+        .form-group.checkbox
+          %input{id: checkbox_id, type: 'checkbox', checked: 'checked'}
+          %label{for: checkbox_id}= skill.description
+
+      .form-group.submit
+        = f.submit class: "btn btn-success btn-lg", value: "Save"
+        %a.btn.btn-info.btn-lg{ href: "/" } Skip

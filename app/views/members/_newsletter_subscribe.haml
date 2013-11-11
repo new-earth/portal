@@ -1,35 +1,18 @@
-%div#newsletter_subscribe_form
-  %table.table-responsive
-    %thead
-      %th{ colspan: "3" }
-        %label
-          Sign up to our newsletter system by filling out the form below:
-          
-        %p.small-text
-          ( Keep me informed about: communities, retreats, institute, festival, everything )
-        
-      
-    
-    %tbody{ align: "center" }        
-      %tr
-        %td{ colspan: "3" }
-          %br
-          .form-group
-            %label.control-label{ for: "email" }
-              Email
-            
-            %input#newsletter_email.form-control{ type: "text", placeholder: "Email" }
-            
-            %br
-            %br
-            %a.btn.btn-success.btn-lg#newsletter_subscribe_btn{ href: "/members/edit_profile" }
-              Subscribe
-          
-            %a.btn.btn-info.btn-lg#newsletter_skip_btn{ href: "/members/edit_profile" }
-              Skip
-          
-        
-      
-    
-  
+#newsletter_subscribe_form.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{type: 'button', 'data-dismiss' => 'modal'} &times;
+        %h4.modal-title Sign up for our newsletter
+      .modal-body
+        %p Keep me informed about: communities, retreats, institute, festival, everything
+        %p (todo: checkboxes for different email lists)
 
+        %form.form-horizontal
+          .form-group
+            %label.control-label.col-sm-2{ for: "newsletter_email" } Email
+            %input#newsletter_email.col-sm-7{ type: "email", placeholder: "Email" }
+
+      .modal-footer
+        %a.btn.btn-success.btn-lg#newsletter_subscribe_btn{ href: "/members/new" } Subscribe
+        %a.btn.btn-info.btn-lg#newsletter_skip_btn{ href: "/members/new" } Skip

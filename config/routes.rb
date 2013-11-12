@@ -16,6 +16,7 @@ Portal::Application.routes.draw do
   resources 'members' do
     collection do
       get 'declaration'
+      post 'newsletter', to: 'members#newsletter_create'
     end
   end
   

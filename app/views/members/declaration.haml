@@ -1,3 +1,11 @@
+= provide :head do
+  :coffeescript
+    $ ->
+      $("#submit_sov_button").click (ev)->
+        ev.preventDefault()
+        signupView = new App.NewsletterSignupView()
+        signupView.render()
+
 .member-top
 
 .panel.panel-info

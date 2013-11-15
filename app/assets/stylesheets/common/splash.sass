@@ -1,16 +1,14 @@
-
 //
 // splash page
 //
 #splash
-  min-width: 1410px // until we figure out how to collapse it properly, or do media queries to reduce font size
 
   header
     $header-height: 550px
     $logo-diameter: 280px
     $logo-offset: 30px
     $title-row-height: ($logo-diameter / 2) + $logo-offset + 5px
-    $menu-height: 85px
+    $menu-height: 55px
 
     .title-row
       clear: both
@@ -18,24 +16,29 @@
       +linear-gradient(#fff 0%, #eee 40%, rgba($light-blue, 0.6) 100%)
     
     .logo-wrapper
-      +make-sm-column(4)
-      +make-sm-column-push(4)
-      +make-sm-column-pull(4)
+      +make-sm-column(8)
+      +make-sm-column-offset(2)
+      //+make-sm-column-push(2)
+      //+make-sm-column-pull(2)
       .logo
-        +h2
-        line-height: 50px
+        width: 334px
+        height: 334px
+        background: image-url('nep_logo_334px.png')
+      // .logo
+      //   +h2
+      //   line-height: 50px
 
-        width: $logo-diameter
-        height: $logo-diameter
-        top: $logo-offset
+      //   width: $logo-diameter
+      //   height: $logo-diameter
+      //   top: $logo-offset
 
-        +radial-gradient(circle at 50% 50%, $light-blue 18%, $dark-blue-green 80%, #000 100%)
-        box-shadow: 0 -5px 80px rgba(#eee, 0.9)
-      .logo-image
-        height: 200px
-        width: 200px
-        background: image-url('logo-transparent-200.png') center no-repeat
-        margin: -9px auto -20px auto
+      //   +radial-gradient(circle at 50% 50%, $light-blue 18%, $dark-blue-green 80%, #000 100%)
+      //   box-shadow: 0 -5px 80px rgba(#eee, 0.9)
+      // .logo-image
+      //   height: 200px
+      //   width: 200px
+      //   background: image-url('logo-transparent-200.png') center no-repeat
+      //   margin: -9px auto -20px auto
 
     .spacer
       height: $header-height - $title-row-height - $menu-height
@@ -48,28 +51,29 @@
         top: 42px
 
     #main-menu
-      height: $menu-height
       background: $powder-blue
-      +h4
       .navbar-nav
-        padding: 5px 0
+        font-size: 1.3em
         & > li > a
           color: $light-foreground
-          padding-left: 85px
           line-height: inherit
-          background-position: left center
-          background-repeat: no-repeat
-
-      .exchange a
-        background-image: image-url('icons/exchange-trishula-small.png')
-      .festival a
-        background-image: image-url('icons/festival-nautilus-small.png')
-      .institute a
-        background-image: image-url('icons/institute-lotus-small.png')
-      .locations a
-        background-image: image-url('icons/locations-phi-small.png')
-      .new-earth a
-        background-image: image-url('icons/new-earth-toroid-small.png')
+        @media (min-width: 1286px)
+          font-size: 1.15em
+          & > li > a
+            line-height: $menu-height
+            padding-left: 83px
+            background-position: left center
+            background-repeat: no-repeat
+          .exchange a
+            background-image: image-url('icons/exchange-trishula-small.png')
+          .festival a
+            background-image: image-url('icons/festival-nautilus-small.png')
+          .institute a
+            background-image: image-url('icons/institute-lotus-small.png')
+          .locations a
+            background-image: image-url('icons/locations-phi-small.png')
+          .new-earth a
+            background-image: image-url('icons/new-earth-toroid-small.png')
 
 
   #bottom-menu
@@ -82,6 +86,7 @@
       +make-sm-column(2)
       +h4
       line-height: 238px
+      white-space: nowrap
       color: #fff
       background-position: center center
       background-repeat: no-repeat
@@ -89,19 +94,31 @@
         text-decoration: none
         text-shadow: 0 0 22px rgba($powder-blue, 0.9)
 
-
-    .locations a
-      background-image: image-url('icons/locations-phi-big.png')
-    .exchange a
-      background-image: image-url('icons/exchange-trishula-big.png')
-    .festival a
-      background-image: image-url('icons/festival-nautilus-big.png')
-    .institute a
-      background-image: image-url('icons/institute-lotus-big.png')
-    .new-earth a
-      background-image: image-url('icons/new-earth-toroid-big.png')
     .spacer // could use :before, :after or :first-child, :last-child, or +make-sm-pull-left instead of a non-semantic spacer div.
       +make-sm-column(1)
+
+    .locations a
+      background-image: image-url('icons/locations-phi-small.png')
+    .exchange a
+      background-image: image-url('icons/exchange-trishula-small.png')
+    .festival a
+      background-image: image-url('icons/festival-nautilus-small.png')
+    .institute a
+      background-image: image-url('icons/institute-lotus-small.png')
+    .new-earth a
+      background-image: image-url('icons/new-earth-toroid-small.png')
+
+    @media (min-width: $screen-md)
+      .locations a
+        background-image: image-url('icons/locations-phi-big.png')
+      .exchange a
+        background-image: image-url('icons/exchange-trishula-big.png')
+      .festival a
+        background-image: image-url('icons/festival-nautilus-big.png')
+      .institute a
+        background-image: image-url('icons/institute-lotus-big.png')
+      .new-earth a
+        background-image: image-url('icons/new-earth-toroid-big.png')
 
   footer
     height: 100px

@@ -1,17 +1,36 @@
 
 #splash-content
-  background: image-url('toroid-3d.png') center 30px no-repeat
-  height: 323px + 30px
+  $bg-img-height: 323px
+  $bg-img-offset: 30px
+  height: $bg-img-height + $bg-img-offset
   position: relative
 
   #main-quote
-    margin-top: 29px
-    width: 28%
-    float: left
-    +make-xs-column(3)
-    +make-sm-column-push(1)
+    margin-top: 45px
+    +make-xs-column(12)
+    +make-sm-column(8)
+    +make-sm-column-offset(2)
+    +make-md-column(4)
+    +make-md-column-offset(1)
     text-align: center
-    padding: 0
+    // padding: 25px 35px
+    font-size: 1.3em
+    text-shadow: 0 0 9px #eee
+  .toroid
+    +make-md-column(7)
+    margin-left: -50px
+    height: 100%
+    // position: relative
+    opacity: 0.4
+    z-index: -2
+    background: image-url('toroid-3d.png') center $bg-img-offset no-repeat
+  @media (min-width: $screen-md)
+    #main-quote
+      font-size: 1.2em
+    .toroid
+      opacity: 1
+
+
 
 .upper-color-strip, .lower-color-strip
   height: 65px
@@ -25,9 +44,12 @@
   bottom: 0
 .lower-color-strip
   +h4
-  padding-left: 30px
+  font-size: 20px
   color: #fff
   background-color: #009ee0
+  @media (min-width: $screen-md)
+    font-size: 2.2em
+
   #btn-subscribe
     +h5
 

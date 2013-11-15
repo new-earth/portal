@@ -1,4 +1,4 @@
-VERSION = "0.0.1"
+VERSION = "0.0.2"
 
 require File.expand_path('../boot', __FILE__)
 

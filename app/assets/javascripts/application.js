@@ -15,4 +15,8 @@
 //= require underscore/underscore
 //= require backbone/backbone
 //= require bootstrap
+//= require_self
 //= require_tree .
+window.App = {
+  Views: {}
+}

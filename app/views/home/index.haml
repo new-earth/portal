@@ -1,3 +1,8 @@
+= content_for :head do
+  :coffeescript
+    $ ->
+      signupView = new App.Views.NewsletterSignup()
+      $('#btn-subscribe').click(-> console.log('hello'); signupView.render())
 
 #splash-content
   #main-quote
@@ -6,9 +11,13 @@
     zero-point emerges as the true event horizon and perfectly describes the quantum of the awakened human heart            |
     %br
     .x ~sacha stone~
+  .toroid
   .other
 
   .upper-color-strip
 .lower-color-strip
   subscribe to the new earth and to your sovereignty
   #btn-subscribe.btn.btn-primary subscribe
+
+
+= render 'members/newsletter_subscribe'

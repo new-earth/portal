@@ -11,5 +11,12 @@
 // about supported directives.
 //
 //= require jquery/jquery
+//= require jquery-ujs/src/rails
+//= require underscore/underscore
+//= require backbone/backbone
 //= require bootstrap
+//= require_self
 //= require_tree .
+window.App = {
+  Views: {}
+}

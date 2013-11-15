@@ -15,6 +15,12 @@
     "tests"
   ],
   "dependencies": {
+    "jquery": "~2.0.3",
+    "jquery-ujs": "",
+    "underscore": "~1.5.2",
+    "backbone": "~1.1.0"
+  },
+  "resolutions": {
     "jquery": "~2.0.3"
   }
 }

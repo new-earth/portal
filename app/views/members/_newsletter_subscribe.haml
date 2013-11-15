@@ -11,8 +11,8 @@
         %form.form-horizontal
           .form-group
             %label.control-label.col-sm-2{ for: "newsletter_email" } Email
-            %input#newsletter_email.col-sm-7{ type: "email", placeholder: "Email" }
-
+            %input#newsletter_email.col-sm-7{ type: "email", name: 'email', placeholder: "Email" }
+            %span.email-error-message.col-sm-2{style: 'color: red'}= # never do this (inline style)
       .modal-footer
         %a.btn.btn-success.btn-lg#newsletter_subscribe_btn{ href: "/members/new" } Subscribe
         %a.btn.btn-info.btn-lg#newsletter_skip_btn{ href: "/members/new" } Skip

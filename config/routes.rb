@@ -4,6 +4,8 @@ Portal::Application.routes.draw do
 
   get 'locations' => 'locations#index'
 
+  get 'enter-new-earth' => 'pages#enter_new_earth', as: 'enter'
+  
   resource 'institute', only: :index do
     member do
       get 'about'

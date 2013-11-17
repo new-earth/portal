@@ -9,7 +9,7 @@
     = yield :head
 
   %body#splash
-    = render partial: 'layouts/top_menu'
+    = render 'layouts/top_menu'
 
     %header
       .title-row
@@ -29,7 +29,7 @@
             %li.institute
               %a{href: about_institute_path} institute
             %li.new-earth
-              %a{href: declaration_members_path} enter new earth
+              %a{href: enter_path} enter new earth
             %li.exchange
               %a{href: ""} bank exchange
             %li.festival
@@ -37,20 +37,4 @@
 
     = yield
 
-    %ul#bottom-menu
-      %li.spacer
-      %li.locations
-        %a{href: '#'} locations 
-      %li.institute
-        %a{href: about_institute_path} institute
-      %li.new-earth
-        %a{href: declaration_members_path} new earth
-      %li.exchange
-        %a{href: '#'} exchange
-      %li.festival
-        %a{href: '#'} festival
-      %li.spacer
-
-
-    %footer
-      © New Earth Project 2013
+    = render 'layouts/footer'

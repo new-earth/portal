@@ -18,8 +18,6 @@
     .logo-wrapper
       +make-sm-column(8)
       +make-sm-column-offset(2)
-      //+make-sm-column-push(2)
-      //+make-sm-column-pull(2)
       .logo
         width: 334px
         height: 334px
@@ -77,54 +75,3 @@
           .new-earth a
             background-image: image-url('icons/new-earth-toroid-small.png')
 
-
-  #bottom-menu
-    +linear-gradient($dark-blue, $blue-black)
-    height: 238px 
-    text-align: center
-    list-style-type: none
-    margin: 0
-    li > a
-      +make-sm-column(2)
-      +h4
-      line-height: 238px
-      white-space: nowrap
-      color: #fff
-      background-position: center center
-      background-repeat: no-repeat
-      &:hover
-        text-decoration: none
-        text-shadow: 0 0 22px rgba($powder-blue, 0.9)
-
-    .spacer // could use :before, :after or :first-child, :last-child, or +make-sm-pull-left instead of a non-semantic spacer div.
-      +make-sm-column(1)
-
-    .locations a
-      background-image: image-url('icons/locations-phi-small.png')
-    .exchange a
-      background-image: image-url('icons/exchange-trishula-small.png')
-    .festival a
-      background-image: image-url('icons/festival-nautilus-small.png')
-    .institute a
-      background-image: image-url('icons/institute-lotus-small.png')
-    .new-earth a
-      background-image: image-url('icons/new-earth-toroid-small.png')
-
-    @media (min-width: $screen-md)
-      .locations a
-        background-image: image-url('icons/locations-phi-big.png')
-      .exchange a
-        background-image: image-url('icons/exchange-trishula-big.png')
-      .festival a
-        background-image: image-url('icons/festival-nautilus-big.png')
-      .institute a
-        background-image: image-url('icons/institute-lotus-big.png')
-      .new-earth a
-        background-image: image-url('icons/new-earth-toroid-big.png')
-
-  footer
-    height: 100px
-    padding-left: 120px // todo: make into row/columns
-    line-height: 50px
-    color: #fff
-    background-color: $blue-black

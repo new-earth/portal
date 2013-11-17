@@ -8,18 +8,18 @@
     = csrf_meta_tags
     = yield :head
 
-  %body
-    = render partial: 'layouts/top_menu'
+  %body{class: current_section}
+    = render 'layouts/top_menu'
+
     %header#main
       .title-row
-        .title= @title
+        .title= current_title
 
         .logo-wrapper
           .logo
-            .logo-image
 
         .section
-          %span.section-text= @section
+          %span.section-text= subtitle_for(@subsection)
           %i.institute-icon
 
 
@@ -33,4 +33,4 @@
     .container
       = yield
 
-    %footer
+    = render 'layouts/footer'

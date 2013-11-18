@@ -6,43 +6,28 @@
   header
     $header-height: 550px
     $logo-diameter: 280px
-    $logo-offset: 30px
+    $logo-offset: 50px
     $title-row-height: ($logo-diameter / 2) + $logo-offset + 5px
     $menu-height: 55px
+    background: image-url('splash-vector-overlay.svg') center -35px no-repeat, image-url('banner-tropical-island.jpg') top center no-repeat
 
     .title-row
       clear: both
       height: $title-row-height
-      +linear-gradient(#fff 0%, #eee 40%, rgba($light-blue, 0.6) 100%)
     
     .logo-wrapper
       +make-sm-column(8)
       +make-sm-column-offset(2)
+      padding-top: $logo-offset
+
       .logo
         width: 334px
         height: 334px
         background: image-url('nep_logo_334px.png')
-      // .logo
-      //   +h2
-      //   line-height: 50px
-
-      //   width: $logo-diameter
-      //   height: $logo-diameter
-      //   top: $logo-offset
-
-      //   +radial-gradient(circle at 50% 50%, $light-blue 18%, $dark-blue-green 80%, #000 100%)
-      //   box-shadow: 0 -5px 80px rgba(#eee, 0.9)
-      // .logo-image
-      //   height: 200px
-      //   width: 200px
-      //   background: image-url('logo-transparent-200.png') center no-repeat
-      //   margin: -9px auto -20px auto
+        box-shadow: 0 -5px 80px rgba(#eee, 0.9)
 
     .spacer
       height: $header-height - $title-row-height - $menu-height
-      background-image: image-url('banner-tropical-island.jpg')
-      background-position: bottom center
-      background-size: cover
       .video
         float: right
         position: relative

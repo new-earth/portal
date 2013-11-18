@@ -2,7 +2,7 @@
 %html
   %head
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    %title New Earth Project - #{@title}
+    %title New Earth Project - #{current_title}
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
@@ -19,13 +19,14 @@
           .logo
 
         .section
-          %span.section-text= subtitle_for(@subsection)
+          %span.section-text= current_subtitle
           %i.institute-icon
 
 
       .spacer
 
-      = render partial: 'layouts/main_menu'
+      =# render partial: 'layouts/main_menu'
+      = yield :menu
 
       .breadcrumbs
         you are here > home > about

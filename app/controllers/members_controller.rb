@@ -19,14 +19,17 @@ class MembersController < ApplicationController
     @section = 'index'
   end
 
-   
+  # These newsletter methods would more properly be their own resource.
+  def newsletter_create
+    render json: {errors: []} # really it would be best to return the attributes of the created object.
+  end
+
   protected
+
   def set_title
     @title = 'members'
   end
   
-  private
-
   def member_params
     params.require(:first_name, :last_name, :email_address, :password, :country ).permit(:middle_name, :password_confirm)
   end

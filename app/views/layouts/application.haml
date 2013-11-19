@@ -2,28 +2,29 @@
 %html
   %head
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    %title New Earth Project - #{@title}
+    %title New Earth Project - #{current_title}
     = init_static_assets "base"
+    = yield :head
 
-  %body
-    = render partial: 'layouts/top_menu'
+  %body{class: current_section}
+    = render 'layouts/top_menu'
+
     %header#main
       .title-row
-        .title= @title
+        .title= current_title
 
         .logo-wrapper
           .logo
-            .logo-image
-            new earth project
 
         .section
-          %span.section-text= @section
+          %span.section-text= current_subtitle
           %i.institute-icon
 
 
       .spacer
 
-      = render partial: 'layouts/main_menu'
+      =# render partial: 'layouts/main_menu'
+      = yield :menu
 
       .breadcrumbs
         you are here > home > about
@@ -31,4 +32,4 @@
     .container
       = yield
 
-    %footer
+    = render 'layouts/footer'

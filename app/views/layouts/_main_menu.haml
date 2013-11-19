@@ -1,7 +1,7 @@
-%nav#main-menu.navbar-wrapper
+%nav#main-menu.navbar-wrapper(data-spy="affix" data-offset-top="390")
   .navbar-collapse
     %ul.nav.navbar-nav
-      - menu_for(@title).each do |menu_name, url|
+      - current_menu.each do |menu_name, url|
         %li
           %a{href: url}= menu_name
 

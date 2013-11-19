@@ -6,7 +6,7 @@ class Intranet::Member < Intranet::Base
   
   validates :first_name, presence: true, length: { maximum: 30 }
   validates :middle_name, length: { maximum: 30 }
-  validates :last_name, presence: true, length: { maximum: 30 }
+  validates :last_name, length: { maximum: 30 }
   validates :email_address, presence: true, uniqueness: true, length: { maximum: 128 }
   validates :country, presence: true, length: { minimum: 2, maximum: 2 }
   

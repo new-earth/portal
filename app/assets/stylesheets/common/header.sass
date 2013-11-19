@@ -137,7 +137,6 @@ nav.navbar.top
 // shared
 //
 header
-  background-size: cover
   color: $light-foreground
   .title-row
 
@@ -156,22 +155,18 @@ header
 // main site
 //
 header#main
-  $header-height: 350px
-  $logo-diameter: 170px
+  $header-height: 300px
+  $logo-height: 209px
   $logo-offset: 14px
-  $title-row-height: ($logo-diameter / 2) + $logo-offset + 5px
+  $title-row-height: ($logo-height / 2) + $logo-offset + 5px
   $menu-height: 50px
 
-  //height: $header-height
-  background-image: image-url('header-temp.jpg')
-
   .title-row
-    +linear-gradient(rgba($dark-blue-green, 0.4), rgba($light-blue, 0.4))
     clear: both
-    height: $title-row-height
+    height: 239px
 
     .title, .section
-      +make-sm-column(5)
+      +make-sm-column(4)
       +h3
       margin-top: ($title-row-height - $h3-font-size)
 
@@ -186,24 +181,14 @@ header#main
       margin-right: 20px
 
   .logo-wrapper
-    +make-sm-column(2)
+    +make-sm-column(4)
+    padding-top: $logo-offset
 
     .logo
-      font-size: 0.8em
-      line-height: 30px
-
-      width: $logo-diameter
-      height: $logo-diameter
-      top: $logo-offset
-
-      +radial-gradient(circle at 50% 50%, $light-blue 30%, $dark-blue-green)
-      box-shadow: 0 -5px 45px rgba(#eee, 0.6)
-      
-    .logo-image
-      background: image-url('logo-transparent-small.png') center no-repeat
-      width: 120px
-      height: 120px
-      margin: -5px auto -12px auto
+      background: image-url('nep_logo_209px.png')
+      width: $logo-height
+      height: $logo-height
+      box-shadow: 0 -3px 37px rgba(#eee, 0.5)
 
   .spacer
     height: $header-height - $title-row-height - $menu-height
@@ -212,13 +197,16 @@ header#main
     height: $menu-height
     background: rgba($dark-blue-green, 0.8)
     +h6
+    &.affix
+      top: 0
+      width: 100%
 
   .institute-icon
     height: 150px
     width: 150px
     background: image-url('institute-icon.png') center no-repeat
-    position: absolute
-    top: -($title-row-height - $h3-font-size)
+    // position: relative
+    // top: -($title-row-height - $h3-font-size)
     //float: none
     //display: inline-block
     //margin: -($title-row-height - $h3-font-size) 0 0 0

@@ -4,51 +4,35 @@
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
     %title Welcome to the New Earth
     = init_static_assets "base"
+    = yield :head
 
   %body#splash
-    = render partial: 'layouts/top_menu'
-    = render partial: 'layouts/login_modal'
+    = render 'layouts/top_menu'
+    = render 'layouts/login_modal'
 
     %header
       .title-row
 
         .logo-wrapper
           .logo
-            .logo-image
-            new earth project
 
       .spacer
         .video video!
       
-      %nav#main-menu.navbar-wrapper
+      %nav#main-menu.h5.navbar-wrapper
         .navbar-collapse
           %ul.nav.navbar-nav
-            %li.locations
+            %li.locations.disabled
               %a{href: ""} locations
-            %li.institute
+            %li.institute.disabled
               %a{href: about_institute_path} institute
             %li.new-earth
-              %a{href: declaration_members_path} enter new earth
-            %li.exchange
+              %a{href: enter_path} enter new earth
+            %li.exchange.disabled
               %a{href: ""} bank exchange
-            %li.festival
+            %li.festival.disabled
               %a{href: ""} festival
 
     = yield
 
-    %ul#bottom-menu
-      %li.spacer
-      %li.locations
-        %a{href: '#'} locations 
-      %li.institute
-        %a{href: about_institute_path} institute
-      %li.new-earth
-        %a{href: declaration_members_path} new earth
-      %li.exchange
-        %a{href: '#'} exchange
-      %li.festival
-        %a{href: '#'} festival
-      %li.spacer
-
-    %footer
-      © New Earth Project 2013
+    = render 'layouts/footer'

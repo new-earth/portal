@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+default_users = User.create [ 
+                              {first_name: 'Joe',
+                               last_name: 'Black',
+                               email: 'joe@spektrumtheory.com',
+                               password_digest: BCrypt::Password.create('secret'),
+                               country_iso: 'US' } ]

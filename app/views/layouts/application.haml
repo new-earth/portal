@@ -3,9 +3,7 @@
   %head
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
     %title New Earth Project - #{@title}
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
-    = csrf_meta_tags
+    = init_static_assets "base"
 
   %body
     = render partial: 'layouts/top_menu'

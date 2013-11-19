@@ -3,12 +3,11 @@
   %head
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
     %title Welcome to the New Earth
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
-    = csrf_meta_tags
+    = init_static_assets "base"
 
   %body#splash
     = render partial: 'layouts/top_menu'
+    = render partial: 'layouts/login_modal'
 
     %header
       .title-row
@@ -17,7 +16,6 @@
           .logo
             .logo-image
             new earth project
-
 
       .spacer
         .video video!
@@ -36,8 +34,6 @@
             %li.festival
               %a{href: ""} festival
 
-
-
     = yield
 
     %ul#bottom-menu
@@ -53,7 +49,6 @@
       %li.festival
         %a{href: '#'} festival
       %li.spacer
-
 
     %footer
       © New Earth Project 2013

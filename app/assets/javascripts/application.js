@@ -20,3 +20,8 @@
 window.App = {
   Views: {}
 }
+$(document).ready(function() {
+  $("#main-menu .mobile-nav a").click(function(e) { 
+    e.preventDefault(); 
+    $("#main-menu .desktop-nav").slideToggle(); });
+});

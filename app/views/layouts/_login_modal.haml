@@ -1,0 +1,19 @@
+#loginModal.modal.fade{tabindex: "-1", role: 'dialog', 'aria-labelledby' => 'loginModalTitle', 'aria-hidden' => 'true'}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{type: 'button', 'data-dismiss' => 'modal', 'aria-hidden' => 'true'} &times;
+        %h4#loginModal.modal-title Sign in to New Earth Project
+      .modal-body
+        .account-wall
+          %img.profile-img{src: 'https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120'} 
+          %form.form-signin{action: "/login"}
+            = email_field_tag :email, params[:email], class: 'form-control', placeholder: 'Email', required: 'required'
+            = password_field_tag :password, params[:password], class: 'form-control', placeholder: 'Password', required: 'required' 
+            = submit_tag "Sign in", class: "btn btn-lg btn-primary btn-block"
+            %label.checkbox.pull-left{for: 'remember_me'} 
+              = check_box_tag "remember_me"
+              Remember me
+            %a.pull-right.need-help{href: '#'} Need Help?
+            %span.clearfix
+            %a.text-center.new-account{href: '#'} Create an Account 

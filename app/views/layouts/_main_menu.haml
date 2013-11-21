@@ -1,6 +1,12 @@
 %nav#main-menu.navbar-wrapper(data-spy="affix" data-offset-top="390")
   .navbar-collapse
-    %ul.nav.navbar-nav
+
+    .mobile-nav
+      %a{"data-status"="plus", "href"="#"}
+        %i.fa-bars
+        Menu
+
+    %ul.nav.navbar-nav.desktop-nav
       - current_menu.each do |menu_name, url|
         %li
           %a{href: url}= menu_name

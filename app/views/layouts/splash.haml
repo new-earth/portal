@@ -3,6 +3,7 @@
   %head
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
     %title Welcome to the New Earth
+    = google_webfonts_init(   {google: ['Lato:100,300,400,700,900,400italic,700italic'] } )
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
@@ -10,6 +11,7 @@
 
   %body#splash
     = render 'layouts/top_menu'
+    = render partial: 'layouts/login_modal'
 
     %header
       .title-row
@@ -23,7 +25,12 @@
       
       %nav#main-menu.h5.navbar-wrapper
         .navbar-collapse
-          %ul.nav.navbar-nav
+
+          .mobile-nav
+            %a{href: "#"}
+              %i.icon-reorder
+              Menu
+          %ul.nav.navbar-nav.desktop-nav
             %li.locations.disabled
               %a{href: ""} locations
             %li.institute.disabled
@@ -34,6 +41,7 @@
               %a{href: ""} bank exchange
             %li.festival.disabled
               %a{href: ""} festival
+        .clearfix
 
     = yield
 

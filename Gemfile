@@ -19,6 +19,7 @@ gem 'haml_coffee_assets'
 gem 'bourbon'
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
 gem 'font-awesome-rails'
+gem 'google-webfonts-rails'
 # --------------------------
 
 gem 'country_select', '~> 1.2.0'

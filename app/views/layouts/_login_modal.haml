@@ -7,13 +7,13 @@
       .modal-body
         .account-wall
           %img.profile-img{src: 'https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120'} 
-          %form.form-signin{action: "/login"}
-            = email_field_tag :email, params[:email], class: 'form-control', placeholder: 'Email', required: 'required'
-            = password_field_tag :password, params[:password], class: 'form-control', placeholder: 'Password', required: 'required' 
-            = submit_tag "Sign in", class: "btn btn-lg btn-primary btn-block"
-            %label.checkbox.pull-left{for: 'remember_me'} 
-              = check_box_tag "remember_me"
+          %form.form-signin
+            %input.form-control{type: 'email', placeholder: 'Email', required: 'required', autofocus: 'autofocus'}
+            %input.form-control{type: 'password', placeholder: 'Password', required: 'required'}
+            %button.btn.btn-lg.btn-primary.btn-block{type: 'submit'} Sign in
+            %label.checkbox.pull-left
+              %input{type: 'checkbox', value: 'remember-me'}
               Remember me
             %a.pull-right.need-help{href: '#'} Need Help?
             %span.clearfix
-            %a.text-center.new-account{href: '#'} Create an Account 
+            %a.text-center.new-account{href: '#'} Create an Account

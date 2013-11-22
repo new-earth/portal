@@ -3,10 +3,7 @@
   %head
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
     %title Welcome to the New Earth
-    = google_webfonts_init(   {google: ['Lato:100,300,400,700,900,400italic,700italic'] } )
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
-    = csrf_meta_tags
+    = init_static_assets "base"
     = yield :head
 
   %body#splash
@@ -18,7 +15,6 @@
 
         .logo-wrapper
           .logo
-
 
       .spacer
         .video video!

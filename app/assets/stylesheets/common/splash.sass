@@ -2,7 +2,6 @@
 // splash page
 //
 #splash
-
   header
     $header-height: 550px
     $logo-diameter: 280px
@@ -66,13 +65,16 @@
           & > li
             width: 100%
             text-align: left
-            font-size: .8em !IMPORTANT
+            font-size: .7em !IMPORTANT
             a
               color: $powder-blue !IMPORTANT
             &:hover, &:focus
-              background-color: $powder-blue
+              background-color: $powder-blue-lighter
+              padding-left: .5em
               a
                 color: #fff !IMPORTANT
+            &:active
+              background-color: $powder-blue
 
       .navbar-nav
         font-size: 1.3em

@@ -23,5 +23,16 @@ window.App = {
 $(document).ready(function() {
   $("#main-menu .mobile-nav a").click(function(e) { 
     e.preventDefault(); 
-    $("#main-menu .desktop-nav").slideToggle(); });
+    $("#main-menu .desktop-nav").slideToggle(); 
+  });
+  $(window).resize(function () {
+    var width = $(window).width();
+    if (width > 1049) {
+      $('#main-menu .desktop-nav').show();
+    } 
+  });
+
+  $('#loginModal').on('shown.bs.modal', function () {
+    $('#loginModal .autofocus').focus();
+})
 });

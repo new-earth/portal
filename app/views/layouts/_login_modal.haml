@@ -6,14 +6,14 @@
         %h4#loginModal.modal-title Sign in to New Earth Project
       .modal-body
         .account-wall
-          %div.profile-img 
-          %form.form-signin
-            %input.form-control.autofocus{type: 'email', placeholder: 'Email', required: 'required'}
-            %input.form-control{type: 'password', placeholder: 'Password', required: 'required'}
-            %button.btn.btn-lg.btn-primary.btn-block{type: 'submit'} Sign in
-            %label.checkbox.pull-left
-              %input{type: 'checkbox', value: 'remember-me'}
+          .profile-img
+          %form.form-signin{action: "/login"}
+            = email_field_tag :email, params[:email], class: 'form-control autofocus', placeholder: 'Email', required: 'required'
+            = password_field_tag :password, params[:password], class: 'form-control', placeholder: 'Password', required: 'required' 
+            = submit_tag "Sign in", class: "btn btn-lg btn-primary btn-block"
+            %label.checkbox.pull-left{for: 'remember_me'} 
+              = check_box_tag "remember_me"
               Remember me
             %a.pull-right.need-help{href: '#'} Need Help?
             %span.clearfix
-            %a.text-center.new-account{href: '#'} Create an Account
+            %a.text-center.new-account{href: '#'} Create an Account 

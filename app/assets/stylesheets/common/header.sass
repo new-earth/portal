@@ -1,3 +1,6 @@
+/*
+ * Q: What css file would be best for the more global stuff like this?
+ */
 a
   -webkit-transition: 0.25s
   -moz-transition: 0.25s
@@ -8,41 +11,17 @@ a
 nav
   font-family: 'Lato'
 
-/* changed from navbar-top to navbar.top that way you an recycle styles used consistantly across navbar's and use navbar.top for specifying the difference for the top navbar. There is a method to my madness :D */
-
-nav.navbar.top
-  font-size: 1.3em
-  font-weight: 400
-  margin-bottom: 0
-  border-bottom: 4px solid $powder-blue
-  li > a
-    line-height: 1em
-    padding: 0.6em 0.8em
-    margin: 0.4em 0
-    border-right: 1px solid #ccc
-    border-bottom: 2px solid transparent
-    &:hover, &:focus
-      border-bottom-color: #ccc
-      border-right-color: transparent
-      color: #777
-  li:last-child > a
-    border-right: none
-    &:hover, &:focus
-      border-right: none
-      color: #777
-a
-  -webkit-transition: 0.25s
-  -moz-transition: 0.25s
-  -o-transition: 0.25s
-  transition: 0.25s
-  -webkit-backface-visibility: hidden
-
-nav
-  font-family: 'Lato'
+/* 
+ * Changed from navbar-top to navbar.top that way you an recycle styles used consistantly across 
+ * navbar's and use navbar.top for specifying the difference for the top navbar. There is a 
+ * method to my madness :D 
+ */
 
 nav.navbar.top
   font-size: 1.2em
   font-weight: 400
+  margin-bottom: 0
+  border-bottom: 4px solid $powder-blue
   li > a
     line-height: 150%
     padding: 0.6em 0.8em
@@ -59,7 +38,9 @@ nav.navbar.top
       border-right: none
       color: #777
 
-/* for login modal, not sure where better to put these yet */
+/* For login modal, not sure where better to put these yet, I really need to schedule some time to go over the app and ask what's what what
+ * the whole splash, and what seems to be like lots of stuff that would not just be in splash only is particularly confusing
+ */
 
 #loginModal, #login-box
   .form-signin

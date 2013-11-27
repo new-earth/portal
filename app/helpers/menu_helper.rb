@@ -23,10 +23,11 @@ module MenuHelper
   end
 
   def current_section
-    case request.path
-    when /^\/enter-new-earth/
-      "enter-new-earth"
-    end
+    # case request.path
+    # when /^\/enter-new-earth/
+    #   "enter-new-earth"
+    # end
+    params[:section]
   end
 
   def current_subsection

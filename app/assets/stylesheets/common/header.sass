@@ -11,21 +11,19 @@ a
 nav
   font-family: 'Lato'
 
-/* 
- * Changed from navbar-top to navbar.top that way you an recycle styles used consistantly across 
- * navbar's and use navbar.top for specifying the difference for the top navbar. There is a 
- * method to my madness :D 
- */
-
 nav.navbar.top
-  font-size: 1.2em
+  position: fixed
+  background-color: #fff
+  width: 100%
+  border-radius: 0
+  z-index: 100
   font-weight: 400
   margin-bottom: 0
-  border-bottom: 4px solid $powder-blue
+  border-bottom: 2px solid $powder-blue
+  min-height: 0 // override bootstrap
   li > a
-    line-height: 150%
-    padding: 0.6em 0.8em
-    margin: 0.4em 0
+    padding-top: 0
+    padding-bottom: 0
     border-right: 1px solid #ccc
     border-bottom: 2px solid transparent
     &:hover, &:focus
@@ -38,70 +36,6 @@ nav.navbar.top
       border-right: none
       color: #777
 
-/* For login modal, not sure where better to put these yet, I really need to schedule some time to go over the app and ask what's what what
- * the whole splash, and what seems to be like lots of stuff that would not just be in splash only is particularly confusing
- */
-
-#loginModal, #login-box
-  .form-signin
-    max-width: 330px
-    padding: 15px
-    margin: 0 auto
-  
-    .form-signin-heading, .form-signin .checkbox
-      margin-bottom: 10px
-
-    .checkbox
-      font-weight: normal
-
-    .form-control
-      position: relative
-      font-size: 16px
-      height: auto
-      padding: 10px
-      -webkit-box-sizing: border-box
-      -moz-box-sizing: border-box
-      box-sizing: border-box
-      &:focus
-        z-index: 2
-    input[type="email"]
-      margin-bottom: 10px
-      border-bottom-left-radius: 0
-      border-bottom-right-radius: 0
-
-    input[type="password"]
-      margin-bottom: 10px
-      border-top-left-radius: 0
-      border-top-right-radius: 0
-
-  .account-wall
-    padding: 40px 0px 20px 0px
-    background-color: #f7f7f7
-    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3)
-    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3)
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3)
-
-  .login-title
-    color: #555
-    font-size: 18px
-    font-weight: 400
-    display: block
-  
-  .profile-img
-    width: 150px
-    height: 150px
-    background-image: image-url("icons/account-circle.svg")
-    background-size: 150px 150px
-    margin: 0 auto 10px
-    display: block
-
-  .need-help
-    margin-top: 10px
-
-  .new-account
-    display: block
-    margin-top: 10px
-
 //
 // shared
 //
@@ -112,6 +46,7 @@ nav.navbar.top
   background-color: $light-blue
 
 header
+  padding-top: 22px
   color: $light-foreground
   .title-row
 

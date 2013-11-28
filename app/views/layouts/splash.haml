@@ -17,9 +17,44 @@
           .logo
 
       .spacer
-        %a.video{href: "#"}
+        %a.video(href="#" data-toggle="modal" data-target="#video-modal")
           .icon
           %span watch the video
+          
+      .modal.fade#video-modal(tabindex="-1" role="dialog" aria-labelledby="video-modal-label" aria-hidden="true")
+        .modal-dialog
+          .modal-content
+            .modal-header
+              %button.close(type="button" data-dismiss="modal" aria-hidden="true")
+                &times;
+            .modal-body
+              %iframe#video-iframe(src="" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen)
+      
+      :javascript
+        $(document).ready( function() {
+          video_src = "//player.vimeo.com/video/70703279?autoplay=1";
+          
+          //
+          // API CALL DID NOT WORK FOR ME... why?
+          //
+          // Uncaught SyntaxError: Invalid target origin
+          //
+          function pauseVideo() {
+            var iframe = $("#video-iframe");
+            var url = iframe.attr('src').split('?')[0];
+            iframe[0].contentWindow.postMessage(JSON.stringify({ method:"pause" }), url);
+          }
+          
+          $('#video-modal').on('shown.bs.modal', function() {
+            $("#video-iframe").attr("src", video_src);
+          })
+          $('#video-modal').on('hide.bs.modal', function() {
+            window.setTimeout(function() {
+              $("#video-iframe").attr("src", "");
+              //pauseVideo();
+            }, 500);
+          })
+        } );
       
       %nav#main-menu.h5.navbar-wrapper
         .navbar-collapse

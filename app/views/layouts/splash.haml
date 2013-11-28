@@ -17,26 +17,27 @@
           .logo
 
       .spacer
-        .video video!
+        %a.video{href: "#"}
+          .icon
+          %span watch the video
       
       %nav#main-menu.h5.navbar-wrapper
         .navbar-collapse
-
           .mobile-nav
             %a{href: "#"}
               %i.icon-reorder
               Menu
           %ul.nav.navbar-nav.desktop-nav
-            %li.locations.disabled
-              %a{href: ""} locations
-            %li.institute.disabled
-              %a{href: about_institute_path} institute
+            %li.locations
+              %a{href: "#"} locations
+            %li.institute
+              %a{href: institute_path} institute
             %li.new-earth
               %a{href: enter_path} enter new earth
-            %li.exchange.disabled
-              %a{href: ""} bank exchange
-            %li.festival.disabled
-              %a{href: ""} festival
+            %li.exchange
+              %a{href: exchange_path} bank exchange
+            %li.festival
+              %a{href: festival_path} festival
         .clearfix
 
     = yield

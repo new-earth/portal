@@ -26,11 +26,24 @@
         box-shadow: 0 -5px 80px rgba(#eee, 0.9)
 
     .spacer
+      position: relative
       height: $header-height - $title-row-height - $menu-height
       .video
         float: right
-        position: relative
+        position: absolute
         top: 42px
+        right: 15px
+        text-align: center
+        font-family: Bauhaus
+        font-size: 20px
+        color: white
+        text-decoration: none
+        .icon
+          width: 130px // 190px
+          height: 130px // 190px
+          margin: 0 auto
+          background: image-url('watch_video.png')
+          background-size: 100% 100%
 
     #main-menu
       background: $powder-blue

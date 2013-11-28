@@ -2,18 +2,10 @@ Portal::Application.routes.draw do
   root 'home#index'
   get 'test' => 'home#test'
 
-  get 'locations' => 'locations#index'
-
-  get 'enter-new-earth' => 'pages#enter_new_earth', as: 'enter'
-  
-  resource 'institute', only: :index do
-    member do
-      get 'about'
-      get 'live_stage'
-      get 'library'
-      get 'community'
-    end
-  end
+  get 'enter-new-earth' => 'pages#enter_new_earth', section: 'enter', as: 'enter'
+  get 'institute' => 'pages#institute',             section: 'institute', as: 'institute'
+  get 'bank-exchange' => 'pages#bank_exchange',     section: 'exchange', as: 'exchange'
+  get 'festival' => 'pages#festival',               section: 'festival', as: 'festival'
 
   resources 'members' do
     collection do

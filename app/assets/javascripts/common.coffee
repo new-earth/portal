@@ -2,10 +2,10 @@
 $ ->
 
   # When mobile size menu link clicked, slide toggle desktop-nav content  
-  $("#main-menu .mobile-nav a").click(function(e) { 
-    e.preventDefault(); 
-    $("#main-menu .desktop-nav").slideToggle(); 
-  });
+  $("#main-menu .mobile-nav a").click (e)->
+    e.preventDefault();
+    $("#main-menu .desktop-nav").slideToggle()
+
 
   # 
   # FIX: Fixes bug where resizing nav to smallest size then toggling open and close on the desktop-nav 
@@ -23,6 +23,6 @@ $ ->
   # Note: I've used a recyclable class of autofocus on the field to autofocus, so this is easily 
   # extendable in the future.
   #
-  $('#loginModal').on('shown.bs.modal', ->
+  $('#loginModal').on 'shown.bs.modal', ->
     $('#loginModal .autofocus').focus()
   

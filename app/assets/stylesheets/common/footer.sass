@@ -1,14 +1,29 @@
 footer
   #bottom-menu
     +linear-gradient($dark-blue, $blue-black)
-    height: 238px 
+    min-height: 238px 
     text-align: center
     list-style-type: none
     margin: 0
+    padding: 15px 0 0 0
+    
+    @media (min-width: $screen-sm)
+      padding-top: 50px
+    @media (min-width: $screen-md + 200)
+      padding-top: 0px
+    
+    @media (max-width: $screen-sm - 1)
+      li
+        display: inline-block
     li > a
+      +make-xs-column(2)
       +make-sm-column(2)
       +h4
-      line-height: 238px
+      
+      width: 100%
+      line-height: 100px
+      @media (min-width: $screen-md + 200)
+        line-height: 238px
       white-space: nowrap
       color: #fff
       background-position: center center
@@ -31,7 +46,7 @@ footer
     .new-earth a
       background-image: image-url('icons/new-earth-toroid-small.png')
 
-    @media (min-width: $screen-md)
+    @media (min-width: $screen-md + 200)
       .locations a
         background-image: image-url('icons/locations-phi-big.png')
       .exchange a
@@ -44,7 +59,7 @@ footer
         background-image: image-url('icons/new-earth-toroid-big.png')
 
   #bottom-bar
-    height: 100px
+    min-height: 100px
     padding-left: 120px // todo: make into row/columns
     line-height: 50px
     color: #fff

@@ -8,7 +8,7 @@
     = csrf_meta_tags
     = yield :head
 
-  %body{class: current_section}
+  %body{id: current_section}
     = render 'layouts/top_menu'
 
     %header#main

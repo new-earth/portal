@@ -2,9 +2,8 @@
 // splash page
 //
 #splash
-
   header
-    $header-height: 550px
+    $header-height: 528px
     $logo-diameter: 280px
     $logo-offset: 50px
     $title-row-height: ($logo-diameter / 2) + $logo-offset + 5px
@@ -61,6 +60,48 @@
 
     #main-menu
       background: $powder-blue
+      box-shadow: 0px 2px 10px rgba(50, 50, 50, 0.75)
+      .navbar-collapse
+        @media (max-width: 1049px)
+          padding-top: 15px
+          padding-right: 0
+          padding-left: 0
+      .mobile-nav
+        margin-left: 15px
+        margin-bottom: 10px
+        a
+          color: #fff
+        a:hover, a:focus
+          text-decoration: none
+          color: #ddd
+        @media (min-width: 1050px)
+          display: none
+        @media (max-width: 1049px)
+          display:block
+ 
+      .desktop-nav
+        margin-left: 15px
+        @media (min-width: 1050px)
+          display: block
+        @media (max-width: 1049px)
+          display: none
+          background-color: #eee
+          float: none
+          border-bottom: 10px solid $powder-blue
+          & > li
+            width: 100%
+            text-align: left
+            font-size: .7em !IMPORTANT
+            a
+              color: $powder-blue !IMPORTANT
+            &:hover, &:focus
+              background-color: $powder-blue-lighter
+              padding-left: .5em
+              a
+                color: #fff !IMPORTANT
+            &:active
+              background-color: $powder-blue
+
       .navbar-nav
         font-size: 1.3em
         margin: 0 auto
@@ -87,4 +128,3 @@
             background-image: image-url('icons/locations-phi-small.png')
           .new-earth a
             background-image: image-url('icons/new-earth-toroid-small.png')
-

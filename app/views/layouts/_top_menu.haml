@@ -1,11 +1,20 @@
-.top-nav
-  %ul.nav.navbar-nav
-    %li.dropdown
-      %a.dropdown-toggle.open{href: '#', 'data-toggle' => 'dropdown'} 
-        new earth institute
-        %i.icon-chevron-sign-down
-      %ul.dropdown-menu
-        %li
-          %a{href: '#'} location1
-        %li
-          %a{href: '#'} location2
+%nav.navbar.top{role: 'navigation'}
+  .navbar-collapse.collapse
+    %ul.nav.navbar-nav.navbar-left
+      %li.dropdown
+        %a.dropdown-toggle.open{href: '#', 'data-toggle' => 'dropdown'} 
+          new earth institute
+          %i.icon-chevron-sign-down
+        %ul.dropdown-menu
+          %li
+            %a{href: '#'} location1
+          %li
+            %a{href: '#'} location2
+    %ul.nav.navbar-nav.navbar-right
+      %li
+        %a.nav-signin{href: '#', 'data-hover' => 'Sign in', 'data-toggle' => 'modal', 'data-target' => '#loginModal'}
+          %span Sign in
+      %li
+        %a.nav-register{href: '#', 'data-hover' => 'Register'}
+          %span Register
+    .clearfix

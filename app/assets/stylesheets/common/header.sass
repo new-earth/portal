@@ -1,21 +1,52 @@
+/*
+ * Q: What css file would be best for the more global stuff like this?
+ */
+a
+  -webkit-transition: 0.25s
+  -moz-transition: 0.25s
+  -o-transition: 0.25s
+  transition: 0.25s
+  -webkit-backface-visibility: hidden
+  
+nav
+  font-family: 'Lato'
 
-.top-nav
-  +heading(16px)
-  height: 24px
-  background-color: $light-blue
-  padding-left: 50px
+nav.navbar.top
+  position: fixed
+  background-color: #fff
+  width: 100%
+  border-radius: 0
+  z-index: 100
+  font-weight: 400
+  margin-bottom: 0
+  border-bottom: 2px solid $powder-blue
+  min-height: 0 // override bootstrap
   li > a
-    padding: 2px 15px
+    padding-top: 0
+    padding-bottom: 0
+    border-right: 1px solid #ccc
+    border-bottom: 2px solid transparent
+    &:hover, &:focus
+      border-bottom-color: #ccc
+      border-right-color: transparent
+      color: #777
+  li:last-child > a
+    border-right: none
+    &:hover, &:focus
+      border-right: none
+      color: #777
+
+//
+// shared
+//
 
 .breadcrumbs
   height: 20px
   font-size: 13px
   background-color: $light-blue
 
-//
-// shared
-//
 header
+  padding-top: 22px
   color: $light-foreground
   .title-row
 

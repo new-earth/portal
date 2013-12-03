@@ -6,7 +6,7 @@
     = init_static_assets "base"
     = yield :head
 
-  %body{:id => current_section, :class => current_section, 'data-spy'=>'scroll'}
+  %body{:id => current_section, :class => current_section, 'data-spy'=>'scroll', 'data-target'=>'#sidenav-wrapper'}
     = render 'layouts/top_menu'
 
     %header#main

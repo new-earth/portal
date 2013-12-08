@@ -4,4 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   add_crumb "<i class='icon-home'></i>".html_safe, '/'
+
+  def not_found
+    raise ActionController::RoutingError.new('Not Found')
+  end
 end

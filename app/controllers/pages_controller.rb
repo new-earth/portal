@@ -4,7 +4,12 @@ class PagesController < ApplicationController
 
   def locations
   end
-  
+
+  def index
+    @path = Intranet::Path.where(path: "/#{params[:path]}/").first || not_found
+    @page_content = @path.page.primary_content.html_safe
+  end
+
   def institute
   end
 

@@ -14,7 +14,9 @@ Portal::Application.routes.draw do
       post 'newsletter', to: 'members#newsletter_create'
     end
   end
-  
+
+  get '*path' => 'pages#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

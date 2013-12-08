@@ -5,6 +5,12 @@ GIT
     bootstrap-sass (3.0.2.1)
       sass (~> 3.2)
 
+GIT
+  remote: git://github.com/zachinglis/crummy.git
+  revision: 5fc36e8ed9cedcc5eb1952c993b14370376d96a8
+  specs:
+    crummy (1.8.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -240,6 +246,7 @@ DEPENDENCIES
   capybara (= 2.1.0)
   coffee-rails (~> 4.0.0)
   country_select (~> 1.2.0)
+  crummy!
   factory_girl_rails
   font-awesome-rails
   fuubar

@@ -1,5 +1,6 @@
 class MembersController < ApplicationController
   before_filter :set_title
+  add_crumb 'Members', members_url
   
   # new declaration form & newsletter signup
   def declaration

@@ -1,6 +1,6 @@
 class MembersController < ApplicationController
   before_filter :set_title
-  add_crumb 'Members', members_url
+  add_crumb('Members') {|instance| instance.members_path }
   
   # new declaration form & newsletter signup
   def declaration

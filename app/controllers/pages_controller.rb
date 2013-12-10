@@ -1,21 +1,27 @@
 class PagesController < ApplicationController
   before_filter :set_section
+  layout 'new_one'
 
-  def enter_new_earth
-    
+  def locations
+    # render :layout => "new_one"
+  end
+  
+  def institute
+    # render :layout => "new_one"
   end
 
-  def institute
-    
+  def enter_new_earth
+    # render :layout => "new_one"
   end
 
   def bank_exchange
-    
+    # render :layout => "new_one"
   end
 
   def festival
-    
+    # render :layout => "new_one"
   end
+  
 
   protected
 

@@ -5,9 +5,8 @@
     %meta{content: "text/html; charset=US-ASCII", "http-equiv" => "Content-Type"}/
     %meta{content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0", name: "viewport"}/
     
-    = stylesheet_link_tag 'common/fonts'
-    = stylesheet_link_tag 'new_layout'
-    
+    = render partial: 'shared/base_assets'
+
     %script{src: "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
     
   %body{id: current_section}

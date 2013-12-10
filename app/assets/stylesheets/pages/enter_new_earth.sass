@@ -1,34 +1,72 @@
-
 #enter
   header
-    background: image-url('vector/nep_logo_bg_ne_portal.svg') top center no-repeat, image-url('banner-earth.jpg') top center no-repeat
+    background-image: image-url('vector/nep_logo_bg_ne_portal.svg'), image-url('banner-earth.jpg')
 
+    .container
+      //width: 100%
+      //padding-right: 15px
+    .main-content
+      width: 75%
   h4
     +h5
 
+  #sidenav-wrapper
+    float: left
+
   nav#sidenav
     +make-sm-column(3)
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+    font-weight: 300
     ul
-      background-color: rgba($powder-blue, 0.4)
-      &.affix-top
-        margin-top: 20px
+      margin-bottom: 1.3em
+      &.nav
+        width: 220px
       &.affix
         position: fixed
-        top: 20px
-    li
-      list-style-type: none
+        top: 50px
+      li
+        list-style-type: none
+        & > a
+          font-size: 1.1em
+          padding: .3em .6em
+          display: block
+          width: 100%
+          height: 100%
+          margin-top: 0
+          margin-bottom: 0
+          &:hover
+            background-color: #f6f6f6
+        &.active > a
+          background: -webkit-gradient(linear, 0 0, 100% 0, from(#6AAAF0), to(#DDF2FF))
+          box-shadow: 3px 0px 0px 1px #66A5E9
+          color: #fff
+          font-weight: 400
 
-  article
-    +make-sm-column(9)
-    background-color: #fafcff
-    // padding: 30px
-
-    .section
-      box-shadow: 0 0 4px rgba($powder-blue, 0.6)
-
-
-    .panel-heading
-      margin-top: 0
-      background-color: rgba($powder-blue, 0.4)
-      padding: 10px 20px 2px 20px
-
+  section.main-content
+    margin-left: 250px
+    article
+      margin-bottom: 1em
+      h2
+        font-weight: 400
+        background-color: #f6f6f6
+        font-size: 2em
+        margin: 0 auto .2em auto
+        padding: .2em .4em
+      p
+        margin-left: .6em
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+      .wrapper.back-to-top
+        padding: 0.2em 0.3em
+        border-top: 1px solid #eee
+        margin: 0.5em 0 0 0.4em
+        opacity: 0.8
+        a
+          font-size: 1em
+          position: relative
+          padding-left: 1.3em
+          &:before
+            position: absolute
+            left: 0
+            font-family: 'FontAwesome'
+            font-size: 1em
+            content: "\F077"  

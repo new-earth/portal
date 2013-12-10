@@ -2,8 +2,8 @@
 set :application, "portal"
 set :repo_url, "git@newearth1.new-earth-project.org:portal.git"
 
-# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
-set :branch, "master"
+ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
+# set :branch, "master"
 
 set :deploy_to, '/srv/apps/portal'
 set :scm, :git

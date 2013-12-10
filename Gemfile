@@ -21,6 +21,7 @@ gem 'haml_coffee_assets'
 gem 'bourbon'
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
 gem 'font-awesome-rails'
+gem 'crummy', github: 'zachinglis/crummy'
 # --------------------------
 
 gem 'country_select', '~> 1.2.0'

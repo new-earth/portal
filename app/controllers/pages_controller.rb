@@ -3,23 +3,18 @@ class PagesController < ApplicationController
   layout 'new_one'
 
   def locations
-    # render :layout => "new_one"
   end
   
   def institute
-    # render :layout => "new_one"
   end
 
   def enter_new_earth
-    # render :layout => "new_one"
   end
 
   def bank_exchange
-    # render :layout => "new_one"
   end
 
   def festival
-    # render :layout => "new_one"
   end
   
 

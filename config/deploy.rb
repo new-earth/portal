@@ -1,6 +1,6 @@
 
 set :application, "portal"
-set :repo_url, "git@newearth1.new-earth-project.org:portal.git"
+set :repo_url, "git@github.com:new-earth/portal.git"
 
 ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 # set :branch, "master"

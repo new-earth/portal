@@ -30,11 +30,8 @@
         .nav-bar
           .inner-wrap
             .nav
-              %a{href: "#"} about
-              %a{href: "#"} e-democracy
-              %a{href: "#"} sovereignty
-              %a{href: "#"} community
-              %a{href: "#"} store
+              - current_menu.each do |menu_name, url|
+                %a{href: url}= menu_name
             .search
       #breadcrumbs
         .inner-wrap

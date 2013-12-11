@@ -1,9 +1,10 @@
 html, body
   margin: 0 0
+  line-height: inherit
 
 a
-  color: inherit
-  text-decoration: none
+  color: inherit !important
+  text-decoration: none !important
 
 #wrap
   font-family: 'Bauhaus'
@@ -136,7 +137,7 @@ a
   font-size: 42px
 
   .icon-wrap
-    margin: 0 2.5%
+    margin: 0 1.3% 0 3.7% // 0 2.5%
     display: inline-block
     width: 95%
     white-space: nowrap
@@ -287,35 +288,15 @@ a
   background: #7b60c8 
 
 #locations #bottom-nav
-  background: #002d3e
-  background: -webkit-linear-gradient(top, #002d3e 0%, #000e1a 100%)
-  background: -moz-linear-gradient(top, #002d3e 0%, #000e1a 100%)
-  background: -ms-linear-gradient(top, #002d3e 0%, #000e1a 100%)
-  background: linear-gradient(to bottom, #002d3e 0%, #000e1a 100%) /* W3C */
+  +linear-gradient(#002d3e, #000e1a)
 #institute #bottom-nav
-  background: #0a0147
-  background: -webkit-linear-gradient(top, #0a0147 0%, #0a021d 100%)
-  background: -moz-linear-gradient(top, #0a0147 0%, #0a021d 100%)
-  background: -ms-linear-gradient(top, #0a0147 0%, #0a021d 100%)
-  background: linear-gradient(to bottom, #0a0147 0%, #0a021d 100%) /* W3C */
+  +linear-gradient(#0a0147, #0a021d)
 #enter     #bottom-nav
-  background: #0a0147
-  background: -webkit-linear-gradient(top, #0a0147 0%, #0a021d 100%)
-  background: -moz-linear-gradient(top, #0a0147 0%, #0a021d 100%)
-  background: -ms-linear-gradient(top, #0a0147 0%, #0a021d 100%)
-  background: linear-gradient(to bottom, #0a0147 0%, #0a021d 100%) /* W3C */
+  +linear-gradient(#0a0147, #0a021d)
 #exchange  #bottom-nav
-  background: #37332f
-  background: -webkit-linear-gradient(top, #37332f 0%, #1a1512 100%)
-  background: -moz-linear-gradient(top, #37332f 0%, #1a1512 100%)
-  background: -ms-linear-gradient(top, #37332f 0%, #1a1512 100%)
-  background: linear-gradient(to bottom, #37332f 0%, #1a1512 100%) /* W3C */
+  +linear-gradient(#37332f, #1a1512)
 #festival  #bottom-nav
-  background: #140d48
-  background: -webkit-linear-gradient(top, #140d48 0%, #070521 100%)
-  background: -moz-linear-gradient(top, #140d48 0%, #070521 100%)
-  background: -ms-linear-gradient(top, #140d48 0%, #070521 100%)
-  background: linear-gradient(to bottom, #140d48 0%, #070521 100%) /* W3C */
+  +linear-gradient(#140d48, #070521)
 
 #locations #footer
   background: #010e16 

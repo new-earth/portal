@@ -5,12 +5,42 @@ module MenuHelper
 
   def menu_for(section)
     case section
+    when "locations"
+      {
+        'world map' => '#',
+        'about' => '#',
+        'retreats' => '#',
+        'communities' => '#'
+      }
     when "institute"
       {
-        'about' => about_institute_path,
-        'live stage' => live_stage_institute_path,
-        'library' => library_institute_path,
-        'community' => community_institute_path
+        'about' => '#', # about_institute_path,
+        'live stage' => '#', # live_stage_institute_path,
+        'library' => '#', # library_institute_path,
+        'community' => '#' # community_institute_path
+      }
+    when "enter"
+      {
+        'about' => '#',
+        'e-democracy' => '#',
+        'sovereignty' => '#',
+        'community' => '#',
+        'store' => '#'
+      }
+    when 'exchange'
+      {
+        'about' => '#',
+        'souvereign' => '#',
+        'accounts' => '#',
+        'funds' => '#'
+      }
+    when 'festival'
+      {
+        'festival' => '#',
+        'congress' => '#',
+        'exposition' => '#',
+        'releases' => '#',
+        'tickets' => '#'
       }
     when 'members'
       {

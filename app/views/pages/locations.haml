@@ -1,1 +1,35 @@
-%h2 locations
+- provide :head do
+  %script(type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyAev2kxmNQT08UIUgUJz3UGDyc464RAeos&sensor=false")
+
+
+  :javascript
+    function initialize() {
+      var mapOptions = {
+        center: new google.maps.LatLng(26.9, 67.68),
+        zoom: 2,
+        mapTypeId: google.maps.MapTypeId.SATELLITE,
+        panControl: false,
+        zoomControl: true,
+        zoomControlOptions: {
+          style: google.maps.ZoomControlStyle.SMALL
+        },
+        mapTypeControl: true,
+        scaleControl: true,
+        overviewMapControl: false
+
+      };
+      var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+      var layer = new google.maps.FusionTablesLayer({
+        query: {
+          select: 'Location',
+          from: '1sq4MrKb34eXConheWUWYr-6DW6i-JsvBUuSMTJU'
+        },
+      });
+      layer.setMap(map);
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+.container
+
+  #map-canvas

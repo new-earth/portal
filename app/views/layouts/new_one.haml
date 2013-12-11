@@ -7,7 +7,7 @@
     
     = render partial: 'shared/base_assets'
 
-    %script{src: "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
+    = yield :head
     
   %body{id: current_section}
     #wrap

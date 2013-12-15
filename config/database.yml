@@ -41,7 +41,7 @@ staging:
 production:
   adapter: mysql2
   encoding: utf8
-  database: newearth
+  database: newearth_development
   pool: 5
   username: root
   password:

@@ -39,12 +39,12 @@ $ ->
   #  - Pages using lots of on-page internal links for SEO.
   #  - Return to Top type UI links. 
 
-  $("a[href*=#]:not([href=#])").click ->
-    if location.pathname.replace(/^\//, "") is @pathname.replace(/^\//, "") and location.hostname is @hostname
-      target = $(@hash)
-      target = (if target.length then target else $("[name=" + @hash.slice(1) + "]"))
-      if target.length
-        $("html,body").animate
-          scrollTop: target.offset().top
-        , 650
-        false
+  # $("a[href*=#]:not([href=#])").click ->
+  #   if location.pathname.replace(/^\//, "") is @pathname.replace(/^\//, "") and location.hostname is @hostname
+  #     target = $(@hash)
+  #     target = (if target.length then target else $("[name=" + @hash.slice(1) + "]"))
+  #     if target.length
+  #       $("html,body").animate
+  #         scrollTop: target.offset().top
+  #       , 650
+  #       false

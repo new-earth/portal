@@ -9,7 +9,7 @@
 
     = yield :head
     
-  %body{id: current_section}
+  %body{id: current_section, class: current_section}
     #wrap
       #top-bar
         .inner-wrap
@@ -36,9 +36,13 @@
       #breadcrumbs
         .inner-wrap
           you are here: about > academies
-      #content
+      
+
+      #content.container
         .inner-wrap
           = yield
+
+
       #bottom-nav
         .icon-wrap
           %a.locations{href: locations_path} locations
@@ -66,10 +70,10 @@
           .left
             © New Earth Project 2013
           .spacer
-            &nbsp
+            &nbsp;
           .clear
 
-  %html
+
     :javascript
       function page(id) {
         document.getElementsByTagName("body")[0].id=id;

@@ -2,50 +2,41 @@
   header
     background-image: image-url('vector/nep_logo_bg_ne_portal.svg'), image-url('banner-earth.jpg')
 
-    .container
-      //width: 100%
-      //padding-right: 15px
-    .main-content
-      width: 75%
   h4
     +h5
 
-  #sidenav-wrapper
-    float: left
-
   nav#sidenav
-    +make-sm-column(3)
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
     font-weight: 300
+    +make-sm-column(3, 0)
     ul
+      background-color: #f6f6f6
       margin-bottom: 1.3em
-      &.nav
-        width: 220px
       &.affix
-        position: fixed
-        top: 50px
+        max-width: 25%
+        top: 40px
       li
         list-style-type: none
         & > a
-          font-size: 1.1em
-          padding: .3em .6em
-          display: block
-          width: 100%
-          height: 100%
-          margin-top: 0
-          margin-bottom: 0
-          &:hover
-            background-color: #f6f6f6
-        &.active > a
-          background: -webkit-gradient(linear, 0 0, 100% 0, from(#6AAAF0), to(#DDF2FF))
-          box-shadow: 3px 0px 0px 1px #66A5E9
+          padding: .3em .4em
+        &.active > a, & > a:hover
+          box-shadow: 2px 0px 0px 0px #66A5E9
           color: #fff
+        &.active > a
           font-weight: 400
 
+
   section.main-content
-    margin-left: 250px
+    +make-sm-column(9)
+
+    .panel-heading
+      margin-top: 0
+      background-color: rgba($powder-blue, 0.4)
+      padding: 10px 20px 2px 20px
+
     article
-      margin-bottom: 1em
+      margin: 0.6em 0 0.6em 0
+      // box-shadow: 0 0 4px rgba($powder-blue, 0.6)
       h2
         font-weight: 400
         background-color: #f6f6f6
@@ -54,19 +45,21 @@
         padding: .2em .4em
       p
         margin-left: .6em
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
-      .wrapper.back-to-top
-        padding: 0.2em 0.3em
-        border-top: 1px solid #eee
-        margin: 0.5em 0 0 0.4em
-        opacity: 0.8
-        a
-          font-size: 1em
-          position: relative
-          padding-left: 1.3em
-          &:before
-            position: absolute
-            left: 0
-            font-family: 'FontAwesome'
-            font-size: 1em
-            content: "\F077"  
+        // font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+
+
+      // .wrapper.back-to-top
+      //   padding: 0.2em 0.3em
+      //   border-top: 1px solid #eee
+      //   margin: 0.5em 0 0 0.4em
+      //   opacity: 0.8
+      //   a
+      //     font-size: 1em
+      //     position: relative
+      //     padding-left: 1.3em
+      //     &:before
+      //       position: absolute
+      //       left: 0
+      //       font-family: 'FontAwesome'
+      //       font-size: 1em
+      //       content: "\F077"  

@@ -9,7 +9,7 @@ class MembersController < ApplicationController
   
   def new
     @section = 'profile'
-    # @profile = Intranet::Member.new
+    # @profile = Member.new
     @user = User.new
   end
     

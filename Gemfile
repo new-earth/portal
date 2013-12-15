@@ -34,8 +34,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0'
+# Authentication
+gem 'clearance'
 
 group :development do
   gem 'capistrano-rails'

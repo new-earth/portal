@@ -16,10 +16,20 @@
           .right
             %a.language{href: "#"}
               ENGLISH change language
-            %a.login{href: "#"}
-              log in / register
+
+            - if signed_in?
+              Signed in as: <%= current_user.email %>
+              = link_to 'Sign out', sign_out_path, :method => :delete
+            - else
+              %a.login{href: sign_in_path} log in / register
+
           %a.dropdown{href: "#"}
             new earth
+
+      #flash
+        - flash.each do |key, value|
+          .flash{class: key}= value
+
       #header
         .logo-wrap
         %a.logo{href: root_path}

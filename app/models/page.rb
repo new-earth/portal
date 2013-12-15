@@ -1,4 +1,4 @@
-class Intranet::Page < Intranet::Base
+class Page < ActiveRecord::Base
   self.table_name = 'page'
 
   belongs_to :path

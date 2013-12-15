@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   end
 
   def index
-    @path = Intranet::Path.where(path: "/#{params[:path]}/").first || not_found
+    @path = Path.where(path: "/#{params[:path]}/").first || not_found
     @page_content = @path.page.primary_content.html_safe
   end
 

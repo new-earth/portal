@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def create
-    Intranet::User.create(user_params)
+    User.create(user_params)
   end
   
   def sovereignty_declaration

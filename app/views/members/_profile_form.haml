@@ -36,14 +36,14 @@
         = country_select("member", "country", [ "us", "ca", "id" ], iso_codes: true, class: "control-label" )
 
       %h5 Skills
-      - Intranet::Value.skills.each do |skill|
+      - Value.skills.each do |skill|
         - checkbox_id = "skill-checkbox-#{skill.value}"
         .form-group.checkbox
           %input{id: checkbox_id, type: 'checkbox', checked: 'checked'}
           %label{for: checkbox_id}= skill.description
 
       %h5 Interests
-      - Intranet::Value.skills.each do |skill|
+      - Value.skills.each do |skill|
         - checkbox_id = "interest-checkbox-#{skill.value}"
         .form-group.checkbox
           %input{id: checkbox_id, type: 'checkbox', checked: 'checked'}

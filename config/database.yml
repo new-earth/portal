@@ -11,7 +11,7 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: portal_development
+  database: newearth_development
   pool: 5
   username: root
   password:
@@ -23,7 +23,7 @@ development:
 test:
   adapter: mysql2
   encoding: utf8
-  database: portal_test
+  database: newearth_test
   pool: 5
   username: root
   password:
@@ -32,7 +32,7 @@ test:
 staging:
   adapter: mysql2
   encoding: utf8
-  database: portal_staging
+  database: newearth_staging
   pool: 5
   username: root
   password:
@@ -41,19 +41,8 @@ staging:
 production:
   adapter: mysql2
   encoding: utf8
-  database: portal_production
-  pool: 5
-  username: root
-  password:
-  socket: /tmp/mysql.sock
-
-# RAILS_ENV=intranet SCHEMA=db/schema.intranet.rb rake db:create db:schema:load
-intranet:
-  adapter: mysql2
-  encoding: utf8
   database: newearth
   pool: 5
   username: root
   password:
   socket: /tmp/mysql.sock
-

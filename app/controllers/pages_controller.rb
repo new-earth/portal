@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   before_filter :set_section
-  layout 'new_one'
+  before_filter :authenticate_member!
 
   def locations
   end

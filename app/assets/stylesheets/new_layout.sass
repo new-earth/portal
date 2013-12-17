@@ -1,3 +1,6 @@
+*
+  font-family: 'Bauhaus', Verdana
+
 html, body
   margin: 0 0
   line-height: inherit
@@ -7,21 +10,22 @@ a
   text-decoration: none !important
 
 #wrap
-  font-family: 'Bauhaus'
   color: white
 
 .inner-wrap
-  //@media (min-width: 1024px)
-  //  margin: 0 auto
-  //  max-width: 1024px
-  //@media (min-width: 1126px)
-  //  width: 90%
+  @media (min-width: 1024px)
+    margin: 0 auto
+    max-width: 1024px
+  @media (min-width: 1126px)
+    max-width: 90%
+  @media (min-width: 1680px)
+    max-width: 1680px
 
 .clear
   clear: both
 
 
-#top-bar
+#top-menu
   // height: 38px
   display: inline-block
   width: 100%
@@ -51,9 +55,10 @@ a
     background-position: right 5px
 
 #header
+  $bg-offset: 132px
   position: relative
-  height: 500px
-  background: top center no-repeat
+  height: 500px + $bg-offset
+  background: center $bg-offset no-repeat
   /*** background-image: <SCHEME> ***/
 
   .logo-wrap
@@ -61,7 +66,6 @@ a
     height: 238px
     background: top center no-repeat
     /*** background-image: <SCHEME> ***/
-    opacity: 0.9
 
   .logo
     position: absolute
@@ -72,7 +76,7 @@ a
     width: 209px
     height: 209px
     margin: 0 auto
-    border-radius: 106px
+    border-radius: 50%
     background: image-url('nep_logo_209px.png')
     box-shadow: 0px 0px 25px rgba(255,255,255,0.8)
 
@@ -136,7 +140,7 @@ a
   /*** background: <SCHEME> ***/
   font-size: 42px
 
-  .icon-wrap
+  .icons-wrap
     margin: 0 1.3% 0 3.7% // 0 2.5%
     display: inline-block
     width: 95%
@@ -150,21 +154,32 @@ a
       text-align: center
       white-space: nowrap
       background: center no-repeat
-      background-size: contain
+      text-shadow: 0px 1px 2px black
+      
+      @media (max-width: 1175px)
+        background-size: contain
+      @media (min-width: 1176px)
+        background-size: inherit    // keep images sharp
+      
       transition: text-shadow 0.2s ease
       &:hover
         text-shadow: 0 0 10px white
 
     .locations
-      background-image: image-url('icons/locations-phi-big.png')
+      //background-image: image-url('nep-icons/locations-phi-big.png')
+      background-image: image-url('nep-icons/locations_icon_big.png')
     .institute
-      background-image: image-url('icons/institute-lotus-big.png')
+      //background-image: image-url('nep-icons/institute-lotus-big.png')
+      background-image: image-url('nep-icons/institute_icon_big.png')
     .new_earth
-      background-image: image-url('icons/new-earth-toroid-big.png')
+      //background-image: image-url('nep-icons/new-earth-toroid-big.png')
+      background-image: image-url('nep-icons/new_earth_icon_big.png')
     .exchange
-      background-image: image-url('icons/exchange-trishula-big.png')
+      //background-image: image-url('nep-icons/exchange-trishula-big.png')
+      background-image: image-url('nep-icons/exchange_icon_big.png')
     .festival
-      background-image: image-url('icons/festival-nautilus-big.png')
+      //background-image: image-url('nep-icons/festival-nautilus-big.png')
+      background-image: image-url('nep-icons/festival_icon_big.png')
 
 #footer
   position: relative
@@ -243,15 +258,15 @@ a
 #festival  #header .logo-wrap
   background-image: image-url('vector/nep_logo_bg_festivals.svg') 
 
-#locations #top-bar
+#locations #top-menu
   background: #00bfe7 
-#institute #top-bar
+#institute #top-menu
   background: #00a2ff 
-#enter     #top-bar
+#enter     #top-menu
   background: #69c1ff 
-#exchange  #top-bar
+#exchange  #top-menu
   background: #c0844b 
-#festival  #top-bar
+#festival  #top-menu
   background: #7b60c8 
 
 #locations #header .page-icon

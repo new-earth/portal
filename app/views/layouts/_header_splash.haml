@@ -1,0 +1,39 @@
+#header
+  .logo-wrap
+  %a.logo{href: root_path}
+  .title.inner-wrap
+    .spacer
+      %a.video(href="#" data-toggle="modal" data-target="#video-modal")
+        .icon
+        %span watch the video
+        
+    .modal.fade#video-modal(tabindex="-1" role="dialog" aria-labelledby="video-modal-label" aria-hidden="true")
+      .modal-dialog
+        .modal-content
+          .modal-header
+            %button.close(type="button" data-dismiss="modal" aria-hidden="true")
+              &times;
+          .modal-body
+            %iframe#video-iframe(src="" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen)
+    
+
+%nav#main-menu.h5.navbar-wrapper
+  .inner-wrap
+    .navbar-collapse
+      .mobile-nav
+        %a{href: "#"}
+          %i.icon-reorder
+          Menu
+      %ul.nav.navbar-nav.desktop-nav
+        %li.locations
+          %a{href: locations_path} locations
+        %li.institute
+          %a{href: institute_path} institute
+        %li.new-earth
+          %a{href: enter_path} enter new earth
+        %li.exchange
+          %a{href: exchange_path} bank exchange
+        %li.festival
+          %a{href: festival_path} festival
+    
+    .clearfix

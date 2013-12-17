@@ -1,0 +1,13 @@
+#header
+  .logo-wrap
+  %a.logo{href: root_path}
+  .inner-wrap.title
+    .text.left sovereignty
+    .text.right new earth
+    .page-icon
+  .nav-bar
+    .inner-wrap
+      .nav
+        - current_menu.each do |menu_name, url|
+          %a{href: url}= menu_name
+      .search

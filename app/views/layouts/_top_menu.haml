@@ -1,20 +1,14 @@
-%nav.navbar.top{role: 'navigation'}
-  .navbar-collapse.collapse
-    %ul.nav.navbar-nav.navbar-left
-      %li.dropdown
-        %a.dropdown-toggle.open{href: '#', 'data-toggle' => 'dropdown'} 
-          new earth institute
-          %i.icon-chevron-sign-down
-        %ul.dropdown-menu
-          %li
-            %a{href: '#'} location1
-          %li
-            %a{href: '#'} location2
-    %ul.nav.navbar-nav.navbar-right
-      %li
-        %a.nav-signin{href: '#', 'data-hover' => 'Sign in', 'data-toggle' => 'modal', 'data-target' => '#loginModal'}
-          %span Sign in
-      %li
-        %a.nav-register{href: '#', 'data-hover' => 'Register'}
-          %span Register
-    .clearfix
+#top-menu
+  .inner-wrap
+    .right
+      %a.language{href: "#"}
+        ENGLISH change language
+
+      - if signed_in?
+        Signed in as: <%= current_user.email %>
+        = link_to 'Sign out', sign_out_path, :method => :delete
+      - else
+        %a.login{href: sign_in_path} log in / register
+
+    %a.dropdown{href: "#"}
+      new earth

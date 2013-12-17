@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   before_filter :set_section
-  layout 'new_one'
+  layout 'sections'
 
   def locations
   end

@@ -80,7 +80,13 @@ $bg-offset: 132px
     margin: 0 auto
     border-radius: 50%
     background: image-url('nep_logo_209px.png')
+    background-size: 100%
     box-shadow: 0px 0px 25px rgba(255,255,255,0.8)
+    
+    -webkit-transition: 0.0s
+    -moz-transition: 0.0s
+    -o-transition: 0.0s
+    transition: 0.0s
 
   .inner-wrap.title
     position: relative
@@ -249,6 +255,7 @@ body
     height: 500px + $bg-offset
     background-position: center $bg-offset
     background-image: image-url('banner-tropical-island.jpg')
+    background-color: $powder-blue
     .logo-bg
       background-image: image-url('vector/nep_logo_bg_startpage.svg') 
     .nav-bar

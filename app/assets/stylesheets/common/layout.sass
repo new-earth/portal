@@ -29,7 +29,7 @@ a
   // height: 38px
   display: inline-block
   width: 100%
-  margin-bottom: -7px // <-------- is there any way to avoid that?
+  margin-bottom: -7px
   /*** background: <SCHEME> ***/
 
   .right
@@ -54,14 +54,16 @@ a
     background: image-url('icons/dropdown_arrow.png') no-repeat
     background-position: right 5px
 
+$bg-offset: 132px
+
 #header
-  $bg-offset: 132px
   position: relative
+  overflow: hidden
   height: 500px + $bg-offset
   background: center $bg-offset no-repeat
   /*** background-image: <SCHEME> ***/
 
-  .logo-wrap
+  .logo-bg
     width: 100%
     height: 238px
     background: top center no-repeat
@@ -236,6 +238,32 @@ a
 
 /* SCHEMES */
 
+
+body
+  #top-menu
+    background: #00bfe7
+  #header
+    height: 500px + $bg-offset
+    background-position: center $bg-offset
+    background-image: image-url('banner-tropical-island.jpg')
+    .logo-bg
+      height: 445px
+      background-image: image-url('vector/nep_logo_bg_startpage.svg') 
+    .logo
+      top: 94px
+      width: 334px
+      height: 334px
+      background: image-url('nep_logo_334px.png')
+    .nav-bar
+      background: rgba(0, 80, 103, 0.75) // #005067
+  #bottom-nav
+    +linear-gradient(#002d3e, #000e1a)
+  #footer
+    background: #010e16
+  #main-quote
+    color: #333333
+
+
 #locations #header 
   background-image: image-url('banner-riverside.jpg')
 #institute #header
@@ -247,15 +275,15 @@ a
 #festival  #header
   background-image: image-url('banner-riverside.jpg')
 
-#locations #header .logo-wrap
+#locations #header .logo-bg
   background-image: image-url('vector/nep_logo_bg_locations.svg') 
-#institute #header .logo-wrap
+#institute #header .logo-bg
   background-image: image-url('vector/nep_logo_bg_institute.svg') 
-#enter     #header .logo-wrap
+#enter     #header .logo-bg
   background-image: image-url('vector/nep_logo_bg_ne_portal.svg') 
-#exchange  #header .logo-wrap
+#exchange  #header .logo-bg
   background-image: image-url('vector/nep_logo_bg_exchange.svg') 
-#festival  #header .logo-wrap
+#festival  #header .logo-bg
   background-image: image-url('vector/nep_logo_bg_festivals.svg') 
 
 #locations #top-menu
@@ -270,15 +298,15 @@ a
   background: #7b60c8 
 
 #locations #header .page-icon
-  background-image: image-url('icons/locations-phi-big.png') 
+  background-image: image-url('nep-icons/locations-phi-big.png') 
 #institute #header .page-icon
-  background-image: image-url('icons/institute-lotus-big.png') 
+  background-image: image-url('nep-icons/institute-lotus-big.png') 
 #enter     #header .page-icon
-  background-image: image-url('icons/new-earth-toroid-big.png') 
+  background-image: image-url('nep-icons/new-earth-toroid-big.png') 
 #exchange  #header .page-icon
-  background-image: image-url('icons/exchange-trishula-big.png') 
+  background-image: image-url('nep-icons/exchange-trishula-big.png') 
 #festival  #header .page-icon
-  background-image: image-url('icons/festival-nautilus-big.png') 
+  background-image: image-url('nep-icons/festival-nautilus-big.png') 
 
 #locations #header .nav-bar
   background: rgba(0, 80, 103, 0.75) // #005067

@@ -15,7 +15,7 @@ function fitSizes() {
 	w = docW < maxW ? docW : maxW
 	
 	fontSize = 60 * Math.max((w / maxW), 0.8) - 30;
-	var iconScale = 85 * w / maxW;
+	var iconScale = 90 * w / maxW;
 	var paddingL = 89 * w / maxW;
 	var paddingR = 21 * w / maxW - 6;
 	$('#main-menu').css('font-size', fontSize + 'px');

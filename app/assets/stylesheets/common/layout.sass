@@ -236,8 +236,11 @@ $bg-offset: 132px
       border-left: none
 
 
-/* SCHEMES */
 
+
+//
+// STANDARD / FALLBACK SCHEME
+//
 
 body
   #top-menu
@@ -247,21 +250,18 @@ body
     background-position: center $bg-offset
     background-image: image-url('banner-tropical-island.jpg')
     .logo-bg
-      height: 445px
       background-image: image-url('vector/nep_logo_bg_startpage.svg') 
-    .logo
-      top: 94px
-      width: 334px
-      height: 334px
-      background: image-url('nep_logo_334px.png')
     .nav-bar
-      background: rgba(0, 80, 103, 0.75) // #005067
+      background: rgba(0, 80, 103, 0.75)
   #bottom-nav
     +linear-gradient(#002d3e, #000e1a)
   #footer
     background: #010e16
-  #main-quote
-    color: #333333
+
+
+//
+// SECTION SCHEMES
+//
 
 
 #locations #header 
@@ -315,7 +315,7 @@ body
 #enter     #header .nav-bar
   background: rgba(0, 115, 213, 0.75) // #0073d5 
 #exchange  #header .nav-bar
-  background: rgba(64, 42, 21, 0.75) // #402a15   /*563c23 */   
+  background: rgba(64, 42, 21, 0.75) // #402a15 
 #festival  #header .nav-bar
   background: rgba(40, 34, 90, 0.75) // #28225a
 

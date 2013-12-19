@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
   before_filter :set_section
-  layout 'sections'
   before_filter :authenticate_member!
   helper :exchange
 

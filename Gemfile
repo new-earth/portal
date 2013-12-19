@@ -35,12 +35,13 @@ group :doc do
 end
 
 # Authentication
-gem 'clearance'
+gem 'devise'
 
 group :development do
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
   gem 'pry-rails'
+  gem 'letter_opener'
 end
 
 group :test do

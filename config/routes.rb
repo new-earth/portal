@@ -1,19 +1,20 @@
 Portal::Application.routes.draw do
+  devise_for :members
   root 'home#index'
   get 'test' => 'home#test'
   
   get 'locations' => 'pages#locations',             section: 'locations', as: 'locations'
   get 'institute' => 'pages#institute',             section: 'institute', as: 'institute'
   get 'enter-new-earth' => 'pages#enter_new_earth', section: 'enter', as: 'enter'
-  get 'bank-exchange' => 'pages#bank_exchange',     section: 'exchange', as: 'exchange'
+  get 'exchange' => 'pages#exchange',               section: 'exchange', as: 'exchange'
   get 'festival' => 'pages#festival',               section: 'festival', as: 'festival'
 
-  resources 'members' do
-    collection do
-      get 'declaration'
-      post 'newsletter', to: 'members#newsletter_create'
-    end
-  end
+  # resources 'members', only: [:new, :create, :index] do
+  #   collection do
+  #     get 'declaration'
+  #     post 'newsletter', to: 'members#newsletter_create'
+  #   end
+  # end
 
   # get '*path' => 'pages#index'
 

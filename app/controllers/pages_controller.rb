@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
   before_filter :set_section
   layout 'sections'
+  before_filter :authenticate_member!
+  helper :exchange
 
   def locations
   end
@@ -16,7 +18,7 @@ class PagesController < ApplicationController
   def enter_new_earth
   end
 
-  def bank_exchange
+  def exchange
   end
 
   def festival

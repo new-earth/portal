@@ -10,5 +10,6 @@
       - else
         %a.login{href: sign_in_path} log in / register
 
-    %a.dropdown{href: "#"}
-      new earth
+    - if current_section
+      %a.dropdown{href: "#"}
+        #{current_section_name}

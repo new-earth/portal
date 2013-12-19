@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
-  before_filter :set_section
   layout 'sections'
+  before_filter :set_section
   before_filter :authenticate_member!
   helper :exchange
 
@@ -38,7 +38,7 @@ class PagesController < ApplicationController
     when "enter"
       @current_subsection = 'sovereignty'
     when 'exchange'
-      @current_subsection = 'bank'
+      @current_subsection = ''
     when 'festival'
       @current_subsection = 'culture'
     end

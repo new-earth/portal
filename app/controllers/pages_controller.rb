@@ -38,7 +38,7 @@ class PagesController < ApplicationController
     when "enter"
       @current_subsection = 'sovereignty'
     when 'exchange'
-      @current_subsection = 'bank'
+      @current_subsection = ''
     when 'festival'
       @current_subsection = 'culture'
     end

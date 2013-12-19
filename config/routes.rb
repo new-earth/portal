@@ -3,11 +3,11 @@ Portal::Application.routes.draw do
   root 'home#index'
   get 'test' => 'home#test'
   
-  get 'locations' => 'pages#locations',             section: 'locations', as: 'locations'
-  get 'institute' => 'pages#institute',             section: 'institute', as: 'institute'
-  get 'enter-new-earth' => 'pages#enter_new_earth', section: 'enter', as: 'enter'
-  get 'exchange' => 'pages#exchange',               section: 'exchange', as: 'exchange'
-  get 'festival' => 'pages#festival',               section: 'festival', as: 'festival'
+  get 'locations' => 'pages#locations',             as: 'locations'
+  get 'institute' => 'pages#institute',             as: 'institute'
+  get 'enter-new-earth' => 'pages#enter_new_earth', as: 'enter'
+  get 'exchange' => 'pages#exchange',               as: 'exchange'
+  get 'festival' => 'pages#festival',               as: 'festival'
 
   # resources 'members', only: [:new, :create, :index] do
   #   collection do

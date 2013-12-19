@@ -1,4 +1,8 @@
 module MenuHelper
+  def sections
+    %w(locations institute enter_new_earth exchange festival members)
+  end
+
   def current_menu
     menu_for(current_section)
   end
@@ -19,7 +23,7 @@ module MenuHelper
         'library' => '#', # library_institute_path,
         'community' => '#' # community_institute_path
       }
-    when "enter"
+    when "enter_new_earth"
       {
         'about' => '#',
         'e-democracy' => '#',
@@ -53,26 +57,23 @@ module MenuHelper
   end
 
   def current_section
-    # case request.path
-    # when /^\/enter-new-earth/
-    #   "enter-new-earth"
-    # end
-    params[:section]
+    @section
   end
   
   def current_section_name
-    case @section
-    when "locations"
-      return 'locations'
-    when "institute"
-      return 'institute'
-    when "enter"
-      return 'new earth'
-    when 'exchange'
-      return 'exchange'
-    when 'festival'
-      return 'festival'
-    end    
+    @section_name
+    # case @section
+    # when "locations"
+    #   return 'locations'
+    # when "institute"
+    #   return 'institute'
+    # when "enter"
+    #   return 'new earth'
+    # when 'exchange'
+    #   return 'exchange'
+    # when 'festival'
+    #   return 'festival'
+    # end    
   end
 
   def current_subsection

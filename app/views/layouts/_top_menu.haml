@@ -11,5 +11,11 @@
         %a.login{href: new_member_session_path} log in
 
     - if current_section
-      %a.dropdown{href: "#"}
-        #{current_section_name}
+      .btn-group
+        %a.dropdown.dropdown-toggle(data-toggle="dropdown" href="#")
+          #{current_section_name.downcase}
+        %ul.dropdown-menu(role="menu")
+          - sections.each do |section|
+            - unless section == current_section
+              %li
+                %a{href: '#'}= section.titleize.downcase

@@ -5,12 +5,13 @@ html, body
   margin: 0 0
   line-height: inherit
 
-a
+#top-menu.navbar.top a, .nav-bar a, footer a
   color: inherit !important
   text-decoration: none !important
+#bottom-nav a
+  text-decoration: none !important
 
-#wrap
-  color: white
+  
 
 .inner-wrap
   @media (min-width: 1024px)
@@ -21,42 +22,26 @@ a
   @media (min-width: 1680px)
     max-width: 1680px
 
-.clear
-  clear: both
-
-
 #top-menu
   // height: 38px
   display: inline-block
   width: 100%
   margin-bottom: -7px
   /*** background: <SCHEME> ***/
-
-  .right
-    display: inline-table
-    float: right
-    height: 28px
-    padding-top: 10px
-    font-size: 19px
-
     a
       display: inline-block
       padding: 0 30px
-
     .login
       border-left: 1px solid white
       line-height: 14px
-
   .dropdown
-    float: left
     padding: 2px 34px 0 6px
-    font-size: 28px
-    background: image-url('icons/dropdown_arrow.png') no-repeat
-    background-position: right 5px
+  
 
 $bg-offset: 132px
 
 #header
+  color: white
   position: relative
   overflow: hidden
   height: 500px + $bg-offset
@@ -90,19 +75,13 @@ $bg-offset: 132px
 
   .inner-wrap.title
     position: relative
-    top: -238px
-
-  .text
-    position: absolute
-    top: 87px
-    padding: 0 6px
+    top: -150px
     font-size: 56px
-  .left
-    left: 0px
-  .right
-    right: 0px
-    margin-right: 100px
-
+    .pull-left
+      left: 0px
+    .pull-right
+      right: 0px
+  
   .page-icon
     position: absolute
     top: 55px
@@ -164,6 +143,8 @@ $bg-offset: 132px
       white-space: nowrap
       background: center no-repeat
       text-shadow: 0px 1px 2px black
+      color: #fff
+      
       
       @media (max-width: 1175px)
         background-size: contain
@@ -190,7 +171,7 @@ $bg-offset: 132px
       //background-image: image-url('nep-icons/festival-nautilus-big.png')
       background-image: image-url('nep-icons/festival_icon_big.png')
 
-#footer
+footer
   position: relative
   padding-top: 25px
   padding-left: 6px
@@ -198,8 +179,6 @@ $bg-offset: 132px
   color: #787878
   /*** background: <SCHEME> ***/
 
-  .left
-    float: left
   .spacer
     float: left
     width: 144px
@@ -231,8 +210,7 @@ $bg-offset: 132px
       background-image: image-url('social/twitter.png') 
     a.facebook
       background-image: image-url('social/facebook.png') 
-
-  .right
+  .pull-right
     float: right
     a
       padding: 0 20px
@@ -263,7 +241,7 @@ body
       background: rgba(0, 80, 103, 0.75)
   #bottom-nav
     +linear-gradient(#002d3e, #000e1a)
-  #footer
+  footer
     background: #010e16
 
 
@@ -349,13 +327,13 @@ body
 #festival  #bottom-nav
   +linear-gradient(#140d48, #070521)
 
-#locations #footer
+#locations 
   background: #010e16 
-#institute #footer
+#institute footer
   background: #010216 
-#enter     #footer
+#enter     footer
   background: #010216 
-#exchange  #footer
+#exchange  footer
   background: #0f0a06 
-#festival  #footer
+#festival  footer
   background: #08060f 

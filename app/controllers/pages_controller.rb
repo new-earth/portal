@@ -32,7 +32,7 @@ class PagesController < ApplicationController
     #
     # Note: Would someone more familiar with the current use for @section check to see if the code 
     # below could be reused for that purpose also? Afterwards feel free to remove this note, thx! -JB
-    @section_name = action_name.titleize
-    add_crumb @section_name
+    @this_section = action_name.titleize
+    add_crumb @this_section
   end
 end

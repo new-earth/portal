@@ -1,14 +1,19 @@
-#top-menu
-  .inner-wrap
-    .right
-      %a.language{href: "#"}
-        ENGLISH change language
+%nav#top-menu.navbar.top{role: 'navigation'}
+  .navbar-collapse.collapse.inner-wrap
 
+    = topnav_dropdown @section_name        
+
+    %ul.nav.navbar-nav.navbar-right
       - if signed_in?
-        Signed in as: <%= current_user.email %>
-        = link_to 'Sign out', sign_out_path, :method => :delete
+        %li
+          = usernav_dropdown current_user
+        %li
+          = link_to 'Sign out', sign_out_path, :method => :delete        
       - else
-        %a.login{href: sign_in_path} log in / register
+        %li
+          %a.nav-signin{href: '#', 'data-toggle' => 'modal', 'data-target' => '#loginModal'}
+            Sign In
+        %li
+          = link_to 'Sign Up', '/sign_up'
 
-    %a.dropdown{href: "#"}
-      new earth
+    .clearfix

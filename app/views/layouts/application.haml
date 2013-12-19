@@ -5,24 +5,21 @@
     %title New Earth Project - #{current_title}
     = init_static_assets "base"
     = yield :head
-
   %body{:id => current_section, :class => current_section, 'data-spy'=>'scroll', 'data-target'=>'#sidenav-wrapper'}
-    = render 'layouts/top_menu'
+
+   = render partial: 'layouts/top_menu'
 
     %header#main
       .title-row
-        .title= current_title
-
+        .title
+          = current_title
         .logo-wrapper
           %a.logo{href: root_path}
-
         .section
           %span.section-text= current_subtitle
           %i.institute-icon
 
-      .spacer
 
-      =# render partial: 'layouts/main_menu'
       = yield :menu
     = render_breadcrumbs
 

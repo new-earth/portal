@@ -59,6 +59,21 @@ module MenuHelper
     # end
     params[:section]
   end
+  
+  def current_section_name
+    case @section
+    when "locations"
+      return 'locations'
+    when "institute"
+      return 'institute'
+    when "enter"
+      return 'new earth'
+    when 'exchange'
+      return 'exchange'
+    when 'festival'
+      return 'festival'
+    end    
+  end
 
   def current_subsection
     
@@ -79,6 +94,6 @@ module MenuHelper
   end
 
   def subtitle_for(subsection)
-    
+    return @current_subsection
   end
 end

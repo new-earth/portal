@@ -27,6 +27,20 @@ class PagesController < ApplicationController
 
   def set_section
     @section = params[:section]
+    
+    case @section
+    when "locations"
+      @current_subsection = 'world map'
+    when "institute"
+      @current_subsection = 'learning portal'
+    when "enter"
+      @current_subsection = 'sovereignty'
+    when 'exchange'
+      @current_subsection = 'bank'
+    when 'festival'
+      @current_subsection = 'culture'
+    end
+      
 
     # Returns a titleized transform of the current action named for use with breadcrumbs. -JB
     #

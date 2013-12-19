@@ -3,7 +3,9 @@
 
 html, body
   margin: 0 0
+  height: 100%
   line-height: inherit
+  background: #010e16 // footer color
 
 a
   color: inherit !important
@@ -137,11 +139,19 @@ $bg-offset: 132px
   font-size: 18px
   /*** background: <SCHEME> ***/
 
+
+
+
 #content
   display: inline-block
+  width: 100%
   padding: 30px 6px
   font-size: 20px
   color: black
+  background: white
+
+
+
 
 #bottom-nav
   padding-top: 20px
@@ -204,7 +214,8 @@ $bg-offset: 132px
     float: left
     width: 144px
   .connect
-    position: absolute
+    @media (min-width: 750px)
+      position: absolute
     left: 0
     right: 0
     margin: 0 auto
@@ -236,6 +247,8 @@ $bg-offset: 132px
     float: right
     a
       padding: 0 20px
+      @media (max-width: 900px)
+        padding: 0 8px
       border-left: 1px solid #787878
       &:hover
         color: white
@@ -261,6 +274,8 @@ body
       background-image: image-url('vector/nep_logo_bg_startpage.svg') 
     .nav-bar
       background: rgba(0, 80, 103, 0.75)
+  #breadcrumbs
+    background: $powder-blue 
   #bottom-nav
     +linear-gradient(#002d3e, #000e1a)
   #footer

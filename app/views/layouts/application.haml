@@ -1,32 +1,29 @@
 !!!
 %html
   %head
-    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    %title New Earth Project - #{current_title}
-    = init_static_assets "base"
+    %title New Earth Project
+    %meta{content: "text/html; charset=US-ASCII", "http-equiv" => "Content-Type"}/
+    %meta{content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0", name: "viewport"}/
+    
+    = render partial: 'shared/base_assets'
+
     = yield :head
+    
+  %body{id: current_section, class: current_section}
+    #wrap
+      
+      = render 'layouts/top_menu'
 
-  %body{:id => current_section, :class => current_section, 'data-spy'=>'scroll', 'data-target'=>'#sidenav-wrapper'}
-    = render 'layouts/top_menu'
+      #flash
+        - flash.each do |key, value|
+          .flash{class: key}= value
 
-    %header#main
-      .title-row
-        .title= current_title
+      -#= render 'layouts/header'
+      -#= render 'layouts/breadcrumbs'
 
-        .logo-wrapper
-          %a.logo{href: root_path}
+      #content
+        .inner-wrap
+          = yield
 
-        .section
-          %span.section-text= current_subtitle
-          %i.institute-icon
+      = render 'layouts/footer'
 
-      .spacer
-
-      =# render partial: 'layouts/main_menu'
-      = yield :menu
-    = render_breadcrumbs
-
-    .container
-      = yield
-
-    = render 'layouts/footer'

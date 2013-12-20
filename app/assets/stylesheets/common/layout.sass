@@ -8,6 +8,9 @@ html, body
   background: #010e16 // footer color
 
 a
+  color: inherit //!important
+  text-decoration: none //!important
+#top-menu .right a, #header a, #bottom-nav a, #footer a
   color: inherit !important
   text-decoration: none !important
 
@@ -24,30 +27,43 @@ a
     max-width: 1680px
 
 .clear
+  float: left
   clear: both
-
+.inline-block
+  display: inline-block
 
 #top-menu
   // height: 38px
-  display: inline-block
+  display: table
   width: 100%
-  margin-bottom: -7px
+  padding-top: 3px
+  // margin-bottom: -7px
   /*** background: <SCHEME> ***/
 
   .right
     display: inline-table
     float: right
-    height: 28px
-    padding-top: 10px
+    padding-top: 6px
+    padding-bottom: 2px
+    line-height: 30px
     font-size: 19px
 
-    a
+    *
       display: inline-block
-      padding: 0 30px
-
+      line-height: 8px
+      //vertical-align: middle      
+    a
+      padding: 8px 20px 0 20px
+      &:hover
+        //text-decoration: underline !important
+        color: #323232 !important
+    a:last-child
+      padding-right: 20px
+    .email
+      padding: 8px 20px 0 10px
     .login
-      border-left: 1px solid white
-      line-height: 14px
+      border-left: 1px solid rgba(255,255,255,0.4)
+      //line-height: 14px
 
   .dropdown
     float: left
@@ -55,6 +71,10 @@ a
     font-size: 28px
     background: image-url('icons/dropdown_arrow.png') no-repeat
     background-position: right 5px
+    text-decoration: none
+    color: white
+    &:hover
+      color: inherit
 
 $bg-offset: 132px
 
@@ -181,8 +201,11 @@ $bg-offset: 132px
         background-size: inherit    // keep images sharp
       
       transition: text-shadow 0.2s ease
+      +transition(0.25s)
+      +transform(scale(0.9))
       &:hover
         text-shadow: 0 0 10px white
+        +transform(scale(1.0))
 
     .locations
       //background-image: image-url('nep-icons/locations-phi-big.png')
@@ -251,7 +274,7 @@ $bg-offset: 132px
         padding: 0 8px
       border-left: 1px solid #787878
       &:hover
-        color: white
+        color: white !important
     a:first-child
       border-left: none
 
@@ -291,7 +314,7 @@ body
   background-image: image-url('banner-riverside.jpg')
 #institute #header
   background-image: image-url('banner-riverside.jpg')
-#enter     #header
+#enter-new-earth     #header
   background-image: image-url('banner-riverside.jpg')
 #exchange  #header
   background-image: image-url('banner-riverside.jpg')
@@ -302,7 +325,7 @@ body
   background-image: image-url('vector/nep_logo_bg_locations.svg') 
 #institute #header .logo-bg
   background-image: image-url('vector/nep_logo_bg_institute.svg') 
-#enter     #header .logo-bg
+#enter-new-earth     #header .logo-bg
   background-image: image-url('vector/nep_logo_bg_ne_portal.svg') 
 #exchange  #header .logo-bg
   background-image: image-url('vector/nep_logo_bg_exchange.svg') 
@@ -313,7 +336,7 @@ body
   background: #00bfe7 
 #institute #top-menu
   background: #00a2ff 
-#enter     #top-menu
+#enter-new-earth     #top-menu
   background: #69c1ff 
 #exchange  #top-menu
   background: #c0844b 
@@ -324,7 +347,7 @@ body
   background-image: image-url('nep-icons/locations-phi-big.png') 
 #institute #header .page-icon
   background-image: image-url('nep-icons/institute-lotus-big.png') 
-#enter     #header .page-icon
+#enter-new-earth     #header .page-icon
   background-image: image-url('nep-icons/new-earth-toroid-big.png') 
 #exchange  #header .page-icon
   background-image: image-url('nep-icons/exchange-trishula-big.png') 
@@ -335,7 +358,7 @@ body
   background: rgba(0, 80, 103, 0.75) // #005067
 #institute #header .nav-bar
   background: rgba(0, 4, 96, 0.75) // #000460 
-#enter     #header .nav-bar
+#enter-new-earth     #header .nav-bar
   background: rgba(0, 115, 213, 0.75) // #0073d5 
 #exchange  #header .nav-bar
   background: rgba(64, 42, 21, 0.75) // #402a15 
@@ -346,7 +369,7 @@ body
   background: #00bfe7 
 #institute #breadcrumbs
   background: #00a2ff 
-#enter     #breadcrumbs
+#enter-new-earth     #breadcrumbs
   background: #69c1ff 
 #exchange  #breadcrumbs
   background: #c0844b 
@@ -357,7 +380,7 @@ body
   +linear-gradient(#002d3e, #000e1a)
 #institute #bottom-nav
   +linear-gradient(#0a0147, #0a021d)
-#enter     #bottom-nav
+#enter-new-earth     #bottom-nav
   +linear-gradient(#0a0147, #0a021d)
 #exchange  #bottom-nav
   +linear-gradient(#37332f, #1a1512)
@@ -368,7 +391,7 @@ body
   background: #010e16 
 #institute #footer
   background: #010216 
-#enter     #footer
+#enter-new-earth     #footer
   background: #010216 
 #exchange  #footer
   background: #0f0a06 

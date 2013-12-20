@@ -1,4 +1,5 @@
-- flash.each do |type, message|
-  .alert.fade.in{class: bootstrap_class_for(type) }
-    %button.close(data-dismiss="alert") x
-    = message
+#flash
+  - flash.each do |type, message|
+    .alert.fade.in{class: bootstrap_class_for(type) }
+      %button.close(data-dismiss="alert") x
+      = message

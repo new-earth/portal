@@ -7,7 +7,7 @@
 
 
 %nav#sidenav
-  %ul.nav.nav-list(data-offset-top="550" data-spy="affix")
+  %ul.nav.nav-list(data-offset-top="700" data-spy="affix")
     - enter_new_earth_content.map{|hash| hash[:link]}.each do |link_text|
       %li
         %a(data-toggle="collapse" data-parent="#top" data-target="##{link_text.parameterize.dasherize}")= link_text

@@ -14,12 +14,10 @@
       
       = render 'layouts/top_menu'
 
-      #flash
-        - flash.each do |key, value|
-          .flash{class: key}= value
-
+      = render partial: 'layouts/flash_messages', flash: flash
+      
       -#= render 'layouts/header'
-      -#= render 'layouts/breadcrumbs'
+      = render 'layouts/breadcrumbs'
 
       #content
         .inner-wrap

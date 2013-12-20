@@ -33,21 +33,32 @@ function fitSizes() {
 		//maxW = 800;
 		//w = docW < maxW ? docW : maxW
 		
-		//var top = 170 + (maxW-w)/4;
-		//$('#header .spacer .video').css('top', top + 'px');
-		
 		// splash logo
-		maxW = 600;
+		maxW = 1600;
 		w = docW < maxW ? docW : maxW
 		
-		var lessSize = Math.min((maxW-w), 200);
+		var w1 = 768;
+		
+		var a = 1.0/(maxW-w1);
+		//var factor = Math.max(0, a*(w-w1));
+		var factor = Math.min(1, a*(maxW-w));
+		
+		console.log("w: "+w+", a: "+a+", factor: "+factor);
+		
+		var lessSize = factor * 200; //Math.min((maxW-w), 200);
 		var logoSize = 334 - lessSize;
-		var logoBgHeight = 445 - lessSize;
+		var logoBgHeight = 445 - lessSize * 1.3;
+		var logoOffset = 94 - lessSize*0.25;
+		$('#header .logo').css('top', logoOffset + 'px');
 		$('#header .logo').css('width', logoSize + 'px');
 		$('#header .logo').css('height', logoSize + 'px');
 		$('#header .logo-bg').css('background-size', 'auto ' + logoBgHeight + 'px');
 		
-		var scaleOffset = (maxW-w) * 0.7;
+		// video link
+		var top = 170 - lessSize;//+ (maxW-w)/4;
+		$('#header .spacer .video').css('top', top + 'px');
+		
+		var scaleOffset = lessSize * 1.3;
 		var headerHeight = 757 - scaleOffset - 1;
 		var bgOffset = 257 - scaleOffset;
 		$('#header').css('height', headerHeight + 'px');

@@ -6,8 +6,9 @@
           ENGLISH change language
 
       - if member_signed_in?
-        = current_member.email
-        = link_to 'sign out', destroy_member_session_path, method: :delete
+        .email
+          = current_member.email
+        = link_to 'sign out', destroy_member_session_path, method: :delete, class: "login"
       - else
         %a.login{href: new_member_session_path} log in
 
@@ -16,7 +17,7 @@
         %a.dropdown.dropdown-toggle(data-toggle="dropdown" href="#")
           #{current_section_name.downcase}
         %ul.dropdown-menu(role="menu")
-          - sections.each do |section|
+          - sections.each do |section, url|
             - unless section == current_section
               %li
-                %a{href: '#'}= section.titleize.downcase
+                %a{href: url}= section.titleize.downcase

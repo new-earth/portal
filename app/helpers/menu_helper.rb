@@ -1,6 +1,14 @@
 module MenuHelper
   def sections
-    %w(locations institute enter_new_earth exchange festival members)
+    # %w(locations institute enter_new_earth exchange festival members)
+    {
+      'locations' => locations_path,
+      'institute' => institute_path,
+      'enter_new_earth' => enter_path,
+      'exchange' => exchange_path,
+      'festival' => festival_path,
+      'members' => '#',
+    }
   end
 
   def current_menu

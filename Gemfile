@@ -24,6 +24,8 @@ gem 'font-awesome-rails'
 gem 'crummy', github: 'zachinglis/crummy'
 # --------------------------
 
+gem 'redcarpet'
+
 gem 'country_select', '~> 1.2.0'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

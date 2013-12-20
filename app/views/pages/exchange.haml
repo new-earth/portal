@@ -1,18 +1,17 @@
 %nav#sidenav
   %ul.nav.nav-list(data-offset-top="550" data-spy="affix")
-    - exchange_content.map{|hash| hash[:link]}.each do |link_text|
+    - enter_new_earth_content.map{|hash| hash[:link]}.each do |link_text|
       %li
-        %a(data-toggle="collapse" data-parent="#top" data-target="##{link_text.parameterize}")= link_text
+        %a(data-toggle="collapse" data-parent="#top" data-target="##{link_text.parameterize.dasherize}")= link_text
+  .clearfix
 
 %section.main-content.panel-group#top
-  - exchange_content.each do |article|
-    - section_id = article[:link].parameterize
+  - enter_new_earth_content.each do |article|
+    - section_id = article[:link].parameterize.dasherize
     .panel.panel-default
       .panel-heading
         %h4.panel-title 
           %a(data-toggle="collapse" data-parent="#top" href="##{section_id}")= article[:title]
 
-    %article.panel-collapse.collapse{id: section_id, class: (article==exchange_content.first ? 'in' : '')}
-      - article[:body].split("\n\n").each do |paragraph|
-        %p= paragraph
-
+      %article.panel-collapse.collapse{id: section_id, class: (article == enter_new_earth_content.first ? 'in' : '')}
+        = $markdown.render(article[:body]).html_safe

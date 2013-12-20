@@ -19,10 +19,8 @@
         = render 'layouts/top_menu'
         = render 'layouts/login_modal'
       
-        #flash
-          - flash.each do |key, value|
-            .flash{class: key}= value
-  
+        = render partial: 'layouts/flash_messages', flash: flash
+
         = render 'layouts/header_splash'
   
       = yield

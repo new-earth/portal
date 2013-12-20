@@ -22,13 +22,10 @@ For more information see the links below
         link: "How Is It Used?",
         body: <<-BODY
 By making a New Earth Declaration of Individual Sovereignty one gives permission to New Earth Nation and the New Earth Trust to 'represent' the broad interests of the maker when dealing at the state and multilateral level with so-called authorities, municipal parties, state-departments and governments in different parts of the world, in respect of any matter where the purpose of such representation is to:
-%ul
-  %li
-    Protect those New Earth Citizens who are also New Earth Residents from interference with their unrestricted enjoyment of community lands and New Earth facilities.
-  %li 
-    Support the exercise of individual sovereign powers and the collective sovereign powers of New Earth Citizens.
-  %li 
-    Respect the principles and ethic of the New Earth Blueprint, in any manner whatsoever. 
+
+* Protect those New Earth Citizens who are also New Earth Residents from interference with their unrestricted enjoyment of community lands and New Earth facilities.
+* Support the exercise of individual sovereign powers and the collective sovereign powers of New Earth Citizens.
+* Respect the principles and ethic of the New Earth Blueprint, in any manner whatsoever. 
         BODY
       },{
         title: "How current systems of government obtain their power over human beings",
@@ -71,13 +68,13 @@ It’s remarkably easy… you just do it! Quite simply there is no lawful requir
 Sovereignty is a state of being. The absolute expression of a sovereign state of being, in each moment, is the only way in which one can realise the absolute freedom which true sovereignty can bring. None of the documents and procedures available through the New Earth Project, or anywhere else, are a solution to reclaiming sovereignty in and of itself.
 
 A sovereign individual is one who:
-%ul
-  %li Answers to no one, except as he or she may, by the exercise of their free will, elect to
-  %li Faces each moment without fear, regardless of what that moment brings
-  %li Settles his or her disputes honestly and quickly
-  %li Never intentionally causes harm or loss to another human being
-  %li Quickly redresses any harm or loss inadvertently caused
-  %li Endeavours to give more to a situation than he or she takes from it
+
+* Answers to no one, except as he or she may, by the exercise of their free will, elect to
+* Faces each moment without fear, regardless of what that moment brings
+* Settles his or her disputes honestly and quickly
+* Never intentionally causes harm or loss to another human being
+* Quickly redresses any harm or loss inadvertently caused
+* Endeavours to give more to a situation than he or she takes from it
 
 How does one deal with agents and representatives of government and Institutions?
 
@@ -134,10 +131,10 @@ This is easily achieved… you use everything you need to just as you have alway
 Put simply when we cease making claims (this is MY name, that is MY passport), we begin to align ourselves with a fundamental truth of our existence on planet earth… everything has been provided, in abundance, for our use, without liability. Only the concept and illusion of ownership (an illusion which has been defined, controlled and perpetuated by the collective ego of mankind) prevents us from freely accessing that abundance. 
 
 Bear in mind that:
-%ul
-  %li No law exists anywhere in the world that requires a man or woman to use money in order to survive.
-  %li No law exists anywhere in the world that requires a man or woman to possess state issued documentation in order to move freely across land and sea.
-  %li In fact no law exists anywhere is the world that requires a man or woman to even have a name, or to do anything whatsoever, period. So live your life as a (wo)man, drop the mask (persona), and step into your sovereign birthright.
+
+* No law exists anywhere in the world that requires a man or woman to use money in order to survive.
+* No law exists anywhere in the world that requires a man or woman to possess state issued documentation in order to move freely across land and sea.
+* In fact no law exists anywhere is the world that requires a man or woman to even have a name, or to do anything whatsoever, period. So live your life as a (wo)man, drop the mask (persona), and step into your sovereign birthright.
 
 Visit the New Earth Academy of Law for practical information, tips and courses on how to conduct yourself, in the so-called real world, as a Sovereign Individual.
         BODY

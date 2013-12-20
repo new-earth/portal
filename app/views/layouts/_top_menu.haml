@@ -1,16 +1,17 @@
 #top-menu
   .inner-wrap
     .right
-      %a.language{href: "#"}
-        ENGLISH change language
+      /
+        %a.language{href: "#"}
+          ENGLISH change language
 
       - if member_signed_in?
         = current_member.email
-        = link_to 'Sign out', destroy_member_session_path, method: :delete
+        = link_to 'sign out', destroy_member_session_path, method: :delete
       - else
         %a.login{href: new_member_session_path} log in
 
-    - if current_section
+    - if current_section && controller_name == 'pages'
       .btn-group
         %a.dropdown.dropdown-toggle(data-toggle="dropdown" href="#")
           #{current_section_name.downcase}

@@ -4,6 +4,7 @@ Portal::Application.routes.draw do
   get 'test' => 'home#test'
   
   get 'locations' => 'pages#locations',             as: 'locations'
+  get 'locations/:subsection(/:page(/:subpage))' => 'pages#locations_pages'
   # get 'institute' => 'pages#institute',             as: 'institute'
   get 'enter-new-earth' => 'pages#enter_new_earth', as: 'enter'
   get 'exchange' => 'pages#exchange',               as: 'exchange'

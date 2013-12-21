@@ -1,0 +1,26 @@
+- provide :head
+- @content = locations_content[@subsection]
+- current_content = nil
+
+%nav#sidenav
+  %ul.nav.nav-pills.nav-stacked.affix-top(data-offset-top="670" data-spy="affix")
+    // .nav-header= @path.title
+    - @content.each do |nav_link|
+      - active = (urlify_link(nav_link[:link]) == params[:page])
+      - current_content = nav_link if active
+
+      %li{class: active && !params[:subpage] ? 'active' : ''}
+        %a{href: locations_url_for(nav_link[:link])}= nav_link[:link]
+        - if active && nav_link[:subnav]
+          %ul.nav.nav-pills.nav-stacked.subnav
+            - nav_link[:subnav].each do |subnav_link|
+              - active = (urlify_link(subnav_link[:link]) == params[:subpage])
+              - current_content = subnav_link if active
+
+              %li{class: active ? 'active' : ''}
+                %a{href: locations_url_for(nav_link[:link], subnav_link[:link])}= subnav_link[:link]
+
+
+%section.main-content
+  %h2= current_content[:title]
+  = $markdown.render(current_content[:content]).html_safe

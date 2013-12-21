@@ -2,6 +2,7 @@ module MenuHelper
   def sections
     # %w(locations institute enter_new_earth exchange festival members)
     {
+      'blueprint' => '#', # TODO
       'locations' => locations_path,
       'institute' => institute_path,
       'enter_new_earth' => enter_path,
@@ -18,10 +19,12 @@ module MenuHelper
   def menu_for(section)
     {
       "locations" => {
-        'world map' => '#',
-        'about' => '#',
-        'retreats' => '#',
-        'communities' => '#'
+        'map' => '/locations',
+        "communities" => "/locations/communities",
+        "retreats" => "/locations/retreats",
+        "participation" => "/locations/participation",
+        "protection" => "/locations/protection",
+        "templates" => "/locations/templates"
       },
       "institute" => {
         "academy of law" => "/institute/law",
@@ -58,33 +61,18 @@ module MenuHelper
     @section
   end
   
-  def current_section_name
-    @section_name
-    # case @section
-    # when "locations"
-    #   return 'locations'
-    # when "institute"
-    #   return 'institute'
-    # when "enter"
-    #   return 'new earth'
-    # when 'exchange'
-    #   return 'exchange'
-    # when 'festival'
-    #   return 'festival'
-    # end    
-  end
-
   def current_subsection
-    
+    @subsection
   end
 
   def current_title
-    title_for(current_section)    
+    title_for(current_section) || @section.titleize.downcase
   end
 
   def title_for(section)
     {
-      "enter-new-earth" => "enter new earth"
+      "enter-new-earth" => "enter new earth",
+      "locations" => "locations"
     }[section]
   end
 

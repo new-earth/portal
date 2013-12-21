@@ -194,10 +194,10 @@ $bg-offset: 132px
       background: center no-repeat
       text-shadow: 0px 1px 2px black
       
-      @media (max-width: 1175px)
+      @media (max-width: 1222px)
         background-size: contain
-      @media (min-width: 1176px)
-        background-size: inherit    // keep images sharp
+      //@media (min-width: 1176px)
+        //background-size: inherit    // keep images sharp
       
       transition: text-shadow 0.2s ease
       +transition(0.25s)
@@ -223,12 +223,16 @@ $bg-offset: 132px
       background-image: image-url('nep-icons/festival_icon_big.png')
 
 #footer
+  display: inline-block
   position: relative
-  padding-top: 25px
+  width: 100%
   padding-left: 6px
   padding-bottom: 6px
   color: #787878
   /*** background: <SCHEME> ***/
+ 
+  .left, .connect, .right
+    padding-top: 16px
 
   .left
     float: left

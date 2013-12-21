@@ -16,52 +16,42 @@ module MenuHelper
   end
 
   def menu_for(section)
-    case section
-    when "locations"
-      {
+    {
+      "locations" => {
         'world map' => '#',
         'about' => '#',
         'retreats' => '#',
         'communities' => '#'
-      }
-    when "institute"
-      {
-        'about' => '#', # about_institute_path,
-        'live stage' => '#', # live_stage_institute_path,
-        'library' => '#', # library_institute_path,
-        'community' => '#' # community_institute_path
-      }
-    when "enter_new_earth"
-      {
+      },
+      "institute" => {
+        "academy of law" => "/institute/law",
+        "academy of wellness" => "/institute/wellness"
+      },
+      "enter_new_earth" => {
         'about' => '#',
         'e-democracy' => '#',
         'sovereignty' => '#',
         'community' => '#',
         'store' => '#'
-      }
-    when 'exchange'
-      {
-        'about' => '#',
-        'souvereign' => '#',
-        'accounts' => '#',
-        'funds' => '#'
-      }
-    when 'festival'
-      {
+      },
+      # 'exchange' => {
+      #   'about' => '#',
+      #   'souvereign' => '#',
+      #   'accounts' => '#',
+      #   'funds' => '#'
+      # },
+      'festival' => {
         'festival' => '#',
         'congress' => '#',
         'exposition' => '#',
         'releases' => '#',
         'tickets' => '#'
-      }
-    when 'members'
-      {
-        'declaration' => declaration_members_path,
-        'profile' => new_member_path
-      }
-    else
-      {}
-    end
+      },
+      # 'members' => {
+      #   'declaration' => declaration_members_path,
+      #   'profile' => new_member_path
+      # }
+    }[section] || {}
   end
 
   def current_section

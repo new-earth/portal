@@ -4,7 +4,7 @@ Portal::Application.routes.draw do
   get 'test' => 'home#test'
   
   get 'locations' => 'pages#locations',             as: 'locations'
-  get 'institute' => 'pages#institute',             as: 'institute'
+  # get 'institute' => 'pages#institute',             as: 'institute'
   get 'enter-new-earth' => 'pages#enter_new_earth', as: 'enter'
   get 'exchange' => 'pages#exchange',               as: 'exchange'
   get 'festival' => 'pages#festival',               as: 'festival'
@@ -15,7 +15,7 @@ Portal::Application.routes.draw do
     end
   end
 
-  # get '*path' => 'pages#index'
+  get '/institute(/:section(/:subsection(/:filename)))' => 'pages#institute', as: 'institute'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

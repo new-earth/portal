@@ -1,4 +1,4 @@
-#enter-new-earth, #exchange
+#enter-new-earth, #exchange, #institute
   header
     background-image: image-url('vector/nep_logo_bg_ne_portal.svg'), image-url('banner-earth.jpg')
 
@@ -21,10 +21,21 @@
           padding: .3em .4em
         &.active > a, & > a:hover
           box-shadow: 2px 0px 0px 0px #66A5E9
-          color: #fff
+        & > a:hover          
+          color: $powder-blue
         &.active > a
           font-weight: 400
 
+    .nav-header
+      font-size: 24px
+      background-color: $powder-blue-lighter
+      color: #fff
+      padding: 6px 0 4px 10px
+
+
+  // TODO: only do this on institute page
+  article
+    +make-sm-column(9)
 
   section.main-content
     +make-sm-column(9)
@@ -51,20 +62,3 @@
     .modal-dialog
       width: auto
       max-width: 1024px
-
-
-      // .wrapper.back-to-top
-      //   padding: 0.2em 0.3em
-      //   border-top: 1px solid #eee
-      //   margin: 0.5em 0 0 0.4em
-      //   opacity: 0.8
-      //   a
-      //     font-size: 1em
-      //     position: relative
-      //     padding-left: 1.3em
-      //     &:before
-      //       position: absolute
-      //       left: 0
-      //       font-family: 'FontAwesome'
-      //       font-size: 1em
-      //       content: "\F077"  

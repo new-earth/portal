@@ -317,7 +317,7 @@ ActiveRecord::Schema.define(version: 20131221024150) do
   end
 
   create_table "member", force: true do |t|
-    t.integer  "status",                 limit: 2,   default: 0,  null: false
+    t.integer  "status",                 limit: 2,        default: 0,  null: false
     t.string   "title",                  limit: 50
     t.string   "first_name",             limit: 30
     t.string   "middle_name",            limit: 30
@@ -337,21 +337,23 @@ ActiveRecord::Schema.define(version: 20131221024150) do
     t.string   "fax",                    limit: 20
     t.string   "skype",                  limit: 50
     t.string   "facebook",               limit: 50
+    t.binary   "password",               limit: 16777215
     t.text     "bio"
     t.text     "skills"
     t.text     "interests"
     t.integer  "community_coordinator",  limit: 1
+    t.integer  "declaration_signed",     limit: 1,        default: 0
     t.date     "date_joined"
     t.date     "date_suspended"
     t.datetime "date_created"
     t.datetime "date_updated"
     t.integer  "created_by_user_id"
     t.integer  "updated_by_user_id"
-    t.string   "encrypted_password",                 default: "", null: false
+    t.string   "encrypted_password",                      default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                      default: 0,  null: false
+    t.integer  "sign_in_count",                           default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -369,7 +371,8 @@ ActiveRecord::Schema.define(version: 20131221024150) do
   end
 
   add_index "member", ["confirmation_token"], name: "index_member_on_confirmation_token", unique: true, using: :btree
-  add_index "member", ["email"], name: "index_member_on_email", using: :btree
+  add_index "member", ["email"], name: "email_address", unique: true, using: :btree
+  add_index "member", ["email"], name: "index_member_on_email", unique: true, using: :btree
   add_index "member", ["first_name", "last_name", "id"], name: "index_first_and_last_name", using: :btree
   add_index "member", ["reset_password_token"], name: "index_member_on_reset_password_token", unique: true, using: :btree
   add_index "member", ["status"], name: "status", using: :btree

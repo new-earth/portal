@@ -1,7 +1,7 @@
 class Path < ActiveRecord::Base
   self.table_name = 'path'
 
-  has_one :page
+  has_many :pages
   belongs_to :page_template
 
   # Columns of interest:

@@ -23,6 +23,7 @@ class App.Views.DeclarationForm extends Backbone.View
       console.log 'saved'
       @$('.modal').modal('hide')
       App.Lib.flashSuccess("You have successfully signed the Declaration of Individual Sovereignty.  Congratulations!")
-      # scroll to the top
+      $('#declaration-button').attr('disabled','disabled').text("Declaration Signed")
+      $('html,body').animate({scrollTop: 0}, 450)
     .fail =>
       # show error message

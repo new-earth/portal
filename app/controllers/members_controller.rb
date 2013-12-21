@@ -9,7 +9,7 @@ class MembersController < ApplicationController
     raise "This action is not allowed" unless member == current_member
 
     # currently only working for the declaration.  will need to update it to also work for the skills form, etc.
-    attributes = params.require(:member).permit(:given_name, :legal_name, :birth_country).merge(made_declaration_at: Time.now)
+    attributes = params.require(:member).permit(:given_name, :legal_name, :birth_country, :signed_declaration_at).merge(signed_declaration_at: Time.now)
 
     member.update_attributes!(attributes)
 

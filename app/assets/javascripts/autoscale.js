@@ -40,7 +40,6 @@ function fitSizes() {
 		var w1 = 768;
 		
 		var a = 1.0/(maxW-w1);
-		//var factor = Math.max(0, a*(w-w1));
 		var factor = Math.min(1, a*(maxW-w));
 		
 		console.log("w: "+w+", a: "+a+", factor: "+factor);

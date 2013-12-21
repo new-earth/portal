@@ -38,9 +38,9 @@ $menu-height: 72px
         color: white
         text-decoration: none
         
-        +transform(scale(1.0))
+        +transform(scale(0.9))
         &:hover
-          +transform(scale(1.1))
+          +transform(scale(1.0))
           
         .icon
           width: 120px // 190px
@@ -246,4 +246,4 @@ $menu-height: 72px
     +h5
     padding: 6px 40px 0px 40px
     margin: 10px 20px 10px 20px
-
+    +transition(0.25s)

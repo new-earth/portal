@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  include MenuHelper
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   add_crumb "<i class='icon-home'></i>".html_safe, '/'

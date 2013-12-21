@@ -19,8 +19,6 @@ class App.Views.DeclarationForm extends Backbone.View
     formData = @$('form').serializeJSON()
     @model.set(formData.member)
 
-
-
     @model.save().done =>
       console.log 'saved'
       @$('.modal').modal('hide')

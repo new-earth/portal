@@ -9,12 +9,11 @@ Portal::Application.routes.draw do
   get 'exchange' => 'pages#exchange',               as: 'exchange'
   get 'festival' => 'pages#festival',               as: 'festival'
 
-  # resources 'members', only: [:new, :create, :index] do
-  #   collection do
-  #     get 'declaration'
-  #     post 'newsletter', to: 'members#newsletter_create'
-  #   end
-  # end
+  resources 'members', only: [:update] do
+    collection do
+      post 'newsletter', to: 'members#newsletter_create'
+    end
+  end
 
   # get '*path' => 'pages#index'
 

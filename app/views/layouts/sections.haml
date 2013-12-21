@@ -7,6 +7,9 @@
     
     = render partial: 'shared/base_assets'
 
+    :coffeescript
+      App.Vars.currentMember = new App.Models.Member(#{current_member.to_json})
+
     = yield :head
     
   %body{id: current_section, class: current_section}

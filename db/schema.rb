@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131216044856) do
+ActiveRecord::Schema.define(version: 20131221024150) do
 
   create_table "affiliate", force: true do |t|
     t.integer  "status",                 limit: 2,   default: 0, null: false
@@ -362,6 +362,10 @@ ActiveRecord::Schema.define(version: 20131216044856) do
     t.string   "unconfirmed_email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "given_name"
+    t.string   "legal_name"
+    t.string   "birth_country",          limit: 2
+    t.datetime "made_declaration_at"
   end
 
   add_index "member", ["confirmation_token"], name: "index_member_on_confirmation_token", unique: true, using: :btree

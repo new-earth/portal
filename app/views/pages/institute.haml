@@ -1,1 +1,17 @@
-%h2 institute
+
+%nav#sidenav
+  %ul.nav.nav-pills.nav-stacked.affix-top(data-offset-top="670" data-spy="affix")
+    .nav-header= @path.title
+    - @sidenav.each do |nav_link|
+      - active = (subsection_path == nav_link[:url])
+      %li{class: (active && !nav_link[:subnav] ? 'active' : '')}
+        %a{href: nav_link[:url]}= nav_link[:title]
+        - if active && nav_link[:subnav]
+          %ul.nav.nav-pills.nav-stacked{style: "padding-left: 10px"}
+            - nav_link[:subnav].each do |subnav_link|
+              - active = (request.path == subnav_link[:url])
+              %li.subnav{class: (active ? 'active' : '')}
+                %a{href: subnav_link[:url]}= subnav_link[:title]
+
+
+= @page_content

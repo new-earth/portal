@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   def set_section
     @section = action_name.dasherize
     @section_name = action_name.titleize.downcase
-    add_crumb @section_name
+    add_crumb @section_name, request.path.split('/')[0..1].join('/')
 
     # case @section
     # when "locations"

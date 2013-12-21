@@ -9,7 +9,7 @@ class Member < ActiveRecord::Base
   before_save :set_defaults
 
   validates :email, uniqueness: true, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, on: :create }
-  validates :password, length: 6..20
+  validates :password, length: 6..20, unless: "password.nil?"
 
   # validates :first_name, presence: true, length: { maximum: 30 }
   # validates :middle_name, length: { maximum: 30 }

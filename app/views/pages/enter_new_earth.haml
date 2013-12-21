@@ -11,8 +11,12 @@
     - enter_new_earth_content.map{|hash| hash[:link]}.each do |link_text|
       %li
         %a(data-toggle="collapse" data-parent="#top" data-target="##{link_text.parameterize.dasherize}")= link_text
+    %br
     %li
-      #declaration-button.btn.btn-primary Make Your Declaration
+      - if current_member.signed_declaration_at.blank?
+        #declaration-button.btn.btn-primary Make Your Declaration
+      - else
+        .btn.btn-primary(disabled="disabled") Declaration Signed
   .clearfix
 
 %section.main-content.panel-group#top

@@ -19,6 +19,8 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 set :keep_releases, 5
 
 
+set :default_environment, { 'PATH' => "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" }
+
 # set :use_sudo, false
 # set :rails_env, "production"
 # set :user, "deploy"
@@ -32,7 +34,7 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      execute :sh, shared_path.join('puma/puma_restart.sh')
+      execute :sh, shared_path.join('puma/puma_phased_restart.sh').to_s + " || sudo monit start portal.puma"
     end
   end
 

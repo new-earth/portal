@@ -11,6 +11,11 @@
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
     font-weight: 300
     +make-sm-column(3, 0)
+    
+    .affix
+      @media (max-width: $screen-xs-max)
+        position: relative
+    
     ul
       background-color: #f6f6f6
       margin-bottom: 1.3em
@@ -19,8 +24,9 @@
         li
           padding-left: 20px
       &.affix
-        max-width: 25%
-        top: 40px
+        @media (min-width: $screen-sm-min)
+          max-width: 25%
+          top: 40px
       li
         list-style-type: none
         & > a

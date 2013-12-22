@@ -1,10 +1,12 @@
 module ExchangeHelper
+  extend self
+
   def exchange_content
     [ 
       {
         title: "About the New Earth Exchange",
         link: "About the Exchange",
-        body: <<-BODY
+        content: <<-CONTENT
 Economics – inspired from the Greek principle oikonomia or the management of the household – connotes the organization of a system that promotes the identification, utilization, proliferation, production, distribution, stewardship, consumption and exchange of goods, services, and experiences by a group or community.  One of the core principles of New Earth is the recognition that individual members within communities benefit from conscious exchange of value between and among each other and that this value exchange can be aligned to abundant gratitude and service.  Consciously honouring the manifold abundance of the physical and intangible realms, the New Earth recognizes the opportunities that emerge when the flow of value exchange – currency in its literal, flowing sense – is sentient and expressly honours all participating members in an ecosystem including the ecosystem itself.
 
 Wealth in the New Earth is discerned by the facility with which members and communities can maximally access and exchange value with the least impediments to themselves and the ecosystem.  Acknowledging that abundance calls forth discernment, generosity and stewardship, our choice is to facilitate and honour the flow and transmission of value within networks rather than reinforcing fear induced scarcity illusions that lead to hoarding and insecurity.  Economic power, once synonymous with oppression, is reclaimed in light of the actual ease with which value exchange energy can flow throughout the ecosystem per unit time.  The more value exchange flow by and between actors in the systems, the more economic power.
@@ -21,12 +23,12 @@ In acknowledgment of that fact the transition to a worldwide economic transforma
 6.  Offers non-indenture payments and currency systems for all mankind facilitating the protection of human freedom, liberty and privacy through free exchange for all people of the world, serving as a transition to a mutual credit system. 
 
 Those expending their energy in service of any aspect of the New Earth Exchange do so from a place of service. At their election, they may receive exchangeable compensation in New Earth Promissories, and earnings are transparent. 
-        BODY
+        CONTENT
       },
       {
         title: "About the New Earth Fund",
         link: "New Earth Fund",
-        body: <<-BODY
+        content: <<-CONTENT
 The New Earth Fund is repository for money, securities and other forms of property (excluding real property). Domiciled in a jurisdiction which offers favourable local laws and treaty arrangements, it provides an environment for the protection of transitioning assets.  Unlike conventional fiduciary accounts, the New Earth Fund invests in and participates with investments that are indenture-free and productivity-aligned.  
 
 The fund is ‘owned’ equally and proportionately by its depositors, who share equally and proportionately in its successes and failures.
@@ -48,12 +50,12 @@ This model is congruent with the three levels or triangle of the mystery school 
 By proceeding from these foundations a growing reservoir and funding resource will be created which genuinely serves the whole earth and which is built up steadily over the long term, thereby generating trust as a result of its motives, transparency and performance. 
 
 A realistic profit is be targeted annually with 50% being donated according to New Earth principles and 50% being distributed to the depositors. When the profit target is exceeded, increasing amounts are donated. 
-        BODY
+        CONTENT
       },
       {
         title: "About the New Earth Promissory",
         link: "New Earth Promissory",
-        body: <<-BODY
+        content: <<-CONTENT
 The New Earth Promissory is a medium of exchange explicitly for use by New Earth Project Members and Community Residents. The economic foundation of the New Earth Promissory is that of ‘Mutual Credit’.
 
 No currency will be exchangeable with New Earth Promissories as they are created and extinguished by their users in accordance with mutual credit principles. 
@@ -95,21 +97,21 @@ There is no pre-established “maximum negative value limit” for users of the 
 Traditionally the limiting factor of such a system has been the transportation of goods and the services on offer. In most cases transport requires old money for the payment of fuel and maintenance. The New Earth Promissory overcomes this problem by interfacing with the New Earth Exchange through established and suitable mechanisms as and when necessary.
 
 The New Earth Promissory is not usurious, since no one can control the issuing of your energy (or currency) except you.
-        BODY
+        CONTENT
       },
       {
         title: "About the Community Response Network",
         link: "Community Response Network",
-        body: <<-BODY
+        content: <<-CONTENT
 Numerous communities throughout history have recognized the need to establish, within economic systems, the capacity to respond to exigencies anticipated and unanticipated.  The Earth is filled with dynamism and, from time to time, this dynamism places individuals and their well-being in jeopardy.  Within the New Earth Exchange, a Mutual Benefit Society is established wherein community members as well as non-community members can receive the benefit from a responsive, enlivened humanity which responds to joys and sorrows with abundance and generosity.
 The Community Response Network begins with a constant communication platform which informs the global community as to the emergence of “needs” and “opportunities” emerging throughout the network.  Already successfully deployed in part with platforms like the Global Innovation Commons – a repository for technical knowledge to address emergent challenges – this exchange links resources, knowledge, community members and technology to those places in need of community level response.
 As a Mutual Benefit Society, the demands for conventional insurance diminish and ultimately extinguish as the actuarial marginal profits accruing to insurers are replaced by expansive Community Response Networks in action.
-        BODY
+        CONTENT
       },
       {
         title: "About the New Earth Gifting Network",
         link: "Gifting Network",
-        body: <<-BODY
+        content: <<-CONTENT
 The New Earth Gifting Network is a global platform serving to reconnect people within their local community through the simple and powerful act of sharing. 
 
 The Gifting Network is the aspect of the New Earth Exchange which breaks beyond any notion of ‘exchange’ altogether. No exchange takes place when one either gives or receives a service and no one is permitted to charge or receive money for a service provided through the Gifting Network.  
@@ -122,12 +124,12 @@ The purpose of the Gifting Network is to:
 * Use the skills you do have to benefit others and learn the skills you don’t have for a time you may need them.
 * Reinvigorate local community spirit 
 * Encourage random acts of kindness to become the foundation of human interaction
-        BODY
+        CONTENT
       },
       {
         title: "About the Sovereign Payment System",
         link: "Sovereign Payment System",
-        body: <<-BODY
+        content: <<-CONTENT
 The New Earth Sovereign is an alternative currency which will be used for all commercial transactions between the New Earth’s various programs, initiatives, partners & affiliates and all non-residents & non-members who wish to engage with New Earth or between themselves. 
 
 For exchange purposes only, 1 New Earth Sovereign = the average hourly income measured across a selection of nation states, and measured against a base currency (US Dollars). This metric ensures that the New Earth Sovereign remains noninflationary as the exchange rate adjusts to counteract the inflationary effects of other currencies.
@@ -158,24 +160,24 @@ How the electronic paying system functions:
   * The Buyer presses the BUY button of the electronic wallet, which takes a picture of the Seller’s QR code.  
   * The Buyer’s phone displays the amount specified by the seller and the Buyer presses the YES button to accept the sale.
   * For both, the Seller and the Buyer, a breakdown of the completed transaction and the new balance of their electronic wallet will be instantly displayed. 
-        BODY
+        CONTENT
       },
       {
         title: "Why the New Earth Exchange is Launching Now",
-        link: "Why",
-        body: <<-BODY
+        link: "Why the Exchange",
+        content: <<-CONTENT
 The true purpose of an economy is to provide pathways which allow access to the unlimited abundance which already exists. Because, until now, we have collectively allowed vested interests to control the creation and supply of money, economic systems have been purposed to create an illusion of scarcity by limiting access to the natural abundance of our planet. 
 
 Quite simply, there will not be a New Earth so long as the creation and supply of money is in the hands of those who do not have the best interests of people and planet at heart.  
 If there is to be any meaningful change in this world, the control of the money supply must be given back to the people who use it.
 
 This is the primary purpose of the New Earth Exchange.
-        BODY
+        CONTENT
       },
       {
         title: "How Vested Interests Have Used Money to Control People",
-        link: "How Money Is Used",
-        body: <<-BODY
+        link: "How Money Has Been Used",
+        content: <<-CONTENT
 Under the current fractional reserve banking model, operating in almost every country across the globe, money is created in the following way:
 
 * The central bank decides to increase the money supply by say £1m. It does so by purchasing government bonds/treasury bills from a dealer in government securities. 
@@ -202,7 +204,7 @@ The £1m created by the central bank can then be expanded to a theoretical £10m
 This credit expansion process is a massive fraud upon the people.
 
 In reality we have never been debtors, and any notion that we are the true creditors is a fictional distraction. We simply are, and have always been, creators; we are the source of all fictional credit money currently in circulation. That power has always been ours. Now, at last, it’s time to cut out the middle man.
-        BODY
+        CONTENT
       },
     ]
   end

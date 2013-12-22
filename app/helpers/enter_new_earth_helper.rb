@@ -4,7 +4,7 @@ module EnterNewEarthHelper
       {
         title: "New Earth Nation",
         link: "New Earth Nation",
-        body: <<-BODY
+        content: <<-CONTENT
 New Earth Nation is founded in recognition of the supremacy of consciousness, the unity of all life and the undeniability of the individual sovereign condition.
 
 It is an open invitation to every member of the human family to transition away from all systems and enclosures which limit our capacity for creative self expression, and instead unite as an extraterritorial family of sovereign individuals who, with the support and solidarity of that family, are collectively empowered to consciously cocreate a new paradigm of prosperity, harmony and abundance.  
@@ -16,21 +16,21 @@ The New Earth Declaration of Sovereignty will align your voice with innumerable 
 Make your Declaration and enter the New Earth
 
 For more information see the links below
-        BODY
+        CONTENT
       },{
         title: "How will my declaration be used by New Earth Nation?",
         link: "How Is It Used?",
-        body: <<-BODY
+        content: <<-CONTENT
 By making a New Earth Declaration of Individual Sovereignty one gives permission to New Earth Nation and the New Earth Trust to 'represent' the broad interests of the maker when dealing at the state and multilateral level with so-called authorities, municipal parties, state-departments and governments in different parts of the world, in respect of any matter where the purpose of such representation is to:
 
 * Protect those New Earth Citizens who are also New Earth Residents from interference with their unrestricted enjoyment of community lands and New Earth facilities.
 * Support the exercise of individual sovereign powers and the collective sovereign powers of New Earth Citizens.
 * Respect the principles and ethic of the New Earth Blueprint, in any manner whatsoever. 
-        BODY
+        CONTENT
       },{
         title: "How current systems of government obtain their power over human beings",
         link: "How Government Obtains Power",
-        body: <<-BODY
+        content: <<-CONTENT
 All governments, corporations and other institutions do not actually exist anywhere but in the collective minds of people. In reality they do not actually exist at all. They are given the effect of life through the belief of people in their existence, and they are given power by the willingness of those people to act on their behalf. 
 
 For a government to enforce its rules and regulations upon human beings that belief must remain intact. However many years of blind voluntary compliance, has allowed governments to develop extremely complex webs of fiction to make it harder for Human Beings to recognize how they have been volunteering so that even when they decide not to continue voluntarily complying, they remain unwitting subjects of its powers. 
@@ -58,11 +58,11 @@ Without this voluntary attachment, a government has no power.
 By redressing how we relate to this name (or estate) we reclaim the power of self-governance. However, when we reclaim this power, we have a greater responsibility to wield it with honesty, integrity and above all… Love.
 
 Join the New Earth Academy of Law for further information.
-        BODY
+        CONTENT
       },{
         title: "How one lawfully ceases to cooperate with current systems and enclosures",
         link: "Cease To Cooperate",
-        body: <<-BODY
+        content: <<-CONTENT
 It’s remarkably easy… you just do it! Quite simply there is no lawful requirement for anyone to do anything they do not wish to do. An authority only has power if you recognise it.
 
 Sovereignty is a state of being. The absolute expression of a sovereign state of being, in each moment, is the only way in which one can realise the absolute freedom which true sovereignty can bring. None of the documents and procedures available through the New Earth Project, or anywhere else, are a solution to reclaiming sovereignty in and of itself.
@@ -97,11 +97,11 @@ If a brother or sister proceeds to cause harm or loss through the use of force, 
 Whilst entering the New Earth requires us to forgive others, and ourselves, for mistakes made in the past, this does not mean that one ought to simply sit back and take abuse – an enlightened being is a doormat for no one.
 
 For further information, guidance & support, go to the New Earth Academy of Law
-        BODY
+        CONTENT
       },{
         title: "Why the need for a Declaration of Sovereignty?",
         link: "Why the need?",
-        body: <<-BODY
+        content: <<-CONTENT
 All men and women are endowed by their creator with certain unalienable rights. It is men and women themselves who are solely responsible for securing these rights. 
 
 When a government becomes destructive of these rights; 
@@ -119,11 +119,11 @@ It is the right and duty of every man and woman to throw off such government and
 In truth, no one need declare what is inherently theirs – one’s actions in exercising one’s sovereignty in each moment are what counts. However at a time when big government and vested interests have amassed more power than ever before, it is strength in numbers and power of purpose alone which will allow humanity to transcend the evolutionary constraints imposed on it by the operation of governments and globalist institutions.
 
 The New Earth Declaration of Sovereignty will enjoin the voices of thousands, then millions, of men and women across the globe, across all cultural and religious divides – putting all governments & globalist institutions on notice that it is they who serve the people and not the other way round, and that their services are no longer required.
-        BODY
+        CONTENT
       },{
         title: "Can I continue to use passports and other state issued documents without re-joining the old world?",
         link: "State-Issued Documents",
-        body: <<-BODY
+        content: <<-CONTENT
 In the months and years to come, when necessary steps have been taken to ensure their credibility, the New Earth Trust may begin to issue its own passports and begin to make old state issued documents obsolete. That’s if the many quickly advancing Quantum Transportation technologies don’t render the need for passports obsolete! Until then it may at times be necessary for you to continue to use old state issued documents to go about your life.
 
 This is easily achieved… you use everything you need to just as you have always done, but you stop permitting anyone to use the name listed thereon to personally identify you. 
@@ -137,11 +137,11 @@ Bear in mind that:
 * In fact no law exists anywhere is the world that requires a man or woman to even have a name, or to do anything whatsoever, period. So live your life as a (wo)man, drop the mask (persona), and step into your sovereign birthright.
 
 Visit the New Earth Academy of Law for practical information, tips and courses on how to conduct yourself, in the so-called real world, as a Sovereign Individual.
-        BODY
+        CONTENT
       },{
         title: "New Earth Nation Defined",
         link: "Nation",
-        body: <<-BODY
+        content: <<-CONTENT
 Etymology of, nation (n.), from Latin nationem literally, “that which has been born”
 
 New Earth Nation is that which is given life by you, the Sovereign men and women who are its Citizens, to be THE free and open platform which unites humanity beyond all systems and enclosures which seek, by their very nature, to separate us from each other, and the Truth of our existence.
@@ -153,11 +153,11 @@ The Oxford English Dictionary defines a nation as “a large body of people unit
 In the New Earth Nation, this common descent arises from the fundamental understanding that we are each born of the same thing – consciousness; this common culture is the expression of the immutable truth that we are all One; this common language is that which utters effortlessly from the quantum of the collective human heart; this particular state is that of joyful self-awareness; and this particular territory is manifest reality itself, not a segregated part of it, but the inseparable perfection of the whole. 
 
 Technically and practically speaking, a sovereign man or woman is a nation in his/her own right. New Earth Nation is nothing more, or less, than a collective of sovereign nations uniting in a common interest… not unlike the founding tenets of many modern societies. The difference being that, in this society, the conditions do not exist for an individual’s sovereignty to be divested to another or for an individual’s sovereign powers to be falsely exercised by another, through deception, by virtue of the propagation of scarcity, fear, indoctrination and manipulation of media, or by any other means. 
-        BODY
+        CONTENT
       },{
         title: "New Earth Citizenship Defined",
         link: "Citizenship",
-        body: <<-BODY
+        content: <<-CONTENT
 Citizenship has come to be a dirty word. The very definition of the word, in most jurisdictions, is such that by identifying oneself as a citizen, one is automatically divesting their Sovereignty by operation of Law.
 
 But just as the rules of language allow anyone to define their own meaning for the words they use, so too does New Earth Nation hereby redefine the word citizenship, whenever it is used within the context of New Earth Nation, to mean:
@@ -165,11 +165,11 @@ But just as the rules of language allow anyone to define their own meaning for t
 “A man or woman who, having absolute sovereign power of his/her own nation state, without condition or limitation, and without presumption of subservience to anyone or anything, does endeavour to live in accordance with natural law, to do no harm, and to mutually assist one another to advance their own perfection and that of the human condition.”
 
 This is the New Earth ‘social contract.’ As citizens of New Earth Nation, we endeavour to embody these principles in each moment. 
-        BODY
+        CONTENT
       },{
         title: "New Earth Residency Defined",
         link: "Residency",
-        body: <<-BODY
+        content: <<-CONTENT
 New Earth Residency is the condition of being a New Earth Resident. A New Earth Resident is anyone who lives within a New Earth Community. New Earth Residencies may be permanent or transient.  
 
 Historically, when one makes a claim of residency, the claim is generally used to subject one to regulation under the commercial laws of the nation state to which the claim relates. Such a claim carries no such liabilities in the New Earth. 
@@ -177,7 +177,7 @@ Historically, when one makes a claim of residency, the claim is generally used t
 New Earth Nation defines a New Earth Resident as:
 
 “A man or woman who inhabits a New Earth Community, whilst maintaining absolute sovereign power of his/her own nation state, without condition or limitation, and without presumption of subservience to anyone or anything, and who does endeavour to live in accordance with natural law, to do no harm, and to mutually assist one another to advance their own perfection and that of the human condition.”
-        BODY
+        CONTENT
       }
     ]
   end

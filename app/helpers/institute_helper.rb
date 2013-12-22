@@ -1,4 +1,6 @@
 module InstituteHelper
+  extend self
+
   def subsection_path
     '/' + ["institute", params[:section], params[:subsection]].compact.join('/')
   end

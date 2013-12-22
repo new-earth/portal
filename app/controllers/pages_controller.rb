@@ -2,7 +2,6 @@ class PagesController < ApplicationController
   layout 'sections'
   before_filter :authenticate_member!
   helper :exchange
-  include InstituteHelper
 
   def locations
   end
@@ -24,7 +23,7 @@ class PagesController < ApplicationController
 
     @sidenav = case params[:section]
       when 'law' then 
-        institute_law_nav
+        InstituteHelper.institute_law_nav
       when 'wellness' then
         JSON.parse(Content.where(name: "InstituteWellnessLeftNav").first.body, symbolize_names: true)
       else
@@ -36,10 +35,12 @@ class PagesController < ApplicationController
   end
 
   def exchange
+    @content = ExchangeHelper.exchange_content
+    render 'general_accordion'
   end
 
   def festival
+    @content = FestivalHelper.festival_content
+    render 'general_accordion'
   end
-  
-
 end

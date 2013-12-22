@@ -28,7 +28,7 @@
           %a(data-toggle="collapse" data-parent="#top" href="##{section_id}")= article[:title]
 
       %article.panel-collapse.collapse{id: section_id, class: (article == enter_new_earth_content.first ? 'in' : '')}
-        = $markdown.render(article[:body]).html_safe
+        = $markdown.render(article[:content]).html_safe
 
 #declaration-form
 

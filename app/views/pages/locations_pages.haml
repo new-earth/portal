@@ -1,12 +1,12 @@
 - provide :head
 - @content = locations_content[@subsection]
-- current_content = nil
+- current_content = @content.first
 
 %nav#sidenav
   %ul.nav.nav-pills.nav-stacked.affix-top(data-offset-top="670" data-spy="affix")
     // .nav-header= @path.title
     - @content.each do |nav_link|
-      - active = (urlify_link(nav_link[:link]) == params[:page])
+      - active = (urlify_link(nav_link[:link]) == params[:page]) || (params[:page].blank? && nav_link == @content.first)
       - current_content = nav_link if active
 
       %li{class: active && !params[:subpage] ? 'active' : ''}

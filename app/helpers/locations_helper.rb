@@ -12,28 +12,33 @@ module LocationsHelper
     url
   end
     
-  def locations_sections
-    [{
-      link: "communities",
-      title: "New Earth Communities"
-    },{
-      link: "retreats",
-      title: "New Earth Retreats"
-    },{
-      link: "participation",
-      title: "Landowner Participation"
-    },{
-      link: "protection",
-      title: "Protection of Land and Communities"
-    },{
-      link: "templates",
-      title: "Turnkey Templates"
-    }]
-  end
+  # def locations_sections
+  #   [{
+  #     link: "communities",
+  #     title: "New Earth Communities"
+  #   },{
+  #     link: "retreats",
+  #     title: "New Earth Retreats"
+  #   },{
+  #     link: "landowners",
+  #     title: "Landowner Participation"
+  #   },{
+  #     link: "protection",
+  #     title: "Protection of Land and Communities"
+  #   },{
+  #     link: "templates",
+  #     title: "Turnkey Templates"
+  #   }]
+  # end
 
+  # cross-reference this against the links in MenuHelper
   def locations_content
     {
-      'communities' => locations_communities_content
+      'communities' => locations_communities_content,
+      'retreats'    => locations_retreats_content,
+      'landowners'  => locations_landowners_content,
+      'protection'  => locations_protection_content,
+      'templates'   => locations_templates_content
     }    
   end
 
@@ -738,5 +743,517 @@ When buying a plot within the New Earth, the particulars of sale will explicitly
 When someone buys or otherwise obtains a Transient Residency in a New Earth Community, they are acquiring the right to use, for life, a specific New Earth Community home, or bundle of homes in a specific community, for a specified period of time each year.
       CONTENT
     }]    
+  end
+
+  def locations_retreats_content
+    [{
+      link: "Create your own Retreat",
+      title: "How to Create your own Retreat within the New Earth",
+      content: <<-CONTENT
+The New Earth Blueprint avails itself to all peoples as a means by which they may mutually cooperate in manifesting the world of prosperity, harmony and abundance which the human family is beginning now to collectively envision at this critical juncture. 
+ 
+Whether a landowner or otherwise, New Earth invites everyone who resonates with the spirit and intent of the Blueprint to create their own communities within the New Earth.  
+
+For those who do wish to develop their own Retreats and also wish to be an integral part of the New Earth family, certain guidelines needfully apply to the use of the New Earth Blueprint, and thus the structure and operation of those Communities, in order to ensure the integrity and effectiveness of New Earth as the planetary touchstone for conscious evolution.
+ 
+The New Earth Blueprint is a benchmark, not a rigid structure - all participants of New Earth are completely free to explore their creativity in advancing the Blueprint and creating infinite expressions of ideal conscious retreats. Where desired the turnkey templates avail themselves to those wishing to develop their own retreats.
+
+By observing with the following guidelines, landowners and other developers of New Earth Retreats may, subject to approval by the New Earth Trust, benefit from:
+ 
+* use of the New Earth Retreat brand.
+* advice and support of New Earth’s vast planetary network of world-leading experts in creating, maintaining and operating the Retreat.
+* the fruits of New Earth Retreats central marketing operations.
+* use of New Earth Retreats central bookings facilities. 
+* access to detailed working drawings of New Earth Architecture structures.
+* access to New Earth Architects to design bespoke Retreat solutions.
+* free access to New Earth Institute resources.
+* the appointment of one or more of New Earth’s world-leading healers and physicians to host a permanent clinic and/or academy at the Retreat, if desired.
+* access to the New Earth Projects suite of advanced technologies with the option to purchase available technologies at a cost price.
+* any other benefit which Retreat is capable and desirous of receiving, and which the New Earth Trust is capable and desirous of providing.
+
+Whilst no one is expressly forbidden from utilizing any part of the New Earth Blueprint to develop a Retreat in any way they choose, anyone who does so will not be eligible to receive any of the aforementioned benefits, unless they observe the following guidelines:
+ 
+* New Earth Trust Administration is notified of the proposed Retreat ahead of actual development. 
+* The bundle of rights to the land on which the Community is situate are transferred to the Earth Sanctuary Trust or otherwise appropriately held on trust in a manner which grants appropriate authority to the New Earth Trustees and Earth Sanctuary Trustees to act in any way to ensure the continuity of unhindered use, and protection of rights, of those whom from time to time use the land or dwell thereon.
+* Designs and layouts are approved by the New Earth Design Team 
+* The Retreat operates a philanthropic profit sharing model whereby 20% of all profits are donated to the New Earth Trust to facilitate the global expansion of New Earth. 
+* 10% of gross revenues from the operation of the Retreat are distributed to New Earth Retreats to pay for all central functions and global marketing. 
+* The Retreat makes provision for the development of a New Earth Institute, to a design provided by the New Earth Trust, which is operated in accordance with the wishes of the New Earth Council (as duly appointed by the global family of New Earth residents and participants). 
+* The Retreat avails itself to, and participates in, the greater New Earth Community to the extent that any other New Earth Retreat does.
+* The Retreat is developed, and maintains its operations, in alignment with the form, function and true spirit of the New Earth Blueprint. 
+ 
+The process
+
+* Prior to commencing development, the landowner or retreat developer will submit their proposal/vision statement/implementation plans to New Earth Retreats.
+* New Earth Retreats approves the Retreat as being suitably aligned with the spirit and intent of the New Earth Blueprint. Where it is not, or where there are omissions or concerns, New Earth Retreats will make recommendations and suggestions to create a full alignment.
+* Where there is agreement and intent to proceed, a dedicated New Earth Retreat Coordinator will be appointed to the project by New Earth Retreats who will work with the Retreat to coordinate all aspects of that which is required to facilitate the fulfilment of the guidelines above.
+* Once approved by the Retreat Coordinator the Retreat will exist as part of the New Earth family like any other New Earth Retreat receiving the same protection, networks and services as any other New Earth Retreat.
+* The Retreat Coordinator will continue to work with the Retreat to ensure continuing alignment for the benefit of all. 
+
+These guidelines and processes will continually evolve as New Earth and it conscious participants continue themselves to remain open to this evolutionary process.  
+      CONTENT
+    },{
+      link: "Bring your Existing Retreat",
+      title: "How to Bring your Existing Retreat into the New Earth",
+      content: <<-CONTENT
+New Earth invites any existing retreat centre whose principles and intentions are aligned with the New Earth Blueprint, or who are desirous of evolving their principles and intentions in alignment with the Blueprint, to bring their retreat centre into the New Earth. 
+
+For those who do wish to bring their existing Retreats into the New Earth, certain guidelines needfully apply to the structure and operation of those Retreats, in order to ensure the integrity and effectiveness of New Earth as the planetary touchstone for conscious evolution.
+ 
+The New Earth Blueprint is a benchmark, not a rigid structure - all participants of New Earth are completely free to explore their creativity in advancing the Blueprint and creating infinite expressions of ideal conscious communities. 
+ 
+By observing the following guidelines, existing Retreats may enter the New Earth and, by extension, benefit from:
+ 
+* Use of the New Earth Retreat brand.
+* Advice and support of New Earth’s vast planetary network of world-leading experts in creating, maintaining and operating the Retreat.
+* The fruits of New Earth Retreats central marketing operations.
+* use of New Earth Retreats central bookings facilities. 
+* Access to detailed working drawings of New Earth Architecture structures.
+* Access to New Earth Architects to design bespoke Retreat solutions.
+* Free access to New Earth Institute resources.
+* The appointment of one or more of New Earth’s world-leading healers and physicians to host a permanent clinic and/or academy at the Retreat, if desired.
+* Access to the New Earth Projects suite of advanced technologies with the option to purchase available technologies at a cost price.
+* Any other benefit which Retreat is capable and desirous of receiving, and which the New Earth Trust is capable and desirous of providing.
+
+Those wishing to bring their existing retreat centre into the New Earth and receive the aforementioned benefits, will needfully observe the following guidelines:
+ 
+* The New Earth Trust approves the retreat as being suitably aligned with the spirit and intent of the New Earth Blueprint.
+* The bundle of rights to the land on which the Community is situate are transferred to the Earth Sanctuary Trust or otherwise appropriately held on trust in a manner which grants appropriate authority to the New Earth Trustees and Earth Sanctuary Trustees to act in any way to ensure the continuity of unhindered use, and protection of rights, of those whom from time to time use the land or dwell thereon.
+* The Retreat operates a philanthropic profit sharing model whereby 20% of all profits are donated to the New Earth Trust to facilitate the global expansion of New Earth. 
+* 10% of gross revenues from the operation of the Retreat are distributed to New Earth Retreats to pay for all central functions and global marketing. 
+* The Retreat allocates a portion of its communal space for use as aNew Earth Institute facility, which is operated in accordance with the wishes of the New Earth Council (as duly appointed by the global family of New Earth residents and participants).
+* The Retreat avails itself to, and participates in, the greater New Earth Community to the extent that any other New Earth Retreat does.
+* Where the Retreat is not already a working example of full spectrum sustainability, the Retreat operators will agree to work with New Earth to become such.
+* The Retreat is developed, and maintains its operations, in alignment with the form, function and true spirit of the New Earth Blueprint. 
+
+The process
+
+* The Retreat provides the New Earth Retreats Team with detailed information on the retreat, how it operates, its founding principles and any other relevant information. 
+* New Earth Retreats approves the Retreat as being suitably aligned with the spirit and intent of the New Earth Blueprint. Where it is not, or where there are omissions or concerns, New Earth Retreats will make recommendations and suggestions to create a full alignment and will work with the Retreat to create a plan and timetable for achieving full spectrum sustainability.
+* Where there is agreement and intent to proceed, a dedicated New Earth Retreat Coordinator will be appointed to the project by New Earth Retreats who will work with the Retreat to coordinate all aspects of that which is required to facilitate the fulfilment of the guidelines above.
+* Once approved by the Retreat Coordinator the Retreat will exist as part of the New Earth family like any other New Earth Retreat receiving the same protection, networks and services as any other New Earth Retreat.
+* The Retreat Coordinator will continue to work with the Retreat to ensure continuing alignment for the benefit of all. 
+
+These guidelines and processes will continually evolve as New Earth and it conscious participants continue themselves to remain open to the evolutionary process.  
+      CONTENT
+    }]
+  end
+
+  def locations_landowners_content
+    [{
+      link: "Land Owner Participation",
+      title: "Land Owner Participation",
+      content: <<-CONTENT
+New Earth is constantly evolving the many ways in which Landowners may participate in the Project. Currently those wishing to do so may participate in one or more of the following ways:
+
+- Donate land to New Earth
+- Participate in a Commercial undertaking with New Earth Retreats
+- Sell land to New Earth
+- Deposit land in the New Earth Mutual Fund and become a beneficiary
+- Create your own Community within the New Earth
+- Create your own Retreat within the New Earth
+
+To understand the New Earth land transfer process, please see:
+
+Earth Sanctuary Trust
+
+Land Transfer process
+
+FAQ’s
+      CONTENT
+    },{
+      link: "Donate Land",
+      title: "Donate land to New Earth",
+      content: <<-CONTENT
+Landowners are invited to donate land to New Earth. Donations may be with or without condition.
+
+Acceptable conditions are:
+
+* To require that the land be used for the development of a New Earth Community or Venue, and to require that land be transferred back, should the same not have commenced within a period of three years.
+* To require residency within any proposed community development. 
+* To participate in the project in any way, provided that they are capable of such participation and provided that the desired manner of participation is congruent with the spirit of the New Earth Blueprint.
+* To retain exclusive use of the land (provided that no other conditions are imposed. Mostly relevant to farmland/arable land owners and to individual homesteaders wishing to benefit from the protective framework of the Earth Sanctuary Trust).
+
+The Trustees of the Earth Sanctuary Trust reserve the right to refuse any donation of land.
+
+The procedure
+
+* Landowner makes enquiry to land@new-earth-nation.org
+* The New Earth Land and Development Team will confirm interest in the enquiry and request all relevant information relating to the land (coordinates, title map, confirmation of ownership, pictures and any other available and relevant information).
+* Upon receipt the Land and Development Team will invite the landowner for an initial consultation to discuss which options are most suitable for them and to answer any questions the landowner may have. 
+* The Land and development Team will confirm New Earth’s desire to proceed.
+* The Landowner will be invited to confirm his conditions, if any, for the transfer.
+* The Land and Development Team will, subject to acceptance of the conditions, prepare draft documentation in line with the landowners requirements.
+* The landowner will approve the documentation and then follow steps 1 to 4 of the land transfer process
+
+The Land and Development Team will always be on hand to discuss any questions which arise and support the landowner to the best of their ability. 
+
+Size of land
+
+Whilst any donation of land may be acce¬pted, for New Earth to be able to utilise the land as a New Earth Venue the land will need to be a minimum of 15 acres (6 hectares). In certain locations where land is less fertile or where there are specific conservation issues or site restrictions, the minimum workable size of land will be greater. 
+
+Where the land is smaller than the minimum size, and it may not therefore be possible for the land to be effectively purposed for community development, donators will not be able to require that the land be used for community development or therefore require the construction of a home for them as part of any community development. 
+
+There is no maximum size of donation.  
+
+Certificate of Title
+
+Donating land to the Earth Sanctuary Trust does not transfer the Certificate of Title (only the bundle of rights).
+
+Landowners may elect to dispose of the Certificate of Title to a person appointed by New Earth, or they may also elect to retain it if they wish. See land Transfer process for further information.
+
+Co-trusteeship
+
+Landowners who donate land to New Earth having a value greater than $1m and who do not impose any condition on the donation which restricts either the Earth Sanctuary Trust or New Earth Trust from employing the land as it sees fit, are invited to sit on the board of Trustees of the Earth Sanctuary Trust where they will sit as part of one united family of land protectors who, in partnership with the panel of law advisors appointed by New Earth, collectively make decisions in respect of issues which affect the protection of the lands within the Trust. The trustees will work closely New Earth in fulfilling the trust purpose.
+
+Legal fees
+
+There are no legal fees involved with the transfer of the bundle of rights (fee simple) to the Earth Sanctuary Trust, it is an entirely private process. If landowners would like to take advice on this process they are free to do so at their own cost. Where land has been donated and the landowner would like to also transfer the Certificate of Title, New Earth will pay reasonable legal expenses.
+      CONTENT
+    },{
+      link: "Commercial Undertakings",
+      title: "Participate in a Commercial undertaking with New Earth Retreats",
+      content: <<-CONTENT
+Landowners who avail land to New Earth for the development of a New Earth Retreat are invited to participate in a profit sharing arrangement in the completed New Earth Retreat. The amount of the profit share will vary subject to location and land value. Landowners who participate in this manner will receive 4 x the predevelopment land value over a period of approximately 10 to 15 years. 
+
+Conditions of participation
+
+Landowners wishing to participate in a Commercial undertaking with New Earth Retreats will be required to:
+
+* Agree to transfer the bundle of rights to the land to the Earth Sanctuary Trust upon receipt of 1 x the predevelopment land value in profit sharing.
+* Agree to transfer the Certificate of Title to the land to New Earth Retreats or its assigns upon receipt of 1 x the predevelopment land value in profit sharing.
+* Donate land to New Earth, of equal beauty and fertility to that of the land forming part of the Retreat agreement, without condition, of a size not less than the land forming part of the Retreat agreement, for the purpose of community development.
+
+The procedure
+
+* Landowner makes enquiry to land@retreats.new-earth-nation.org
+* The New Earth Retreats Team will confirm interest in the enquiry and request all relevant information relating to the land (coordinates, title map, confirmation of ownership, pictures and any other available and relevant information).
+* Upon receipt the Retreats Team will invite the landowner for an initial consultation to discuss the project and to answer any questions the landowner may have. 
+* The Retreats Team will confirm New Earth’s desire to proceed and will outline a strategic path for the implementation of the project.
+* The parties will agree a partnership agreement detailing the terms of the profit sharing arrangement and conditions of participation.
+* The Retreats Team will undertake all items contained in the strategic path document and, upon approval of funding, New Earth Developments will construct the retreat.
+* Upon completion of the retreat, the landowner will transfer the donation land for community development to the Earth Sanctuary Trust. 
+* Upon receipt of 2 x the predevelopment land value in profit sharing, the Landowner will transfer the bundle of rights to the retreat land to the Earth Sanctuary Trust and will transfer the Certificate of Title to New Earth Retreats.
+* Upon receipt of 4 x the predevelopment land value in profit sharing, the profit sharing arrangement will cease. 
+
+The Land and Development Team will always be on hand to discuss any questions which arise and support the landowner to the best of their ability. 
+
+Size of land
+
+New Earth Retreats smallest turnkey template requires a 15 acre (6 hectare) site. The larger turnkey template for Retreat requires a 40 acre (16 hectare) site. In certain locations where land is less fertile or where there are specific conservation issues or site restrictions, these requirements will be greater. Bespoke retreat models will be developed for any land not suiting any of the turnkey templates, although 15 acres shall always be considered the minimum size except in exceptional circumstances. 
+
+There is no maximum size of land which will be considered for use as a New Earth Retreat.  
+
+Legal fees
+
+Each party will be responsible for their own legal expenses. 
+      CONTENT
+    },{
+      link: "Sell Land to New Earth",
+      title: "Sell Land to New Earth",
+      content: <<-CONTENT
+The New Earth Trust will buy land from landowners where:
+  
+* The land is assessed by the New Earth Trust Administration as being suitable to serve as a New Earth Venue.
+* The land is sold at a discounted price or the landowner agrees to payment of the land price being deferred until receipt of revenue from community home presales. Under the latter circumstance, the landowner would not be required to transfer the land until 28 days prior to the scheduled commencement of presales.
+
+The transfer process will be the same as for donations of land. The purchase price will be paid in consideration of the transfer of the Certificate of Title, not the bundle of rights. 
+
+Landowners who wish to sell rather than donate land to New Earth will not be invited to participate as co-trustees of the Earth Sanctuary Trust. 
+
+The procedure
+
+* Landowner makes enquiry to land@new-earth-nation.org
+* The New Earth Land and Development Team will confirm interest in the enquiry and request all relevant information relating to the land (coordinates, title map, confirmation of ownership, pictures and any other available and relevant information).
+* Upon receipt the Land and Development Team will invite the landowner for an initial consultation to discuss which options are most suitable for them and to answer any questions the landowner may have. 
+* The Land and development Team will confirm New Earth’s desire to proceed, and undertake an assessment of the land value.
+* The Landowner will confirm the value and the parties will agree the level of discount to be applied or any other preferential terms.
+* The Land and Development Team will prepare draft documentation in line with the landowners requirements.
+* The landowner will approve the documentation and then follow steps 1 to 4 of the land transfer process
+
+The Land and Development Team will always be on hand to discuss any questions which arise and support the landowner to the best of their ability. 
+
+Size of land
+
+Notwithstanding any exceptional circumstances, the minimum size of land which the New Earth Trust will usually consider purchasing is 15 acres (6 hectares). In certain locations where land is less fertile or where there are specific conservation issues or site restrictions, this size will be greater. 
+
+There is no maximum size of land that will be considered for purchase.  
+
+Legal fees
+
+There are no legal fees involved with the transfer of the bundle of rights (fee simple) to the Earth Sanctuary Trust, it is an entirely private process. If landowners would like to take advice on this process they are free to do so at their own cost. Each party will pay their own legal expenses in respect of the transfer of the Certificate of Title.
+      CONTENT
+    },{
+      link: "Earth Sanctuary Trust",
+      title: "Earth Sanctuary Trust",
+      content: <<-CONTENT
+The Earth Sanctuary Trust serves as the protective environment for the lands, upon which New Earth Project venues are situate, to be held. The purpose of the trust is to: 
+ 
+* protect the lands of the peoples of the earth,
+* facilitate autonomy of governance and self-determination, protecting the rights of the peoples who live thereon, and
+* provide a foundation for an international community of enlightened practices of education, trade, mutual cooperation and peaceful coexistence.
+ 
+The Trustees receive transfers of the bundle of rights (fee-simple) pertaining to lands. 
+
+Those Grantors (current owners) who donate land and would like to remain as custodians of the land will have the ability to do so. Each Grantor, if they so choose, will be appointed as a Trustee of the Earth Sanctuary Trust where they will sit as part of one united family of land protectors who, in partnership with the panel of law advisors appointed by the New Earth Trust, collectively make decisions in respect of issues which affect the protection of the lands within the Trust. The trustees will work closely with New Earth Trust in fulfilling the trust purpose.
+
+The Earth Sanctuary Trust is a private trust which means that it is not registered with any government agency anywhere in the world and does not appear in any register or public record. A private trust is the most effective vehicle for the protection of lands and communities because:
+
+* The public statutory realm is subordinate to private realm of equity which governs the law of trusts.
+* The principles and maxims of the law of equity evolved as a moral interpretation of natural law. 
+* The law as it relates to private trusts can never be altered by a government statute. 
+* The terms of a private trust are the law of the trust.
+* A Trustee holds the land for the benefit of others.
+* The beneficiaries have none of the liabilities which accompany ownership yet receive all of the benefits which the trust provides for.
+* A Trustee cannot be compelled to disclose the identity of the beneficiaries.
+* A Trustee has a legal and equitable obligation to use any lawful means to fulfil the trust purpose and protect the interests of the beneficiaries.
+      CONTENT
+    },{
+      link: "Land Transfer Process",
+      title: "Land Transfer process",
+      content: <<-CONTENT
+To understand why the following land transfer process has been devised it is necessary to understand how current land law functions. 
+
+### The procedure
+
+1.  The Land owner (Grantor) executes a trust indenture. The indenture states the four things essential to a valid trust being - 1, the intent to form a trust, 2. the purpose of the trust (to secure the land for future generations and cause the creation of New Earth venues), 3, designates the parties to the trust (Grantor, Trustee, Beneficiaries), and 4. Designates the trust corpus (land). It also includes any other specific conditions which have been agreed. 
+2.  The trust corpus (land) is delivered to the trustee - this is the point at which the trust takes effect. In recent times it has become common for delivery of land to be made by delivery of title deeds, however many years ago it was customary for the parties to attend the land for a ceremony where the Transferor would dig the soil and physically hand it to the transferee. In the case of transfers to the Earth Sanctuary Trust, where possible, both shall occur.
+3.  The landowner, where the land has been donated and if he so chooses, is appointed to the board of trustees of the Earth Sanctuary Trust, where they will sit as part of one united family of land protectors who collectively make decisions in respect of issues which affect the protection of the lands within the Trust.
+4.  The landowner, if he so chooses, transfers the Certificate of Title to the designated local organisation or Individual. Where land is being sold rather than donated, the Certificate of Title will be transferred in consideration of the agreed purchase price.
+
+What this land transfer process achieves is separation of the Certificate of Title from the actual land limiting the legal capacity for public agencies and institutions to interfere with the land or its inhabitants. Any presumed lawful jurisdiction will be quickly quelled by the Trustees and the sovereign inhabitants themselves.
+
+To enhance self-generating community autonomy, the New Earth project will facilitate educational programs for all those inhabitants who wish to participate in advancing individual and community sovereignty.
+
+### Sample Indenture for transfer of Fee Simple to Earth Sanctuary Trust
+
+THIS INDENTURE WITNESSETH the special trust and confidence that the living spirit(s) whose person(s) known as ___________ (grantor(s)), hath in the trustees, their heirs and assigns, to protect the life, liberties and rights of the peoples which now be, and which hereafter from time to time shall be, inhabiting and dwelling upon the lands known as _______________ as described and highlighted red on the attached schedule, and to ensure their unhindered use of the same, for the sole purpose that they may live freely and unhindered in accordance with the highest principles of natural law. 
+
+To have and to hold to the said trustees, their heirs and assigns forever, to the only use of the said trustees, their heirs and assigns forever, upon trust, the estate in fee simple of the lands known as _________________ as described and highlighted red on the attached schedule, for the benefit of the peoples which now be, and which hereafter from time to time shall be, inhabiting and dwelling thereon, ensuring at all times their absolute sovereignty as residents of New Earth Nation. The Grantor shall retain the Certificate of Title. 
+
+The trustees shall use said lands, or part of them, for the purpose of developing a New Earth Venue in accordance with the New Earth Blueprint, and shall purpose any rents, issues or profits arising from the same, to succour, aid, relieve and protect the said peoples which now be, or hereafter shall be, inhabiting and dwelling upon these lands or any other lands held by the Earth Sanctuary Trust or for the purpose of advancing the stated vision of the New Earth Blueprint. 
+
+The co-trustees, or any of them, their heirs or assigns, or any of them, or any other person, or persons, whatsoever hereafter to be named, elected or chosen as trustees of the said lands, to the uses above the jurisdiction of any governmental or nongovernmental organisation, its agents and successors, and above the jurisdiction of any other Sovereign power, its agents and successors, may not charge, convey, employ or convert the said lands, to any other use, or uses, intent, or intents, or any other way, that may be perceived to vary the uses above in these presents mentioned, and may not make any new lease, or leases, of the said lands, or of any part thereof, and may not apply for, accept or use any form of government issued identification or identifying numbers.
+
+And it is further concluded and agreed by and between the said parties to these presents, and all of them, that the peoples which hereafter, from time to time, shall be inhabiting upon the said lands are prohibited nunc pro tunc from bringing suit against the said trustees, whatsoever be their motive, unless by unanimous verdict the said inhabitants do determine that such action is necessary.
+
+And it is further concluded and agreed by and between the said parties to these presents, and all of them, that as soon as it is unanimously determined by the trustees that the beneficiaries of this express trust, their heirs and assigns no longer require the protection that it affords, and the purpose for which it was created has ceased or is deemed otherwise unnecessary, it too shall cease and be disbanded, and all the said lands, along with any rents, issues or profits arising from the same shall be dispersed to the beneficiaries by the co-trustees by the appropriate means of the time, as they shall at their discretion deem appropriate.
+
+Executed under my hand and seal,
+
+
+By: __________, Grantor 
+
+Witnessed this day, the _____ day of ___________ in the year ______________, by the living spirits whose persons are known as:
+
+### Civil Law Jurisdictions
+
+Certain countries do not operate a common law system, instead they operate a civil law system. Whilst some civil law jurisdictions do recognise trusts, many do not. Where New Earth acquires land in such locations, the procedure for dealing with land transfers will be slightly different. Civil law jurisdictions do however usually make provision for the benefits which trusts provide through other arrangements such as a fiducia and a usufruct. Each circumstance where such a situation arises will be dealt with accordingly to its own merits.
+      CONTENT
+    },{
+      link: "Current Land Law",
+      title: "How current land law functions",
+      content: <<-CONTENT
+In the developed world it is Certificates of Title for Registered Estates that serve as one of the primary facilitators for a government to obtain statutory jurisdiction over land (coupled with the peoples presumption of its authority). 
+
+Most countries use the Torrens Land Registration System. The purpose of the Torrens system is essentially to streamline the manner in which banks & large corporations may obtain security over the lands of the people. It also streamlines government ability to enforce rules and regulations as to what occurs on land.
+
+How it works is - there are many titles and interests in any given piece of land. Most people are only aware of legal title and equitable title, but there are actually a great deal more. In fact the list is potentially endless if the estate is carved up by process of law as many are.
+
+It is important to remember that a bank or government institution is public and fictional in nature so it only has jurisdiction over things which are fictional i.e. titles, never the land itself. 
+So in order to get jurisdiction over the land itself, men and women must be tricked into attaching fictional title to real land. Through the process of land registration, the Certificate of Title is comingled with the bundle of rights (fee-simple) creating a situation where, by acting upon the Certificate of Title, a bank would gain access to the bundle of rights and therefore to the land itself, and a government institution which has jurisdiction over the Certificate of Title would therefore have jurisdiction over how the bundle of rights are exercised. This is the same effect we observe when people unwittingly attach themselves to a registered legal name.
+
+Whilst there are many more aspects to the protection of lands and communities, the first thing which must be done is to extract land from this system of registration. 
+
+Where title to land has not been registered the task is much simpler, however it is essentially very simple nevertheless. One must split the bundle of rights from the Certificate of Title and thereby sever the link between fiction and illusion. This can be achieved by transferring the 'fee-simple' (bundle of rights) to a private individual or group of individuals whilst leaving the Certificate of Title with the transferor.
+      CONTENT
+    },{
+      link: "FAQ",
+      title: "Landowner FAQ",
+      content: <<-CONTENT
+*If we create a New Earth Community on our land can we keep our vision and values, and express our own creativity in manifesting it?*
+
+All landowners wishing to create New Earth Communities on their land will need to be aligned with the vision and values of New Earth. However the foundation of New Earth is sovereign creative expression so, subject to a few specific requirements, every member of the human family is free to engage with the project to create their own versions of perfection. 
+
+*If we sell our land to the Project, instead of donating, what are our options to participate, are we left out?*
+
+No, landowners who sell land to the project will have first right of refusal to join the community. Additionally, New Earth will make every effort to accommodate landowners wishing to participate in any other way, provided they are capable of such participation.
+
+*Will a community be at a disadvantage if it is not developed alongside a New Earth Retreat?*
+
+No. The founding principle of every community is self reliance. If a community requires something offered by a Retreat (or other initiative) and it is not available in close proximity, then the community will make provision for it themselves.
+
+*What if the conditions of my land do not permit a turnkey template to be implemented?*
+
+The turnkey templates are only guidelines. The beauty of natural design and sacred geometry is that the principles can be applied to any circumstance. Where land does not provide the conditions for a turnkey template to be constructed, bespoke solutions will be created.
+
+*Can we choose the type of materials we want to be used for the development of a community?*
+
+Landowners wishing to retain this level of input may wish to consider creating their own community within the New Earth
+
+*Is New Earth familiar with the regulations, zoning laws & construction codes in my country?*
+
+The New Earth Legal and Development Teams are familiar with most regulatory frameworks. However we shall not be creating a New Earth following the same rules that were used to create the old one. As an extraterritorial collective of sovereign human beings, we will not, except in respect of certain commercial undertakings, be asking for permission from any territorial authority. We will instead, in the spirit of unity, invite them to support and participate with New Earth initiatives in their area.
+
+*Who will pay land taxes?*
+
+Once land has been separated from its Certificate of Title there is no legal foundation for the enforcement of land tax, and it is not the policy of New Earth to voluntarily support a failing socio-economic model which encourages the divesting of individual sovereignty.
+      CONTENT
+    }]    
+  end
+
+  def locations_protection_content
+    [{
+      link: "Protection",
+      title: "Protection of Land and Communities",
+      content: <<-CONTENT
+See also how current land law functions
+
+### Earth Sanctuary Trust
+
+The Earth Sanctuary Trust serves as the protective environment for the lands, upon which New Earth venues are situate, to be held. The purpose of the trust is to: 
+ 
+* protect the lands of the peoples of the earth,
+* facilitate autonomy of governance and self-determination, protecting the rights of the peoples who live thereon, and
+* provide a foundation for an international community of enlightened practices of education, trade, mutual cooperation and peaceful coexistence.
+ 
+The Trustees receive transfers of the bundle of rights (fee-simple) pertaining to lands. 
+
+Those Grantors (current owners) who donate land and would like to remain as custodians of the land will have the ability to do so. Each Grantor, if they so choose, will be appointed as a Trustee of the Earth Sanctuary Trust where they will sit as part of one united family of land protectors who, in partnership with the panel of law advisors appointed by the New Earth Trust, collectively make decisions in respect of issues which affect the protection of the lands within the Trust. The trustees will work closely with New Earth Trust in fulfilling the trust purpose.
+
+The Earth Sanctuary Trust is a private trust which means that it is not registered with any government agency anywhere in the world and does not appear in any register or public record. A private trust is the most effective vehicle for the protection of lands and communities because:
+
+* The public statutory realm is subordinate to private realm of equity which governs the law of trusts.
+* The principles and maxims of the law of equity evolved as a moral interpretation of natural law. 
+* The law as it relates to private trusts can never be altered by a government statute. 
+* The terms of a private trust are the law of the trust.
+* A Trustee holds the land for the benefit of others.
+* The beneficiaries have none of the liabilities which accompany ownership yet receive all of the benefits which the trust provides for.
+* A Trustee cannot be compelled to disclose the identity of the beneficiaries.
+* A Trustee has a legal and equitable obligation to use any lawful means to fulfil the trust purpose and protect the interests of the beneficiaries.
+
+### New Earth Nation
+
+The New Earth Declaration of Individual Sovereignty made by each community resident permissions New Earth Nation and New Earth Trust to 'represent' the broad interests of the resident when dealing at the state and multilateral level with so-called authorities, municipal parties, state-departments and governments in different parts of the world in respect of those lands being used by New Earth Citizens. 
+
+Additionally, the New Earth Law Commission situate within the New Earth Academy of Law will be on hand to tackle issues for and on behalf of individuals or communities anywhere in the world. In time a domestic Law Commission for each nation-state will provide focussed specialist support.
+
+Operating in the realms of natural law and certain areas of common law, the Law Commissions do not enforce security, protection, or defense, they support consciousness in action!
+      CONTENT
+    }]
+  end
+
+  def locations_templates_content
+    [{
+      link: "Turnkey Templates",
+      title: "New Earth Turnkey Templates",
+      content: <<-CONTENT
+New Earth provides turnkey templates as ready-made development models which can be implemented in most locations. Aside from their use in a number of locations developed by the New Earth Trust, those wishing to create their own communities within the New Earth and/or create their own retreats within the New Earth may also use these templates as the foundation of their development model. The templates may not be suitable for all locations in which case bespoke developments will be created. 
+
+The turnkey templates provide for a mix of community, retreat and institute at each New Earth location, however they may also be used where only community or only retreat are desired.
+
+They are intended to provide each New Earth venue with the ideal balance of facilities, ease of implementation, functionality, size & cost. Each turnkey template incorporates the following aspects:
+
+* The creation of an Earth Sanctuary Protectorate for the development of first phase New Earth Community, Retreat & Institute, and which preferably provides for future community expansion,
+* Development of a physical New Earth Institute to serve as the touchstone for all community and retreat operations as well as the conduit to a global network of resources, people and technology,
+* Development of a New Earth Community.
+* Development of a New Earth Retreat and for the larger template, an integrated Healing Centre. 
+
+Small turnkey template
+Large turnkey template
+
+
+### Earth Sanctuary Protectorate
+
+The priority of the New Earth Trust is to formally protect the maximum amount of land possible to provide the greatest amount of space within which humanity may reclaim its sovereign birthright. Thus regardless of the size of land available, it is hoped that landowners will look to participate with the Earth Sanctuary Trust to protect the maximum available amount of land, subject of course to mutually agreeable terms & conditions. 
+
+
+### Institute
+
+The New Earth Institute serves as the central hub of every New Earth venue. Its central location allows for retreat visitors & residents alike to maximise their benefit from its facilities. Amongst its many purposes are:
+
+* Conduit to the greater New Earth Community – fitted with highly advanced computing technology and software applications developed specifically for use within the New Earth to create a fully immersive, freely available, New Earth noosphere.
+* Prime attractor for the New Earth Retreat – the many world leading academics, healers & wisdom keepers from the global Institute network will host workshops, training-camps, seminars & retreats across the broad range of new earth disciplines from the Institute. The Retreat will manage the Institutes facilities and cater for all accommodation needs.
+* Touch-stone for the New Earth Community – the community can freely use the Institute facilities when they are not in use by the retreat or other parties. 
+* Through the on-site Institute, the global Institute network will avail its vast knowledge and technology base to New Earth Community free of charge.
+* Test-bed, showcase, and conduit to the Community & Retreat, for the worlds most advanced consciousness enhancing technologies brought to bear by the New Earth Project and its partners & affiliates
+
+The New Earth Institute sits at the heart of the development master plans.
+      CONTENT
+    },{
+      link: "Small Turnkey Template",
+      title: "Small Turnkey Template",
+      content: <<-CONTENT
+The small turnkey template provides for two development master plans, for community and retreat. The New Earth Institute is situated in close proximity to each of these developments.
+
+The minimum recommended overall land size for implementation of both of the master plans is 12 hectares, providing additional spaces to support any site specific conservation issues. This area may also need to be increased where land is less fertile.
+ 
+### Community (see master plan)
+
+The small Community seeding Template provides for a 30 home New Earth Community Development comprising:
+
+* 3 x Lotus domes purposed for healing, learning and misc community activities (see plans at Appendix B)
+* 6 x triple-dome Trishula 3 bed homes for open market sale (see plans at Appendix B)
+* 6 x double-dome Trishula 2 bed homes for open market sale (see plans at Appendix B)
+* 6 x single-dome Trishula studio homes for open market sale 
+* 6 x single-dome Trishula studio homes allocated for Transient Residencies
+* 6 x single-dome Trishula studio homes to be gifted, or subsidised, by the New Earth Trust to project participants and other community-worthy individuals
+
+The small Community seeding template sits on a rectangular site of 4 hectares.
+
+### Retreat (see master plan)
+
+The small Retreat template provides for a 47 bed New Earth Retreat Development comprising:
+
+* 6 x 72m2 luxury double dome accommodation units
+* 6 x 36m2 luxury dome accommodation units 
+* 35x 10m2 budget dome accommodation units
+* 1 x 130m2 Lotus dome restaurant and communal facility
+* 1 x triple-dome treatment spa facility 
+* 1 x central natural swimming pool and relaxation zone
+
+The small Retreat template sits on a rectangular site of 2 hectares, with the adjacent New Earth Institute occupying an additional 1 hectare site.
+      CONTENT
+    },{
+      link: "Large Turnkey Template",
+      title: "Large Turnkey Template",
+      content: <<-CONTENT
+The large turnkey template provides for two development master plans, for community and retreat. The New Earth Institute is incorporated within each of these master plans.
+
+The minimum recommended overall land size for implementation of both of the master plans is 60 hectares, providing additional spaces to support any site specific conservation issues. This area may also need to be increased where land is less fertile.
+ 
+### Community (see master plan)
+
+The large Community seeding Template provides for a 120 home New Earth Community Development comprising:
+
+* 1x central Toroid New Earth Institute facility
+* 6 x Lotus domes purposed as general community gathering spaces
+* 3 x Lotus dome complexes purposed for healing, learning and misc community activities 
+* 24 x quadruple-dome Trishula 4 bed homes for open market sale 
+* 24 x triple-dome Trishula 3 bed homes for open market sale 
+* 24 x double-dome Trishula 2 bed homes for open market sale 
+* 12 x double-dome Trishula 2 bed homes to be gifted, or subsidised, by the New Earth Trust to project participants and other community-worthy individuals
+* 12 x single-dome Trishula studio homes for open market sale 
+* 12 x single-dome Trishula studio homes allocated for Transient Residencies
+* 12 x single-dome Trishula studio homes to be gifted, or subsidised, by the New Earth Trust to project participants and other community-worthy individuals
+
+The large Community seeding template sits on a rectangular site of x 37.5 hectares 
+
+### Retreat (see master plan)
+
+The large Retreat template provides for a 133 bed New Earth Retreat Development comprising:
+
+* 3 x 108m2 luxury triple dome accommodation units
+* 6 x 72m2 luxury double dome accommodation units
+* 24 x 36m2 luxury dome accommodation units 
+* 100 x 10m2 budget dome accommodation units
+* 2 x 130m2 Lotus dome restaurant facilities
+* 1 x quintruple-dome treatment spa facility
+* 1 x central New Earth Institute facility 
+* 2 x natural swimming pool and relaxation zone
+
+The large Retreat template sits on a rectangular site of x 10 hectares. The Retreat template is flexible and can be easily adapted to change the proportions between luxury and budget accommodations.
+     CONTENT
+    }]
   end
 end

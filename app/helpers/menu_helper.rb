@@ -22,7 +22,7 @@ module MenuHelper
         'map' => '/locations',
         "communities" => "/locations/communities",
         "retreats" => "/locations/retreats",
-        "participation" => "/locations/participation",
+        "landowners" => "/locations/landowners",
         "protection" => "/locations/protection",
         "templates" => "/locations/templates"
       },

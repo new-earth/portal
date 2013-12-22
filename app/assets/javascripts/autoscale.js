@@ -64,19 +64,29 @@ function fitSizes() {
 		$('#header').css('background-position', 'center ' + bgOffset + 'px');
 	}
 	else {
-		maxW = 400;
+		maxW = 1600;
 		w = docW < maxW ? docW : maxW
 		
-		var lessSize = Math.min((maxW-w), 200);
+		var w1 = 512;
+		
+		var a = 1.0/(maxW-w1);
+		var factor = Math.min(1, a*(maxW-w));
+		
+		console.log("w: "+w+", a: "+a+", factor: "+factor);
+		
+		var lessSize = factor * 100;
 		var logoSize = 209 - lessSize;
 		var logoBgHeight = 238 - lessSize;
 		$('#header .logo').css('width', logoSize + 'px');
 		$('#header .logo').css('height', logoSize + 'px');
 		$('#header .logo-bg').css('background-size', 'auto ' + logoBgHeight + 'px');
 		
-		var scaleOffset = (maxW-w) * 0.7;
-		var headerHeight = 632 - scaleOffset - 1;
-		var bgOffset = 132 - scaleOffset;
+		var scaleOffset = lessSize * 0.7;
+		var shrinkHeader = 3.3;
+		//var headerHeight = 420 - scaleOffset - 1;
+		//var bgOffset = 66 - scaleOffset;
+		var headerHeight = 632 - scaleOffset*shrinkHeader - 1;
+		var bgOffset = 132 - scaleOffset*shrinkHeader;
 		$('#header').css('height', headerHeight + 'px');
 		$('#header').css('background-position', 'center ' + bgOffset + 'px');
 		
@@ -85,7 +95,8 @@ function fitSizes() {
 		w = docW < maxW ? docW : maxW
 	
 		var fontSize = 56 * w / maxW;
-		var top = 87 + 15 * (1 / (w / maxW) - 1) - scaleOffset;
+		//var top = 87 + 15 * (1 / (w / maxW) - 1) - scaleOffset;
+		var top = 80 - scaleOffset*0.5;
 		$('#header .title .text').css({
 			'font-size' : fontSize + 'px',
 			'top' : top + 'px'

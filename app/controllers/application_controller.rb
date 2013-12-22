@@ -14,20 +14,7 @@ class ApplicationController < ActionController::Base
 
   def set_section
     @section = action_name.dasherize
-    @section_name = action_name.titleize.downcase
-    add_crumb @section_name, request.path.split('/')[0..1].join('/')
 
-    # case @section
-    # when "locations"
-    #   @current_subsection = 'world map'
-    # when "institute"
-    #   @current_subsection = 'learning portal'
-    # when "enter"
-    #   @current_subsection = 'sovereignty'
-    # when 'exchange'
-    #   @current_subsection = ''
-    # when 'festival'
-    #   @current_subsection = 'culture'
-    # end
+    # add_crumb current_section_name, request.path.split('/')[0..1].join('/')
   end
 end

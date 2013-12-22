@@ -15,7 +15,7 @@
     - if current_section && controller_name == 'pages'
       .btn-group
         %a.dropdown.dropdown-toggle(data-toggle="dropdown" href="#")
-          #{current_section_name.downcase}
+          #{current_title.downcase}
         %ul.dropdown-menu(role="menu")
           - sections.each do |section, url|
             - unless section == current_section

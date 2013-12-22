@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   layout 'sections'
-  before_filter :authenticate_member!
+  before_filter :authenticate_member!, only: [:institute]
+  include InstituteHelper
   helper :exchange
 
   def locations

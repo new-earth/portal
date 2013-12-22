@@ -86,6 +86,12 @@ A roaming festival travels between new venues, creating the infrastructure for i
 
 Additionally the collective energy of 20,000 people can assist in establishing operational elements of the community, such as permaculture gardens, during the course of the event. And at the end of the festival a core group of people remain behind to populate and evolve the community. 
       CONTENT
+#     },{
+#       title: "Presentation",
+#       link: "Presentation",
+#       content: <<-CONTENT
+# [Download the Presentation](/files/new-earth-presentation.pdf)
+#       CONTENT
     }]
   end
 end

@@ -13,7 +13,9 @@
         %a(data-toggle="collapse" data-parent="#top" data-target="##{link_text.parameterize.dasherize}")= link_text
     %br
     %li
-      - if current_member.signed_declaration_at.blank?
+      - if !member_signed_in?
+        %a.btn.btn-info{href: new_member_session_path} Sign the Declaration
+      - elsif current_member.signed_declaration_at.blank?
         #declaration-button.btn.btn-primary Make Your Declaration
       - else
         .btn.btn-primary(disabled="disabled") Declaration Signed

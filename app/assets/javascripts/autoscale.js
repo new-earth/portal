@@ -42,7 +42,7 @@ function fitSizes() {
 		var a = 1.0/(maxW-w1);
 		var factor = Math.min(1, a*(maxW-w));
 		
-		console.log("w: "+w+", a: "+a+", factor: "+factor);
+		//console.log("w: "+w+", a: "+a+", factor: "+factor);
 		
 		var lessSize = factor * 200; //Math.min((maxW-w), 200);
 		var logoSize = 334 - lessSize;
@@ -72,7 +72,7 @@ function fitSizes() {
 		var a = 1.0/(maxW-w1);
 		var factor = Math.min(1, a*(maxW-w));
 		
-		console.log("w: "+w+", a: "+a+", factor: "+factor);
+		//console.log("w: "+w+", a: "+a+", factor: "+factor);
 		
 		var lessSize = factor * 100;
 		var logoSize = 209 - lessSize;

@@ -367,7 +367,7 @@ ActiveRecord::Schema.define(version: 20131221024150) do
     t.string   "given_name"
     t.string   "legal_name"
     t.string   "birth_country",          limit: 2
-    t.datetime "made_declaration_at"
+    t.datetime "signed_declaration_at"
   end
 
   add_index "member", ["confirmation_token"], name: "index_member_on_confirmation_token", unique: true, using: :btree

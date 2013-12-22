@@ -20,7 +20,6 @@ class App.Views.DeclarationForm extends Backbone.View
     @model.set(formData.member)
 
     @model.save().done =>
-      console.log 'saved'
       @$('.modal').modal('hide')
       App.Lib.flashSuccess("You have successfully signed the Declaration of Individual Sovereignty.  Congratulations!")
       $('#declaration-button').attr('disabled','disabled').text("Declaration Signed")

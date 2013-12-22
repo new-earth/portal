@@ -3,6 +3,29 @@ module InstituteHelper
     '/' + ["institute", params[:section], params[:subsection]].compact.join('/')
   end
 
+  def parse_content_links
+    body = Content.all[1].body
+    nav_links = []
+    raw_links = body.split("\r\n")
+    
+    raw_links.each do |raw_link|
+      if raw_link[0] != "\t"
+        # nav link
+        # add current raw_link data to nav_links
+        url, title = raw_link.split("\t")
+        nav_links << {url: url, title: title}
+      else
+        # subnav link
+        subnav_links = (nav_links.last[:subnav] ||= [])
+        _, url, title = raw_link.split("\t")
+
+        subnav_links << {url: url, title: title}
+      end
+      
+    end
+    nav_links
+  end
+
   def institute_law_nav
     [
       {

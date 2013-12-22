@@ -20,10 +20,16 @@ class PagesController < ApplicationController
     @page = @path.pages.where(file_name: (params[:filename]||'index')+".html").first
     @page_content = @page.primary_content.html_safe
 
-    add_crumb @page.page_title, "#{subsection_path}/#{@page.file_name}"
+    add_crumb @page.page_title.downcase, "#{subsection_path}/#{@page.file_name}"
 
-    @sidenav = institute_law_nav if params[:section] == 'law'
-    @sidenav ||= []
+    @sidenav = case params[:section]
+      when 'law' then 
+        institute_law_nav
+      when 'wellness' then
+        JSON.parse(Content.where(name: "InstituteWellnessLeftNav").first.body, symbolize_names: true)
+      else
+        []
+      end
   end
 
   def enter_new_earth

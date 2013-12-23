@@ -11,10 +11,15 @@
 // about supported directives.
 //
 //= require jquery/jquery
+//= require jquery-ui/ui/jquery-ui
 //= require jquery-ujs/src/rails
 //= require underscore/underscore
 //= require backbone/backbone
 //= require bootstrap
+//= require rangy/rangy-core
+//= require hallo/dist/hallo
+//= require showdown/compressed/showdown.js
+//= require to-markdown/src/to-markdown.js
 //= require_self
 //= require_tree .
 window.App = {

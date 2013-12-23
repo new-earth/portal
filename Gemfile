@@ -8,7 +8,6 @@ gem 'mysql2'
 
 gem 'puma'
 
-
 # -------- Assets ----------
 gem 'haml-rails'
 gem 'sass-rails', '~> 4.0.0'

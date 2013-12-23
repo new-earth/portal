@@ -25,4 +25,3 @@ $ ->
   #
   $('#loginModal').on 'shown.bs.modal', ->
     $('#loginModal .autofocus').focus()
-  

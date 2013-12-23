@@ -317,13 +317,13 @@ ActiveRecord::Schema.define(version: 20131221024150) do
   end
 
   create_table "member", force: true do |t|
-    t.integer  "status",                 limit: 2,        default: 0,  null: false
+    t.integer  "status",                 limit: 2,   default: 0, null: false
     t.string   "title",                  limit: 50
     t.string   "first_name",             limit: 30
     t.string   "middle_name",            limit: 30
     t.string   "last_name",              limit: 30
     t.string   "company",                limit: 50
-    t.string   "email",                  limit: 128
+    t.string   "email_address",          limit: 128
     t.string   "email_address_2",        limit: 128
     t.string   "address",                limit: 50
     t.string   "address2",               limit: 50
@@ -337,44 +337,39 @@ ActiveRecord::Schema.define(version: 20131221024150) do
     t.string   "fax",                    limit: 20
     t.string   "skype",                  limit: 50
     t.string   "facebook",               limit: 50
-    t.binary   "password",               limit: 16777215
     t.text     "bio"
     t.text     "skills"
     t.text     "interests"
     t.integer  "community_coordinator",  limit: 1
-    t.integer  "declaration_signed",     limit: 1,        default: 0
     t.date     "date_joined"
     t.date     "date_suspended"
     t.datetime "date_created"
     t.datetime "date_updated"
     t.integer  "created_by_user_id"
     t.integer  "updated_by_user_id"
-    t.string   "encrypted_password",                      default: "", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "email",                                          null: false
+    t.string   "encrypted_password",     limit: 128,             null: false
+    t.string   "confirmation_token",     limit: 128
+    t.string   "remember_token",         limit: 128,             null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                           default: 0,  null: false
+    t.integer  "sign_in_count",                      default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "given_name"
     t.string   "legal_name"
     t.string   "birth_country",          limit: 2
     t.datetime "signed_declaration_at"
   end
 
-  add_index "member", ["confirmation_token"], name: "index_member_on_confirmation_token", unique: true, using: :btree
-  add_index "member", ["email"], name: "email_address", unique: true, using: :btree
-  add_index "member", ["email"], name: "index_member_on_email", unique: true, using: :btree
+  add_index "member", ["email"], name: "index_member_on_email", using: :btree
   add_index "member", ["first_name", "last_name", "id"], name: "index_first_and_last_name", using: :btree
-  add_index "member", ["reset_password_token"], name: "index_member_on_reset_password_token", unique: true, using: :btree
+  add_index "member", ["remember_token"], name: "index_member_on_remember_token", using: :btree
   add_index "member", ["status"], name: "status", using: :btree
 
   create_table "member_account", force: true do |t|

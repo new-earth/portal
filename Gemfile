@@ -27,6 +27,11 @@ gem 'country_select', '~> 1.2.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+# Markdown
+gem 'maruku'
+gem 'redcarpet'
+gem 'rouge'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

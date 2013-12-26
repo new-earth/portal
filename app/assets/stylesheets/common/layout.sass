@@ -1,0 +1,395 @@
+*
+  font-family: 'Bauhaus', Verdana
+
+html, body
+  margin: 0 0
+  height: 100%
+  line-height: inherit
+  background: #010e16 // footer color
+
+a
+  color: inherit //!important
+  text-decoration: none //!important
+#top-menu .right a, #header a, #bottom-nav a, #footer a
+  color: inherit !important
+  text-decoration: none !important
+
+#wrap
+  color: white
+
+.inner-wrap
+  @media (min-width: 1024px)
+    margin: 0 auto
+    max-width: 1024px
+  @media (min-width: 1126px)
+    max-width: 90%
+  @media (min-width: 1680px)
+    max-width: 1680px
+
+.clear
+  float: left
+  clear: both
+.inline-block
+  display: inline-block
+
+#top-menu
+  // height: 38px
+  display: table
+  width: 100%
+  padding-top: 3px
+  // margin-bottom: -7px
+  /*** background: <SCHEME> ***/
+
+  .right
+    display: inline-table
+    float: right
+    padding-top: 6px
+    padding-bottom: 2px
+    line-height: 30px
+    font-size: 19px
+
+    *
+      display: inline-block
+      line-height: 8px
+      //vertical-align: middle      
+    a
+      padding: 8px 20px 0 20px
+      &:hover
+        //text-decoration: underline !important
+        color: #323232 !important
+    a:last-child
+      padding-right: 20px
+    .email
+      padding: 8px 20px 0 10px
+    .login
+      border-left: 1px solid rgba(255,255,255,0.4)
+      //line-height: 14px
+
+  .dropdown
+    float: left
+    padding: 2px 34px 0 6px
+    font-size: 28px
+    background: image-url('icons/dropdown_arrow.png') no-repeat
+    background-position: right 5px
+    text-decoration: none
+    color: white
+    &:hover
+      color: inherit
+
+$bg-offset: 132px
+
+#header
+  position: relative
+  overflow: hidden
+  height: 500px + $bg-offset
+  background: center $bg-offset no-repeat
+  /*** background-image: <SCHEME> ***/
+
+  .logo-bg
+    width: 100%
+    height: 238px
+    background: top center no-repeat
+    /*** background-image: <SCHEME> ***/
+
+  .logo
+    position: absolute
+    top: 18px
+    left: 0
+    right: 0
+    z-index: 1
+    width: 209px
+    height: 209px
+    margin: 0 auto
+    border-radius: 50%
+    background: image-url('nep_logo_209px.png')
+    background-size: 100%
+    box-shadow: 0px 0px 25px rgba(255,255,255,0.8)
+    
+    -webkit-transition: 0.0s
+    -moz-transition: 0.0s
+    -o-transition: 0.0s
+    transition: 0.0s
+
+  .inner-wrap.title
+    position: relative
+    top: -238px
+
+  .text
+    position: absolute
+    top: 87px
+    padding: 0 6px
+    font-size: 56px
+  .left
+    left: 0px
+  .right
+    right: 0px
+    margin-right: 100px
+
+  .page-icon
+    position: absolute
+    top: 55px
+    right: 20px
+    width: 140px
+    height: 140px
+    background: center no-repeat
+    /*** background-image: <SCHEME> ***/
+    background-size: contain
+
+  .nav-bar
+    position: absolute
+    bottom: 0px
+    width: 100%
+    font-size: 30px
+    /*** background: <SCHEME> ***/
+    .nav
+      a
+        display: inline-block
+        padding: 0 30px
+        line-height: 63px
+      a:first-child
+        padding-left: 6px
+      a:hover
+        background: rgba(50,50,50,0.3)
+        // text-shadow: 0 0 10px white
+
+#breadcrumbs
+  height: 39px
+  padding: 0 6px
+  line-height: 39px
+  font-size: 18px
+  /*** background: <SCHEME> ***/
+
+
+
+
+#content
+  display: inline-block
+  width: 100%
+  padding: 30px 6px
+  font-size: 20px
+  color: black
+  background: white
+
+
+
+
+#bottom-nav
+  padding-top: 40px
+  padding-bottom: 20px
+  /*** background: <SCHEME> ***/
+  font-size: 42px
+
+  .icons-wrap
+    display: inline-block
+    width: 100%
+    white-space: nowrap
+
+    a
+      display: inline-block
+      float: left
+      width: 20%
+      line-height: 230px
+      text-align: center
+      white-space: nowrap
+      background: center no-repeat
+      text-shadow: 0px 1px 2px black
+      
+      @media (max-width: 1222px)
+        background-size: contain    // keep images sharp
+      
+      transition: text-shadow 0.2s ease
+      +transition(0.25s)
+      +transform(scale(0.95))
+      &:hover
+        text-shadow: 0 0 10px white
+        +transform(scale(1.0))
+
+    .locations
+      background-image: image-url('nep-icons/locations_icon_big.png')
+    .institute
+      background-image: image-url('nep-icons/institute_icon_big.png')
+    .new_earth
+      background-image: image-url('nep-icons/new_earth_icon_big.png')
+    .exchange
+      background-image: image-url('nep-icons/exchange_icon_big.png')
+    .festival
+      background-image: image-url('nep-icons/festival_icon_big.png')
+
+#footer
+  display: inline-block
+  position: relative
+  width: 100%
+  padding-left: 6px
+  padding-bottom: 6px
+  color: #787878
+  /*** background: <SCHEME> ***/
+ 
+  .left, .connect, .right
+    padding-top: 16px
+
+  .left
+    float: left
+  .spacer
+    float: left
+    width: 144px
+  .connect
+    @media (min-width: 750px)
+      position: absolute
+    left: 0
+    right: 0
+    margin: 0 auto
+    padding-left: 5px
+    width: 144px
+
+    a
+      display: inline-block
+      width: 20%
+      height: 17px
+      margin: 0 -2px
+      background: center no-repeat
+      background-size: contain
+      opacity: 0.5
+      &:hover
+        opacity: 1
+    a.youtube
+      background-image: image-url('social/youtube.png') 
+    a.vimeo
+      background-image: image-url('social/vimeo.png') 
+    a.google
+      background-image: image-url('social/google_plus.png') 
+    a.twitter
+      background-image: image-url('social/twitter.png') 
+    a.facebook
+      background-image: image-url('social/facebook.png') 
+
+  .right
+    float: right
+    a
+      padding: 0 20px
+      @media (max-width: 900px)
+        padding: 0 8px
+      border-left: 1px solid #787878
+      &:hover
+        color: white !important
+    a:first-child
+      border-left: none
+
+
+
+
+//
+// STANDARD / FALLBACK SCHEME
+//
+
+body
+  #top-menu
+    background: #00bfe7
+  #header
+    height: 500px + $bg-offset
+    background-position: center $bg-offset
+    background-image: image-url('banner-tropical-island.jpg')
+    background-color: $powder-blue
+    .logo-bg
+      background-image: image-url('vector/nep_logo_bg_startpage.svg') 
+    .nav-bar
+      background: rgba(0, 80, 103, 0.75)
+  #breadcrumbs
+    background: $powder-blue 
+  #bottom-nav
+    +linear-gradient(#002d3e, #000e1a)
+  #footer
+    background: #010e16
+
+
+//
+// SECTION SCHEMES
+//
+
+
+#locations #header 
+  background-image: image-url('header-images/image_06_small_width.jpg')
+#institute #header
+  background-image: image-url('header-images/image_07_small_width.jpg')
+#enter-new-earth #header
+  background-image: image-url('header-images/image_02_small_width.jpg')
+#exchange #header
+  background-image: image-url('header-images/image_01_small_width.jpg')
+#festival #header
+  background-image: image-url('banner-riverside.jpg')
+
+#locations #header .logo-bg
+  background-image: image-url('vector/nep_logo_bg_locations.svg') 
+#institute #header .logo-bg
+  background-image: image-url('vector/nep_logo_bg_institute.svg') 
+#enter-new-earth     #header .logo-bg
+  background-image: image-url('vector/nep_logo_bg_ne_portal.svg') 
+#exchange  #header .logo-bg
+  background-image: image-url('vector/nep_logo_bg_exchange.svg') 
+#festival  #header .logo-bg
+  background-image: image-url('vector/nep_logo_bg_festivals.svg') 
+
+#locations #top-menu
+  background: #00bfe7 
+#institute #top-menu
+  background: #00a2ff 
+#enter-new-earth     #top-menu
+  background: #69c1ff 
+#exchange  #top-menu
+  background: #c0844b 
+#festival  #top-menu
+  background: #7b60c8 
+
+#locations #header .page-icon
+  background-image: image-url('nep-icons/locations-phi-big.png') 
+#institute #header .page-icon
+  background-image: image-url('nep-icons/institute-lotus-big.png') 
+#enter-new-earth     #header .page-icon
+  background-image: image-url('nep-icons/new-earth-toroid-big.png') 
+#exchange  #header .page-icon
+  background-image: image-url('nep-icons/exchange-trishula-big.png') 
+#festival  #header .page-icon
+  background-image: image-url('nep-icons/festival-nautilus-big.png') 
+
+#locations #header .nav-bar
+  background: rgba(0, 80, 103, 0.75) // #005067
+#institute #header .nav-bar
+  background: rgba(0, 4, 96, 0.75) // #000460 
+#enter-new-earth     #header .nav-bar
+  background: rgba(0, 115, 213, 0.75) // #0073d5 
+#exchange  #header .nav-bar
+  background: rgba(64, 42, 21, 0.75) // #402a15 
+#festival  #header .nav-bar
+  background: rgba(40, 34, 90, 0.75) // #28225a
+
+#locations #breadcrumbs
+  background: #00bfe7 
+#institute #breadcrumbs
+  background: #00a2ff 
+#enter-new-earth     #breadcrumbs
+  background: #69c1ff 
+#exchange  #breadcrumbs
+  background: #c0844b 
+#festival  #breadcrumbs
+  background: #7b60c8 
+
+#locations #bottom-nav
+  +linear-gradient(#002d3e, #000e1a)
+#institute #bottom-nav
+  +linear-gradient(#0a0147, #0a021d)
+#enter-new-earth     #bottom-nav
+  +linear-gradient(#0a0147, #0a021d)
+#exchange  #bottom-nav
+  +linear-gradient(#37332f, #1a1512)
+#festival  #bottom-nav
+  +linear-gradient(#140d48, #070521)
+
+#locations #footer
+  background: #010e16 
+#institute #footer
+  background: #010216 
+#enter-new-earth     #footer
+  background: #010216 
+#exchange  #footer
+  background: #0f0a06 
+#festival  #footer
+  background: #08060f 

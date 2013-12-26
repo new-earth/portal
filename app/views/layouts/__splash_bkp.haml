@@ -1,0 +1,59 @@
+!!!
+%html
+  %head
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    %title Welcome to the New Earth
+    = init_static_assets "base"
+    :coffeescript
+      $ ->
+        player = new App.Views.VimeoModal(el: '#video-modal', videoSrc: "//player.vimeo.com/video/70703279?autoplay=1")
+
+    = yield :head
+
+  %body#splash
+    = render 'layouts/top_menu_bkp'
+    = render 'layouts/login_modal'
+
+    %header
+      .title-row
+
+        .logo-wrapper
+          .logo
+
+      .spacer
+        %a.video(href="#" data-toggle="modal" data-target="#video-modal")
+          .icon
+          %span watch the video
+          
+      .modal.fade#video-modal(tabindex="-1" role="dialog" aria-labelledby="video-modal-label" aria-hidden="true")
+        .modal-dialog
+          .modal-content
+            .modal-header
+              %button.close(type="button" data-dismiss="modal" aria-hidden="true")
+                &times;
+            .modal-body
+              %iframe#video-iframe(src="" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen)
+      
+      %nav#main-menu.h5.navbar-wrapper
+        .navbar-collapse
+          .mobile-nav
+            %a{href: "#"}
+              %i.icon-reorder
+              Menu
+          %ul.nav.navbar-nav.desktop-nav
+            %li.locations
+              %a{href: locations_path} locations
+            %li.institute
+              %a{href: institute_path} institute
+            %li.new-earth
+              %a{href: enter_path} enter new earth
+            %li.exchange
+              %a{href: exchange_path} bank exchange
+            %li.festival
+              %a{href: festival_path} festival
+        
+        .clearfix
+
+    = yield
+
+    = render 'layouts/footer_bkp'

@@ -1,9 +1,9 @@
 
 set :application, "portal"
-set :repo_url, "git@newearth1.new-earth-project.org:portal.git"
+set :repo_url, "git@github.com:new-earth/portal.git"
 
-# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
-set :branch, "master"
+ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
+# set :branch, "master"
 
 set :deploy_to, '/srv/apps/portal'
 set :scm, :git
@@ -13,11 +13,13 @@ set :log_level, :debug
 set :pty, true
 
 set :linked_files, %w{config/database.yml}
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system vendor/assets/components}
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 set :keep_releases, 5
 
+
+set :default_environment, { 'PATH' => "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" }
 
 # set :use_sudo, false
 # set :rails_env, "production"
@@ -32,7 +34,7 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      execute :sh, shared_path.join('puma/puma_phased_restart.sh')
+      execute :sh, shared_path.join('puma/puma_phased_restart.sh').to_s + " || sudo monit start portal.puma"
     end
   end
 

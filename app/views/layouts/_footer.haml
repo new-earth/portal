@@ -1,17 +1,30 @@
-%footer
-  %ul#bottom-menu
-    %li.spacer
-    %li.locations
-      %a{href: '#'} locations 
-    %li.institute
-      %a{href: institute_path} institute
-    %li.new-earth
-      %a{href: enter_path} new earth
-    %li.exchange
-      %a{href: exchange_path} exchange
-    %li.festival
-      %a{href: festival_path} festival
-    %li.spacer
-
-  #bottom-bar
-    © New Earth Project 2013
+#bottom-nav
+  .inner-wrap
+    .icons-wrap
+      %a.locations{href: locations_path} locations
+      %a.institute{href: institute_path} institute
+      %a.new_earth{href: enter_path} new earth
+      %a.exchange{href: exchange_path} exchange
+      %a.festival{href: festival_path} festival
+#footer
+  .inner-wrap
+    .connect
+      %a.youtube{href: "#"}
+      %a.vimeo{href: "#"}
+      %a.google{href: "#"}
+      %a.twitter{href: "#"}
+      %a.facebook{href: "#"}
+    .right
+      %a{href: "#"}
+        contact
+      %a{href: "#"}
+        press
+      %a{href: "#"}
+        news
+      %a{href: "#"}
+        log in / register
+    .left
+      © New Earth Project 2013
+    .spacer
+      &nbsp;
+    .clear

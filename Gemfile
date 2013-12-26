@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '4.0.2'
 
 # Use mysql as the database for Active Record
 gem 'mysql2'
@@ -20,7 +20,10 @@ gem 'haml_coffee_assets'
 gem 'bourbon'
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
 gem 'font-awesome-rails'
+gem 'crummy', github: 'zachinglis/crummy'
 # --------------------------
+
+gem 'redcarpet'
 
 gem 'country_select', '~> 1.2.0'
 
@@ -37,13 +40,14 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0'
+# Authentication
+gem 'devise'
 
 group :development do
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
   gem 'pry-rails'
+  gem 'letter_opener'
 end
 
 group :test do

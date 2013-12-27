@@ -1,8 +1,5 @@
 source 'https://rubygems.org'
 
-# Set Ruby version
-ruby '2.0.0'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
@@ -11,9 +8,6 @@ gem 'mysql2'
 
 gem 'puma'
 
-# following two gems reccomended/required for ability to test deploy to heroku for testing/group dev
-gem 'foreman'
-gem 'rails_12factor'
 
 # -------- Assets ----------
 gem 'haml-rails'
@@ -41,10 +35,6 @@ end
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
-
-group :production do
-  gem 'mysql'
-end
 
 group :development do
   gem 'capistrano-rails'

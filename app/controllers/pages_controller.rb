@@ -1,38 +1,44 @@
 class PagesController < ApplicationController
-  before_filter :set_section
   layout 'sections'
+  helper :exchange
+  #before_action :authenticate_member!
+  before_action :set_sects
 
-  def locations
-  end
+  @@SECTIONS = ['locations', 'enter', 'institute', 'exchange', 'festival']
+  @@SECTION_REMAPS = {enter: 'enter new earth'}
 
   def index
     @path = Path.where(path: "/#{params[:path]}/").first || not_found
     @page_content = @path.page.primary_content.html_safe
   end
 
+  def locations
+  end
+
   def institute
   end
 
-  def enter_new_earth
+  def enter
   end
 
-  def bank_exchange
+  def exchange
   end
 
   def festival
   end
-  
 
   protected
 
+  def set_sects
+    set_section
+
+    section = @@SECTION_REMAPS[action_name] || action_name
+    @sects = OpenStruct.new(slug: action_name.gsub(' ', '-').downcase, section: section.titleize, subslug: nil, subsection: nil)
+    add_crumb @sects.section
+  end
+
   def set_section
     @section = params[:section]
-
-    # Returns a titleized transform of the current action named for use with breadcrumbs. -JB
-    #
-    # Note: Would someone more familiar with the current use for @section check to see if the code 
-    # below could be reused for that purpose also? Afterwards feel free to remove this note, thx! -JB
-    @this_section = action_name.titleize
-    add_crumb @this_section
   end
+  
 end

@@ -1,15 +1,43 @@
-%nav#main-menu.navbar-wrapper(data-spy="affix" data-offset-top="390")
-  .navbar-collapse
+- case current_layout
 
-    .mobile-nav
-      %a{"data-status"="plus", "href"="#"}
-        %i.fa-bars
-        Menu
+- when 'sections'
 
-    %ul.nav.navbar-nav.desktop-nav
-      - current_menu.each do |menu_name, url|
-        %li
-          %a{href: url}= menu_name
+  %nav#main-nav.navbar.navbar-default{role: 'navigation'}
+    .navbar-inner
+      .navbar-header
+        %button.navbar-toggle{type: 'button', 'data-toggle' => 'collapse', 'data-target' => '#main-nav-collapse'}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+      #main-nav-collapse.collapse.navbar-collapse
+        %ul.nav.navbar-nav
+          - current_menu.each do |menu_name, url|
+            %li
+              %a{href: url}= menu_name
+        .search
 
 
-  .clearfix
+- when 'splash'
+
+  %nav#main-menu.navbar.navbar-default{role: 'navigation'}
+    .navbar-inner
+      .navbar-header
+        %button.navbar-toggle{type: 'button', 'data-toggle' => 'collapse', 'data-target' => '#main-menu-collapse'}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+      #main-menu-collapse.collapse.navbar-collapse
+        %ul.nav.navbar-nav
+          %li.locations
+            %a{href: locations_path} locations
+          %li.institute
+            %a{href: institute_path} institute
+          %li.new-earth
+            %a{href: enter_path} enter new earth
+          %li.exchange
+            %a{href: exchange_path} exchange
+          %li.festival
+            %a{href: festival_path} festival
+

@@ -4,7 +4,6 @@
     %title Welcome to the New Earth
     %meta{content: "text/html; charset=US-ASCII", "http-equiv" => "Content-Type"}/
     %meta{content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0", name: "viewport"}/
-    
     = init_static_assets "base"
     
     :coffeescript
@@ -18,13 +17,11 @@
       %header
         = render 'layouts/top_menu'
         = render 'layouts/login_modal'
-      
-        #flash
-          - flash.each do |key, value|
-            .flash{class: key}= value
+        = render 'layouts/header'
+        = render 'layouts/main_menu'
+        = yield :menu
   
-        = render 'layouts/header_splash'
-  
+      = flash_messages
       = yield
   
       = render 'layouts/footer'

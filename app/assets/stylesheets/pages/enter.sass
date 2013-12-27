@@ -1,0 +1,53 @@
+#enter
+
+  nav#sidenav
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+    font-weight: 300
+    +make-sm-column(3)
+    width: 230px !important
+    ul
+      background-color: #f6f6f6
+      margin-bottom: 1.3em
+      &.affix, &.affix-top
+        width: 200px
+        top: 20px
+      &.affix-top
+        position: static  
+      &.affix
+        position: fixed
+      li
+        list-style-type: none
+        & > a
+          padding: .3em .4em
+        &.active > a, & > a:hover
+          box-shadow: 2px 0px 0px 0px #66A5E9
+          color: #fff
+        &.active > a
+          font-weight: 400
+    @include breakpoint(small)
+      display: none
+
+  section.main-content
+    +make-sm-column(9)
+    margin-left: 220px !important
+    width: auto !important
+    float: none !important
+    @include breakpoint(small)
+      margin-left: auto !important
+
+    .panel-heading
+      margin-top: 0
+      background-color: rgba($powder-blue, 0.4)
+      padding: 10px 20px 2px 20px
+
+    article
+      margin: 0.6em 0 0.6em 0
+      h2
+        font-weight: 400
+        background-color: #f6f6f6
+        font-size: 2em
+        margin: 0 auto .2em auto
+        padding: .2em .4em
+      p
+        margin-left: .6em
+

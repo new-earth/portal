@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  include Clearance::Controller
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -7,6 +6,7 @@ class ApplicationController < ActionController::Base
   add_crumb "<i class='icon-home'></i>".html_safe, '/'
 
   def not_found
-    raise ActionController::RoutingError.new('Not Found')
+    raise ActionController::RoutingError.new("Not Found! action: #{action_name} in controller: #{controller_name}")
   end
+
 end

@@ -14,9 +14,11 @@
 //= require jquery-ujs/src/rails
 //= require underscore/underscore
 //= require backbone/backbone
+//= require jquery.lightbox
 //= require bootstrap
 //= require_self
 //= require_tree .
 window.App = {
   Views: {}
 }
+

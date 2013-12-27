@@ -1,29 +1,22 @@
 !!!
 %html
   %head
-    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    %title New Earth Project - #{current_title}
+    %title New Earth Project | #{this_section}
+    %meta{content: "text/html; charset=US-ASCII", "http-equiv" => "Content-Type"}/
+    %meta{content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0", name: "viewport"}/
     = init_static_assets "base"
     = yield :head
-  %body{:id => current_section, :class => current_section, 'data-spy'=>'scroll', 'data-target'=>'#sidenav-wrapper'}
 
-   = render partial: 'layouts/top_menu'
-
-    %header#main
-      .title-row
-        .title
-          = current_title
-        .logo-wrapper
-          %a.logo{href: root_path}
-        .section
-          %span.section-text= current_subtitle
-          %i.institute-icon
-
-
-      = yield :menu
+  %body{id: section_slug, class: [section_slug, subsection_slug]}
+   
+    = render partial: 'layouts/top_menu'
+    = render partial: 'layouts/header'
+    = yield :menu
     = render_breadcrumbs
 
-    .container
-      = yield
+    #content.container
+      .inner-wrap
+        = flash_messages
+        = yield
 
     = render 'layouts/footer'

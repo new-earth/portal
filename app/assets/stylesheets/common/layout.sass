@@ -5,38 +5,74 @@ html, body
   margin: 0 0
   line-height: inherit
 
-#top-menu.navbar.top a, .nav-bar a, footer a
-  color: inherit !important
-  text-decoration: none !important
+
+
+
+
 #bottom-nav a
   text-decoration: none !important
 
-  
-
-.inner-wrap
-  @media (min-width: 1024px)
-    margin: 0 auto
-    max-width: 1024px
-  @media (min-width: 1126px)
-    max-width: 90%
-  @media (min-width: 1680px)
-    max-width: 1680px
-
-#top-menu
-  // height: 38px
-  display: inline-block
+#top-nav
+  display: block
+  font-size: 1.2em
   width: 100%
-  margin-bottom: -7px
-  /*** background: <SCHEME> ***/
-    a
-      display: inline-block
-      padding: 0 30px
-    .login
-      border-left: 1px solid white
-      line-height: 14px
-  .dropdown
-    padding: 2px 34px 0 6px
+  margin-bottom: 0
+  border-radius: 0
+  2px solid 
+  padding: 0 15px
+  a
+    display: inline-block
+    padding: 15px
+    color: #fff !important
+    line-height: normal
+    &:hover, &.open:hover
+      background: rgba(50, 50, 50, 0.3)
+  .navbar-nav
+    @include breakpoint(medium)
+      margin: 0
+  .navbar-right
+    float: right 
+    & > li
+      float: left 
+  .navbar-left
+    float: left
+body#institute nav#top-nav
+  background-color: rgba(0, 4, 96, 0.74902)
   
+
+#main-nav, #main-menu
+  position: absolute
+  bottom: 0px
+  width: 100%
+  background: rgba(0, 80, 103, 0.75)
+  &.navbar
+    border: none
+    margin-bottom: 0
+  .navbar-nav
+    margin: 0 auto
+    text-align: center
+    & > li > a
+      display: inline-block
+      color: #fff
+      font-size: 2em
+      padding: 25px
+      &:hover
+        background: rgba(50,50,50,0.3)
+      @include breakpoint(medium)
+        font-size: 1.7em
+        padding: 20px
+      @include breakpoint(small)
+        font-size: 1em
+        padding: 10px
+
+
+#main-nav, #main-menu
+  #main-nav-collapse.navbar-collapse.in
+    .navbar-nav
+      margin: 10px -15px !important
+    a
+      display: block
+
 
 $bg-offset: 132px
 
@@ -44,15 +80,42 @@ $bg-offset: 132px
   color: white
   position: relative
   overflow: hidden
-  height: 500px + $bg-offset
+  height: 500px
   background: center $bg-offset no-repeat
+  background-position: center bottom
   /*** background-image: <SCHEME> ***/
+  @include breakpoint(large)
+    height: 450px
+  @include breakpoint(medium)
+    height: 400px
+  @include breakpoint(small)
+    height: 250px
+
 
   .logo-bg
     width: 100%
     height: 238px
     background: top center no-repeat
+    background-size: 3000px 238px
     /*** background-image: <SCHEME> ***/
+    @include breakpoint(medium)
+      background-position: center bottom 
+      height: 220px
+      background-size: 2800px 220px
+    @include breakpoint(small)
+      background-image: none !important
+      height: 60px
+  #splash .logo-bg
+    width: 3000px
+    height: 238px
+    background-size: 3000px 238px
+#splash .logo-bg
+  width: 100%
+  height: 445px
+  background-size: 3000px 445px
+  background-position: 50% 0
+  position: relative
+
 
   .logo
     position: absolute
@@ -60,27 +123,58 @@ $bg-offset: 132px
     left: 0
     right: 0
     z-index: 1
-    width: 209px
-    height: 209px
+    width: 195px
+    height: 195px
     margin: 0 auto
     border-radius: 50%
     background: image-url('nep_logo_209px.png')
-    background-size: 100%
+    background-size: 195px
     box-shadow: 0px 0px 25px rgba(255,255,255,0.8)
-    
-    -webkit-transition: 0.0s
-    -moz-transition: 0.0s
-    -o-transition: 0.0s
-    transition: 0.0s
+    @include breakpoint(medium)
+      width: 175px
+      height: 175px
+      background-size: 175px 175px
+    @include breakpoint(small)
+      background-image: none !important
+      width: 100%
+      height: auto
+      position: absolute
+      top: 0
+      left: 0
+      margin: 15px
+      color: #000 !important
+      font-size: 48px
+      font-weight: bold
+      opacity: 0.5
+      background: #fff
+      border-radius: 0
+#splash .logo
+  display: inline-block
+  width: 334px
+  height: 334px
+  background-size: 334px 334px
+
+
+
 
   .inner-wrap.title
+    padding: 0 25px
     position: relative
-    top: -150px
-    font-size: 56px
+    top: -175px
+    font-size: 3.0em
     .pull-left
       left: 0px
     .pull-right
       right: 0px
+    @include breakpoint(large)
+      font-size: 2.5em
+      top: -165px
+    @include breakpoint(medium)
+      font-size: 2.2em
+      top: -150px
+    @include breakpoint(small)
+      display: none
+
   
   .page-icon
     position: absolute
@@ -92,29 +186,18 @@ $bg-offset: 132px
     /*** background-image: <SCHEME> ***/
     background-size: contain
 
-  .nav-bar
-    position: absolute
-    bottom: 0px
-    width: 100%
-    font-size: 30px
-    /*** background: <SCHEME> ***/
-    .nav
-      a
-        display: inline-block
-        padding: 0 30px
-        line-height: 63px
-      a:first-child
-        padding-left: 6px
-      a:hover
-        background: rgba(50,50,50,0.3)
-        // text-shadow: 0 0 10px white
+.breadcrumb
+  // font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  border-top: 3px solid #66A5E9
+  border-bottom-right-radius: 5px
+  border-bottom-left-radius: 5px
+  & > li, & > .active
+    font-size: 1.3em
+    font-weight: 300
+    color #555
+    @include breakpoint(small)
+      display: none
 
-#breadcrumbs
-  height: 39px
-  padding: 0 6px
-  line-height: 39px
-  font-size: 18px
-  /*** background: <SCHEME> ***/
 
 #content
   display: inline-block
@@ -211,7 +294,6 @@ footer
     a.facebook
       background-image: image-url('social/facebook.png') 
   .pull-right
-    float: right
     a
       padding: 0 20px
       border-left: 1px solid #787878
@@ -227,18 +309,7 @@ footer
 // STANDARD / FALLBACK SCHEME
 //
 
-body
-  #top-menu
-    background: #00bfe7
-  #header
-    height: 500px + $bg-offset
-    background-position: center $bg-offset
-    background-image: image-url('banner-tropical-island.jpg')
-    background-color: $powder-blue
-    .logo-bg
-      background-image: image-url('vector/nep_logo_bg_startpage.svg') 
-    .nav-bar
-      background: rgba(0, 80, 103, 0.75)
+  
   #bottom-nav
     +linear-gradient(#002d3e, #000e1a)
   footer
@@ -254,7 +325,7 @@ body
   background-image: image-url('banner-riverside.jpg')
 #institute #header
   background-image: image-url('banner-riverside.jpg')
-#enter     #header
+#enter #header
   background-image: image-url('banner-riverside.jpg')
 #exchange  #header
   background-image: image-url('banner-riverside.jpg')
@@ -272,15 +343,15 @@ body
 #festival  #header .logo-bg
   background-image: image-url('vector/nep_logo_bg_festivals.svg') 
 
-#locations #top-menu
+#locations #top-nav
   background: #00bfe7 
-#institute #top-menu
+#institute #top-nav
   background: #00a2ff 
-#enter     #top-menu
+#enter     #top-nav
   background: #69c1ff 
-#exchange  #top-menu
+#exchange  #top-nav
   background: #c0844b 
-#festival  #top-menu
+#festival  #top-nav
   background: #7b60c8 
 
 #locations #header .page-icon
@@ -294,27 +365,16 @@ body
 #festival  #header .page-icon
   background-image: image-url('nep-icons/festival-nautilus-big.png') 
 
-#locations #header .nav-bar
+#locations #main-nav
   background: rgba(0, 80, 103, 0.75) // #005067
-#institute #header .nav-bar
+#institute #main-nav
   background: rgba(0, 4, 96, 0.75) // #000460 
-#enter     #header .nav-bar
+#enter     #main-nav
   background: rgba(0, 115, 213, 0.75) // #0073d5 
-#exchange  #header .nav-bar
+#exchange  #main-nav
   background: rgba(64, 42, 21, 0.75) // #402a15 
-#festival  #header .nav-bar
+#festival  #main-nav
   background: rgba(40, 34, 90, 0.75) // #28225a
-
-#locations #breadcrumbs
-  background: #00bfe7 
-#institute #breadcrumbs
-  background: #00a2ff 
-#enter     #breadcrumbs
-  background: #69c1ff 
-#exchange  #breadcrumbs
-  background: #c0844b 
-#festival  #breadcrumbs
-  background: #7b60c8 
 
 #locations #bottom-nav
   +linear-gradient(#002d3e, #000e1a)
@@ -327,7 +387,7 @@ body
 #festival  #bottom-nav
   +linear-gradient(#140d48, #070521)
 
-#locations 
+#locations footer
   background: #010e16 
 #institute footer
   background: #010216 
@@ -337,3 +397,7 @@ body
   background: #0f0a06 
 #festival  footer
   background: #08060f 
+
+
+
+

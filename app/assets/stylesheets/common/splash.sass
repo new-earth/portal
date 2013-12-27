@@ -47,19 +47,6 @@ $menu-height: 72px
           border-radius: 75px
         span
           text-shadow: 0px 1px 1px black
-          
-    #video-modal
-      text-align: center
-      .modal-dialog
-        display: list-item // make modal fit to video size
-        padding-top: 65px
-        .modal-header
-          padding: 5px
-          border-bottom: none
-        .modal-content
-          background-color: #030303
-          .modal-body
-            padding: 10px
     .nav-bar
       background: rgba(0, 80, 103, 0.75) // #005067
   #bottom-nav
@@ -69,110 +56,45 @@ $menu-height: 72px
   #main-quote
     color: #333333
 
-////////////
-
-#splash
-  header
-    //background: image-url('vector/nep_logo_bg_startpage.svg') center -35px no-repeat, image-url('banner-tropical-island.jpg') top center no-repeat
-
-    //.title-row
-    //  clear: both
-    //  height: $title-row-height
-    
-    // .logo-wrapper
-      // +make-sm-column(8)
-      // +make-sm-column-offset(2)
-      // padding-top: $logo-offset
-      // 
-      // .logo
-        // width: 334px
-        // height: 334px
-        // background: image-url('nep_logo_334px.png')
-        // box-shadow: 0 -5px 80px rgba(#eee, 0.9)
-
-    #main-menu
-      font-size: 28px
-      background: $powder-blue
-      box-shadow: 0px 2px 10px rgba(50, 50, 50, 0.75)
-      .navbar-collapse
-        padding-left: 0
-        padding-right: 0
-        @media (min-width: 768px)
-          display: flex   // center icons (quick fix)
-        @media (max-width: 513px)
-          padding-top: 15px
-      .mobile-nav
-        margin-left: 15px
-        margin-bottom: 10px
-        a
-          color: #fff
-        a:hover, a:focus
-          text-decoration: none
-          color: #ddd
-        @media (min-width: 512px) // 1050
-          display: none
-        @media (max-width: 513px) // 1049
-          display: block
- 
-      .desktop-nav
-        margin-left: 15px
-        @media (min-width: 512px)
-          display: block
-        @media (max-width: 513px)
-          display: none
-          background-color: #eee
-          float: none
-          border-bottom: 10px solid $powder-blue
-          & > li
-            width: 100%
-            text-align: left
-            font-size: .7em !IMPORTANT
-            a
-              color: $powder-blue !IMPORTANT
-            &:hover, &:focus
-              background-color: $powder-blue-lighter
-              padding-left: .5em
-              a
-                color: #fff !IMPORTANT
-            &:active
-              background-color: $powder-blue
-
-      .navbar-nav
-        font-size: 1.3em
-        margin: 0 auto
-        text-align: center
-        & > li > a
-          color: $light-foreground
-          line-height: inherit
-          &:hover
-            background-color: darken($powder-blue, 20%)
-        @media (min-width: 768px) // 1362
-          font-size: 1.15em
-          & > li > a
-            line-height: $menu-height
-            padding-left: 89px
-            background-position: left center
-            background-repeat: no-repeat
-          // .exchange a
-            // background-image: image-url('nep-icons/exchange-trishula-small.png')
-          // .festival a
-            // background-image: image-url('nep-icons/festival-nautilus-small.png')
-          // .institute a
-            // background-image: image-url('nep-icons/institute-lotus-small.png')
-          // .locations a
-            // background-image: image-url('nep-icons/locations-phi-small.png')
-          // .new-earth a
-            // background-image: image-url('nep-icons/new-earth-toroid-small.png')
-          .exchange a
-            background-image: image-url('nep-icons/exchange_icon_small.png')
-          .festival a
-            background-image: image-url('nep-icons/festival_icon_small.png')
-          .institute a
-            background-image: image-url('nep-icons/institute_icon_small.png')
-          .locations a
-            background-image: image-url('nep-icons/locations_icon_small.png')
-          .new-earth a
-            background-image: image-url('nep-icons/new_earth_icon_small.png')
+  #main-menu, #main-nav
+    background: $powder-blue
+    .navbar-collapse
+      padding-left: 0
+      padding-right: 0
+      @media (min-width: 768px)
+        display: flex   // center icons (quick fix)
+      @media (max-width: 513px)
+        padding-top: 15px
+    .navbar-nav
+      & > li > a
+        padding: 40px 30px
+        padding-left: 80px
+        padding-right: 20px
+        background-position: 10px center
+        background-repeat: no-repeat
+        background-size: 60px 60px
+        color: $light-foreground
+        &:hover
+          background-color: darken($powder-blue, 20%)
+        @include breakpoint(large)
+          font-size: 1.7em
+          padding: 30px
+          padding-left: 65px
+          padding-right: 15px
+          background-size: 45px 45px
+        @include breakpoint(medium)
+          padding: 20px
+          background-image: none !important       
+      .exchange a
+        background-image: image-url('nep-icons/exchange_icon_small.png')
+      .festival a
+        background-image: image-url('nep-icons/festival_icon_small.png')
+      .institute a
+        background-image: image-url('nep-icons/institute_icon_small.png')
+      .locations a
+        background-image: image-url('nep-icons/locations_icon_small.png')
+      .new-earth a
+        background-image: image-url('nep-icons/new_earth_icon_small.png')
 
 
 //

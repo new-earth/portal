@@ -4,18 +4,19 @@
     %title New Earth Project
     %meta{content: "text/html; charset=US-ASCII", "http-equiv" => "Content-Type"}/
     %meta{content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0", name: "viewport"}/
-    = render partial: 'shared/base_assets'
+    = init_static_assets "base"
     = yield :head
     
-  %body{id: current_section, class: current_section}
+  %body{id: section_slug, class: [section_slug, subsection_slug]}
     
-    = render partial: 'layouts/top_menu'
-    = render partial: 'layouts/flash_notice'
-    = render partial: 'layouts/header'
-    = render_breadcrumbs
-
+    %header
+      = render partial: 'layouts/top_menu'
+      = render partial: 'layouts/header'
+      = render_breadcrumbs
+    
     #content.container
       .inner-wrap
+        = flash_messages
         = yield
 
     = render 'layouts/footer'

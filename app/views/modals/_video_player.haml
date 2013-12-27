@@ -1,0 +1,13 @@
+.modal.fade#videoModal(tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true")
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close(type="button" data-dismiss="modal" aria-hidden="true")
+          &times;
+        %h3#videoModalLabel 
+          New Earth Project Intro
+      .modal-body
+        %iframe#video(src="" width="800" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen)
+      .modal-footer
+        %a.btn{href: '#'}
+          Close

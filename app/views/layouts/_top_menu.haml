@@ -1,19 +1,16 @@
-%nav#top-menu.navbar.top{role: 'navigation'}
-  .navbar-collapse.collapse.inner-wrap
-
-    = topnav_dropdown @section_name        
+%nav#top-nav.navbar.navbar-default{role: 'navigation'}
+  .navbar-inner
+    = topnav_dropdown        
 
     %ul.nav.navbar-nav.navbar-right
       - if signed_in?
-        %li
-          = usernav_dropdown current_user
-        %li
-          = link_to 'Sign out', sign_out_path, :method => :delete        
+        .hidden-sm.hidden-xs
+          %li= usernav_dropdown current_user
+          %li= link_to 'Sign out', sign_out_path, method: :delete
+        .hidden-lg.hidden-md
+          %li= mobile_nav current_user      
       - else
         %li
-          %a.nav-signin{href: '#', 'data-toggle' => 'modal', 'data-target' => '#loginModal'}
-            Sign In
-        %li
-          = link_to 'Sign Up', '/sign_up'
-
+          %a{href: '#', 'data-toggle' => 'modal', 'data-target' => '#loginModal'}Sign In
+        %li= link_to 'Sign Up', '/sign_up'
     .clearfix

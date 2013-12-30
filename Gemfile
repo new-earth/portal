@@ -8,6 +8,8 @@ gem 'mysql2'
 
 gem 'puma'
 
+gem 'rails_admin'
+gem 'newrelic_rpm'
 
 # -------- Assets ----------
 gem 'haml-rails'
@@ -36,8 +38,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Authentication
+# Authentication & Authorization
 gem 'devise'
+gem 'cancan'
 
 group :development do
   gem 'capistrano-rails'

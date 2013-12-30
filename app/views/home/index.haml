@@ -1,8 +1,3 @@
-= content_for :head do
-  :coffeescript
-    $ ->
-      signupView = new App.Views.NewsletterSignup()
-      $('#btn-subscribe').click(-> signupView.render())
 
 #splash-content
   .toroid
@@ -29,6 +24,3 @@
 
   .upper-color-strip
 .lower-color-strip
-
-
-= render 'members/newsletter_subscribe'

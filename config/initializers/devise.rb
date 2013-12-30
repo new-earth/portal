@@ -10,7 +10,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'New Earth <no-reply@newearthnation.org>'
+  config.mailer_sender = 'New Earth Nation <no-reply@newearthnation.org>'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'

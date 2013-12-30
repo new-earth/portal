@@ -10,6 +10,7 @@
           = current_member.email
         = link_to 'sign out', destroy_member_session_path, method: :delete, class: "login"
       - else
+        %a.login{href: new_member_registration_path} sign up
         %a.login{href: new_member_session_path} log in
 
     - if current_section && controller_name == 'pages'

@@ -5,7 +5,7 @@ set :repo_url, "git@github.com:new-earth/portal.git"
 ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 # set :branch, "master"
 
-set :deploy_to, '/srv/apps/portal'
+set :deploy_to, '/srv/portal'
 set :scm, :git
 
 set :format, :pretty
@@ -18,16 +18,15 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 set :keep_releases, 5
 
+set :default_env, { path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" }
 
-set :default_environment, { 'PATH' => "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" }
+SSHKit.config.command_map[:rake] = "bundle exec rake"
 
 # set :use_sudo, false
 # set :rails_env, "production"
 # set :user, "deploy"
 # set :deploy_via, :remote_cache
 # set :git_shallow_clone, 1
-
-
 
 namespace :deploy do
 

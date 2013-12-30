@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131230064553) do
+ActiveRecord::Schema.define(version: 20131230102809) do
 
   create_table "affiliate", force: true do |t|
     t.integer  "status",                 limit: 2,   default: 0, null: false
@@ -505,6 +505,16 @@ ActiveRecord::Schema.define(version: 20131230064553) do
 
   add_index "page", ["file_name"], name: "file_name", using: :btree
   add_index "page", ["name"], name: "name", using: :btree
+
+  create_table "page_contents", force: true do |t|
+    t.string "section"
+    t.string "title"
+    t.string "link"
+    t.string "parent_link"
+    t.text   "content"
+  end
+
+  add_index "page_contents", ["section"], name: "index_page_contents_on_section", using: :btree
 
   create_table "page_template", force: true do |t|
     t.string   "name",         limit: 45, null: false

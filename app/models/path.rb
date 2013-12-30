@@ -15,6 +15,7 @@ class Path < ActiveRecord::Base
 
   rails_admin do
     navigation_icon 'icon-external-link'
+    parent PageTemplate
   end
 
 end

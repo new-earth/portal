@@ -5,7 +5,7 @@ module MenuHelper
       'new earth blueprint' => '#', # TODO
       'locations' => locations_path,
       'institute' => institute_path,
-      'enter_new_earth' => enter_path,
+      'enter-new-earth' => enter_path,
       'exchange' => exchange_path,
       'festival' => festival_path
     }
@@ -42,13 +42,13 @@ module MenuHelper
       #   'accounts' => '#',
       #   'funds' => '#'
       # },
-      'festival' => {
-        'festival' => '#',
-        'congress' => '#',
-        'exposition' => '#',
-        'releases' => '#',
-        'tickets' => '#'
-      },
+      # 'festival' => {
+      #   'festival' => '#',
+      #   'congress' => '#',
+      #   'exposition' => '#',
+      #   'releases' => '#',
+      #   'tickets' => '#'
+      # },
       # 'members' => {
       #   'declaration' => declaration_members_path,
       #   'profile' => new_member_path

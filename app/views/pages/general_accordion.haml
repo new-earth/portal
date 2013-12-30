@@ -1,17 +1,17 @@
 %nav#sidenav
   %ul.nav.nav-list(data-offset-top="630" data-spy="affix")
-    - @content.map{|hash| hash[:link]}.each do |link_text|
+    - @page_contents.pluck(:link).each do |link_text|
       %li
         %a(data-toggle="collapse" data-parent="#top" data-target="##{link_text.parameterize.dasherize}")= link_text
   .clearfix
 
 %section.main-content.panel-group#top
-  - @content.each do |article|
-    - section_id = article[:link].parameterize.dasherize
+  - @page_contents.each do |content|
+    - section_id = content.link.parameterize.dasherize
     .panel.panel-default
       .panel-heading
         %h4.panel-title 
-          %a(data-toggle="collapse" data-parent="#top" href="##{section_id}")= article[:title]
+          %a(data-toggle="collapse" data-parent="#top" href="##{section_id}")= content.title
 
-      %article.panel-collapse.collapse{id: section_id, class: (article == @content.first ? 'in' : '')}
-        = $markdown.render(article[:content]).html_safe
+      %article.panel-collapse.collapse{id: section_id, class: (content == @page_contents.first ? 'in' : '')}
+        = $markdown.render(content.content).html_safe

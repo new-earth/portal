@@ -16,6 +16,7 @@ class Page < ActiveRecord::Base
 
   rails_admin do
     navigation_icon 'icon-file-text'
+    parent Path
   end
 
 end

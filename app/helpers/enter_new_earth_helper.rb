@@ -182,4 +182,3 @@ New Earth Nation defines a New Earth Resident as:
     ]
   end
 end
-

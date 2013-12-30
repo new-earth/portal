@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
 
   rails_admin do
     navigation_icon 'icon-user'
+    parent Member
   end
   
   protected

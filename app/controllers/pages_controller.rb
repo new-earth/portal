@@ -33,15 +33,17 @@ class PagesController < ApplicationController
   end
 
   def enter_new_earth
+    @page_contents = PageContent.where(section: @section)
   end
 
   def exchange
+    @page_contents = PageContent.where(section: @section)
     @content = ExchangeHelper.exchange_content
-    render 'general_accordion'
   end
 
   def festival
-    @content = FestivalHelper.festival_content
+    # @content = FestivalHelper.festival_content
+    @page_contents = PageContent.where(section: @section)
     render 'general_accordion'
   end
 end

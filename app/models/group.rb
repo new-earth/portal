@@ -5,6 +5,7 @@ class Group < ActiveRecord::Base
 
   rails_admin do
     navigation_icon 'icon-group'
+    parent User
   end
 
 end

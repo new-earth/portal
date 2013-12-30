@@ -210,3 +210,8 @@ In reality we have never been debtors, and any notion that we are the true credi
   end
 
 end
+
+# include ExchangeHelper
+# exchange_content.map do |content|
+#   pc = PageContent.create(section: "exchange", title: content[:title], link: content[:link], content: content[:content])
+# end

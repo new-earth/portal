@@ -1,7 +1,7 @@
 Portal::Application.routes.draw do
   devise_for :members
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-  
+
   root 'home#index'
   get 'test' => 'home#test'
   

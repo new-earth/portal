@@ -6,10 +6,17 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-developers = User.create( [ 
-                            { first_name: 'Joe',
-                              last_name: 'Black',
-                              email: 'joe@spektrumtheory.com',
-                              password_digest: BCrypt::Password.create('secret'),
-                              country_iso: 'US' }
-                          ] )
+include ExchangeHelper
+exchange_content.map do |content|
+  PageContent.create_with(link: content[:link], content: content[:content]).find_or_create_by(section: "exchange", title: content[:title])
+end
+
+include EnterNewEarthHelper
+enter_new_earth_content.map do |content|
+  PageContent.create_with(link: content[:link], content: content[:content]).find_or_create_by(section: "enter-new-earth", title: content[:title])
+end
+
+include FestivalHelper
+festival_content.map do |content|
+  PageContent.create_with(link: content[:link], content: content[:content]).find_or_create_by(section: "festival", title: content[:title])
+end

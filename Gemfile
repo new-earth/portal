@@ -9,6 +9,7 @@ gem 'mysql2'
 gem 'puma'
 
 gem 'rails_admin'
+gem 'paperclip'
 gem 'newrelic_rpm'
 gem 'exception_notification'
 

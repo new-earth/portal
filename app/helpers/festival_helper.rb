@@ -95,9 +95,3 @@ Additionally the collective energy of 20,000 people can assist in establishing o
     }]
   end
 end
-
-
-# include FestivalHelper
-# festival_content.map do |content|
-#   pc = PageContent.create(section: "festival", title: content[:title], link: content[:link], content: content[:content])
-# end

@@ -4,7 +4,8 @@
       li
         float: left
 
-- provide :main_menu do
+-# provide :main_menu do
+/
   .nav-bar
     .inner-wrap
       .nav.nav-tabs
@@ -30,6 +31,13 @@
       Crowd funding widget
     .orange{style: 'background-color: #f90; height: 40%; padding: 15px'}
       Venture Financing widget
+
+%nav#sidenav
+  %ul.nav.nav-list(data-offset-top="630" data-spy="affix")
+    - @page_contents.pluck(:link).each do |link_text|
+      %li
+        %a(data-toggle="collapse" data-parent="#top" data-target="##{link_text.parameterize.dasherize}")= link_text
+  .clearfix
 
 %section.main-content.panel-group#top
   - @page_contents.each do |content|

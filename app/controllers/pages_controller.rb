@@ -38,7 +38,7 @@ class PagesController < ApplicationController
 
   def exchange
     @page_contents = PageContent.where(section: @section)
-    @content = ExchangeHelper.exchange_content
+    # @content = ExchangeHelper.exchange_content
   end
 
   def festival

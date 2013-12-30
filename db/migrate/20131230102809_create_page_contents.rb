@@ -6,6 +6,7 @@ class CreatePageContents < ActiveRecord::Migration
       t.string :link
       t.string :parent_link
       t.text :content
+      t.timestamps
 
       t.index :section
     end

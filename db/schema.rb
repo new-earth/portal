@@ -507,11 +507,13 @@ ActiveRecord::Schema.define(version: 20131230102809) do
   add_index "page", ["name"], name: "name", using: :btree
 
   create_table "page_contents", force: true do |t|
-    t.string "section"
-    t.string "title"
-    t.string "link"
-    t.string "parent_link"
-    t.text   "content"
+    t.string   "section"
+    t.string   "title"
+    t.string   "link"
+    t.string   "parent_link"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "page_contents", ["section"], name: "index_page_contents_on_section", using: :btree

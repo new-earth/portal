@@ -12,4 +12,10 @@ class Page < ActiveRecord::Base
   # section_menu_link_text
   # page_title
   # primary_content: ***
+
+
+  rails_admin do
+    navigation_icon 'icon-file-text'
+  end
+
 end

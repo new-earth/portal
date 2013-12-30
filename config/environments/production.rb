@@ -73,9 +73,14 @@ Portal::Application.configure do
     domain: "newearthnation.org",
     enable_starttls_auto: true
   }
-
   config.action_mailer.default_url_options = {host: 'newearthnation.org'}
 
+  config.middleware.use ExceptionNotification::Rack,
+    :email => {
+      :email_prefix => "[New Earth Portal] ",
+      :sender_address => %{"New Earth Notifier" <notifier@newearthnation.org>},
+      :exception_recipients => %w{duke@humanitad.org}
+    }
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).
   config.i18n.fallbacks = true

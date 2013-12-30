@@ -10,6 +10,7 @@ gem 'puma'
 
 gem 'rails_admin'
 gem 'newrelic_rpm'
+gem 'exception_notification'
 
 # -------- Assets ----------
 gem 'haml-rails'

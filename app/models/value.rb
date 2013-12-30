@@ -4,4 +4,10 @@ class Value < ActiveRecord::Base
 
   scope :interests, -> { where(name: 'register_interests').order(:order_by) }
   scope :skills,    -> { where(name: 'register_skills').order(:order_by) }
+
+
+  rails_admin do
+    navigation_icon 'icon-tags'
+  end
+
 end

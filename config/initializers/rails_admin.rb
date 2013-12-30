@@ -13,7 +13,9 @@ RailsAdmin.config do |config|
 
   # RailsAdmin may need a way to know who the current user is]
   config.current_user_method { current_member } # auto-generated
-
+  
+  config.authorize_with :cancan
+  
   # If you want to track changes on your models:
   # config.audit_with :history, 'Member'
 
@@ -33,7 +35,7 @@ RailsAdmin.config do |config|
   # config.included_models = ['Content', 'Member', 'Page', 'PageTemplate', 'Path', 'User', 'Value']
 
   # Label methods for model instances:
-  # config.label_methods << :description # Default is [:name, :title]
+  config.label_methods = [:username] + config.label_methods # Default is [:name, :title]
 
 
   ################  Model configuration  ################

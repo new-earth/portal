@@ -5,4 +5,9 @@ class PageTemplate < ActiveRecord::Base
 
   # Columns of interest:
   # name
+
+  rails_admin do
+    navigation_icon 'icon-book'
+  end
+
 end

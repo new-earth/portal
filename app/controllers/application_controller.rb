@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
     raise ActionController::RoutingError.new('Not Found')
   end
 
+  def current_ability
+    @current_ability ||= Ability.new(current_member)
+  end
+
   protected
 
   def set_section

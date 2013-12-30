@@ -11,10 +11,18 @@ class Member < ActiveRecord::Base
   validates :email, uniqueness: true, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, on: :create }
   validates :password, length: 6..20, unless: "password.nil?"
 
+  rails_admin do
+    navigation_icon 'icon-user'
+  end
   # validates :first_name, presence: true, length: { maximum: 30 }
   # validates :middle_name, length: { maximum: 30 }
   # validates :last_name, length: { maximum: 30 }
   # validates :country, presence: true, length: { minimum: 2, maximum: 2 }
+
+  def admin?
+    # has a user, that user is in Group #1 (Website Administrator)
+    self.user && self.user.groups.where(id: 1).count > 0
+  end
 
   private
 

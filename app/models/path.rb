@@ -12,4 +12,9 @@ class Path < ActiveRecord::Base
   # title: page title
   # sort_order: integer. assuming it's the sort by.
   
+
+  rails_admin do
+    navigation_icon 'icon-external-link'
+  end
+
 end

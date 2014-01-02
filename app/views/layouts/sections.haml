@@ -1,0 +1,31 @@
+!!!
+%html
+  %head
+    %title New Earth Project
+    %meta{content: "text/html; charset=US-ASCII", "http-equiv" => "Content-Type"}/
+    %meta{content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0", name: "viewport"}/
+    
+    = render partial: 'shared/base_assets'
+
+    :coffeescript
+      App.Vars.currentMember = new App.Models.Member(#{current_member.to_json})
+
+    = yield :head
+    
+  %body{id: current_section, class: current_section}
+    #wrap
+      
+      = render 'layouts/top_menu'
+      
+      = render partial: 'layouts/flash_messages', flash: flash
+
+      = render 'layouts/header'
+      = render 'layouts/breadcrumbs'
+
+      #content
+        .inner-wrap
+          = yield
+
+      = render 'layouts/footer'
+
+    = render 'layouts/analytics'

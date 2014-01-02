@@ -1,20 +1,24 @@
-%nav.navbar.top{role: 'navigation'}
-  .navbar-collapse.collapse
-    %ul.nav.navbar-nav.navbar-left
-      %li.dropdown
-        %a.dropdown-toggle.open{href: '#', 'data-toggle' => 'dropdown'} 
-          new earth institute
-          %i.icon-chevron-sign-down
-        %ul.dropdown-menu
-          %li
-            %a{href: '#'} location1
-          %li
-            %a{href: '#'} location2
-    %ul.nav.navbar-nav.navbar-right
-      %li
-        %a.nav-signin{href: '#', 'data-hover' => 'Sign in', 'data-toggle' => 'modal', 'data-target' => '#loginModal'}
-          %span Sign in
-      %li
-        %a.nav-register{href: '#', 'data-hover' => 'Register'}
-          %span Register
-    .clearfix
+#top-menu
+  .inner-wrap
+    .right
+      /
+        %a.language{href: "#"}
+          ENGLISH change language
+
+      - if member_signed_in?
+        .email
+          = current_member.email
+        = link_to 'sign out', destroy_member_session_path, method: :delete, class: "login"
+      - else
+        %a.login{href: new_member_registration_path} sign up
+        %a.login{href: new_member_session_path} log in
+
+    - if current_section && controller_name == 'pages'
+      .btn-group
+        %a.dropdown.dropdown-toggle(data-toggle="dropdown" href="#")
+          #{current_title.downcase}
+        %ul.dropdown-menu(role="menu")
+          - sections.each do |section, url|
+            - unless section == current_section
+              %li
+                %a{href: url}= section.titleize.downcase

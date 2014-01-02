@@ -1,25 +1,49 @@
 class PagesController < ApplicationController
-  before_filter :set_section
+  layout 'sections'
+  before_filter :authenticate_member!, only: [:institute]
+  include InstituteHelper
+  helper :exchange
 
-  def enter_new_earth
-    
+  def locations
+  end
+
+  def locations_pages
+    @section = "locations"
+    @subsection = params[:subsection]
   end
 
   def institute
-    
+    add_crumb params[:section], "/institute/#{params[:section]}" if params[:section].present?
+    add_crumb params[:subsection], "/institute/#{params[:section]}/#{params[:subsection]}" if params[:subsection].present?
+
+    @path = Path.where(path: "#{subsection_path}/").first || not_found
+    @page = @path.pages.where(file_name: (params[:filename]||'index')+".html").first
+    @page_content = @page.primary_content.html_safe
+
+    add_crumb @page.page_title.downcase, "#{subsection_path}/#{@page.file_name}"
+
+    @sidenav = case params[:section]
+      when 'law' then 
+        InstituteHelper.institute_law_nav
+      when 'wellness' then
+        JSON.parse(Content.where(name: "InstituteWellnessLeftNav").first.body, symbolize_names: true)
+      else
+        []
+      end
   end
 
-  def bank_exchange
-    
+  def enter_new_earth
+    @page_contents = PageContent.where(section: @section)
+  end
+
+  def exchange
+    @page_contents = PageContent.where(section: @section)
+    # @content = ExchangeHelper.exchange_content
   end
 
   def festival
-    
-  end
-
-  protected
-
-  def set_section
-    @section = params[:section]
+    # @content = FestivalHelper.festival_content
+    @page_contents = PageContent.where(section: @section)
+    render 'general_accordion'
   end
 end

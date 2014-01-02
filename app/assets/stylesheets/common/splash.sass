@@ -1,49 +1,57 @@
 //
 // splash page
 //
+
+$bg-offset: 257px
+$header-height: 528px
+$logo-diameter: 280px
+$logo-offset: 50px
+$title-row-height: ($logo-diameter / 2) + $logo-offset + 5px
+$menu-height: 72px
+
 #splash
-  header
-    $header-height: 528px
-    $logo-diameter: 280px
-    $logo-offset: 50px
-    $title-row-height: ($logo-diameter / 2) + $logo-offset + 5px
-    $menu-height: 55px
-    background: image-url('splash-vector-overlay.svg') center -35px no-repeat, image-url('banner-tropical-island.jpg') top center no-repeat
-
-    .title-row
-      clear: both
-      height: $title-row-height
-    
-    .logo-wrapper
-      +make-sm-column(8)
-      +make-sm-column-offset(2)
-      padding-top: $logo-offset
-
-      .logo
-        width: 334px
-        height: 334px
-        background: image-url('nep_logo_334px.png')
-        box-shadow: 0 -5px 80px rgba(#eee, 0.9)
-
+  #top-menu
+    background: #00bfe7
+  #header
+    height: 500px + $bg-offset
+    background-position: center $bg-offset
+    background-image: image-url('header-images/image_04_small_width.jpg')
+    .logo-bg
+      height: 445px
+      background-image: image-url('vector/nep_logo_bg_startpage.svg') 
+    .logo
+      top: 94px
+      width: 334px
+      height: 334px
+      background-image: image-url('nep_logo_334px.png')
     .spacer
       position: relative
       height: $header-height - $title-row-height - $menu-height
       .video
         float: right
         position: absolute
-        top: 42px
+        top: 170px
         right: 15px
         text-align: center
         font-family: Bauhaus
         font-size: 20px
         color: white
         text-decoration: none
+        
+        +transform(scale(0.9))
+        &:hover
+          +transform(scale(1.0))
+          
         .icon
-          width: 130px // 190px
-          height: 130px // 190px
+          width: 120px // 190px
+          height: 120px // 190px
           margin: 0 auto
           background: image-url('watch_video.png')
           background-size: 100% 100%
+          +box-shadow(0px 0px 20px white)
+          border-radius: 50%
+        span
+          text-shadow: 0px 1px 1px black
           
     #video-modal
       text-align: center
@@ -57,15 +65,47 @@
           background-color: #030303
           .modal-body
             padding: 10px
+    .nav-bar
+      background: rgba(0, 80, 103, 0.75) // #005067
+  #bottom-nav
+    +linear-gradient(#002d3e, #000e1a)
+  #footer
+    background: #010e16
+  #main-quote
+    color: #333333
+
+////////////
+
+#splash
+  header
+    //background: image-url('vector/nep_logo_bg_startpage.svg') center -35px no-repeat, image-url('banner-tropical-island.jpg') top center no-repeat
+
+    //.title-row
+    //  clear: both
+    //  height: $title-row-height
+    
+    // .logo-wrapper
+      // +make-sm-column(8)
+      // +make-sm-column-offset(2)
+      // padding-top: $logo-offset
+      // 
+      // .logo
+        // width: 334px
+        // height: 334px
+        // background: image-url('nep_logo_334px.png')
+        // box-shadow: 0 -5px 80px rgba(#eee, 0.9)
 
     #main-menu
+      font-size: 28px
       background: $powder-blue
       box-shadow: 0px 2px 10px rgba(50, 50, 50, 0.75)
       .navbar-collapse
-        @media (max-width: 1049px)
+        padding-left: 0
+        padding-right: 0
+        @media (min-width: 768px)
+          display: flex   // center icons (quick fix)
+        @media (max-width: 513px)
           padding-top: 15px
-          padding-right: 0
-          padding-left: 0
       .mobile-nav
         margin-left: 15px
         margin-bottom: 10px
@@ -74,16 +114,16 @@
         a:hover, a:focus
           text-decoration: none
           color: #ddd
-        @media (min-width: 1050px)
+        @media (min-width: 512px) // 1050
           display: none
-        @media (max-width: 1049px)
-          display:block
+        @media (max-width: 513px) // 1049
+          display: block
  
       .desktop-nav
         margin-left: 15px
-        @media (min-width: 1050px)
+        @media (min-width: 512px)
           display: block
-        @media (max-width: 1049px)
+        @media (max-width: 513px)
           display: none
           background-color: #eee
           float: none
@@ -111,20 +151,88 @@
           line-height: inherit
           &:hover
             background-color: darken($powder-blue, 20%)
-        @media (min-width: 1286px)
+        @media (min-width: $screen-sm)
           font-size: 1.15em
           & > li > a
-            line-height: $menu-height
-            padding-left: 83px
+            line-height: $menu-height - 10
+            padding: 20px 0 20px 89px
             background-position: left center
             background-repeat: no-repeat
           .exchange a
-            background-image: image-url('icons/exchange-trishula-small.png')
+            background-image: image-url('nep-icons/exchange_icon_small.png')
           .festival a
-            background-image: image-url('icons/festival-nautilus-small.png')
+            background-image: image-url('nep-icons/festival_icon_small.png')
           .institute a
-            background-image: image-url('icons/institute-lotus-small.png')
+            background-image: image-url('nep-icons/institute_icon_small.png')
           .locations a
-            background-image: image-url('icons/locations-phi-small.png')
+            background-image: image-url('nep-icons/locations_icon_small.png')
           .new-earth a
-            background-image: image-url('icons/new-earth-toroid-small.png')
+            background-image: image-url('nep-icons/new_earth_icon_small.png')
+
+
+//
+// home/index.haml template
+//
+#splash-content
+  $bg-img-height: 323px
+  $bg-img-offset: 30px
+  height: $bg-img-height + $bg-img-offset + 13px
+  position: relative
+  background: white
+
+  #main-quote
+    $quote-width: 400px
+    position: absolute
+    margin: 0 auto
+    padding-top: 77px
+    @media (min-width: $screen-md)
+      padding-top: 45px
+    @media (min-width: $quote-width)
+      width: $quote-width
+    +make-sm-column(6)
+    +make-sm-column-offset(3)
+    +make-md-column(4)
+    +make-md-column-offset(0)
+    +make-lg-column-offset(0)
+    text-align: center
+    font-size: 16px
+    // font-weight: bold <- bold would look better, but looks blurry
+    text-shadow: 0 0 7px $powder-blue
+  .toroid
+    position: absolute
+    width: 100%
+    height: 100%
+    opacity: 0.3
+    background: image-url('toroid-3d.png') center $bg-img-offset no-repeat
+  @media (min-width: $screen-md)
+    #main-quote
+      font-size: 16px
+    .toroid
+      opacity: 1
+
+.upper-color-strip, .lower-color-strip
+  min-height: 65px
+  text-align: center
+  z-index: -5
+.upper-color-strip
+  background-color: #71c0eb
+  width: 100%
+  position: absolute
+  bottom: 0
+.lower-color-strip
+  +h4
+  line-height: 28px
+  font-size: 20px
+  color: $very-dark-blue
+  background-color: #009ee0
+  @media (min-width: $screen-md)
+    font-size: 1.8em
+  height: auto
+  min-height: 2em
+  padding: 7px inherit
+
+  #btn-subscribe
+    +h5
+    padding: 6px 40px 0px 40px
+    margin: 10px 20px 10px 20px
+    +transition(0.25s)

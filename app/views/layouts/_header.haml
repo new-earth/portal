@@ -1,0 +1,18 @@
+#header
+  .logo-bg
+  %a.logo{href: root_path}
+  .inner-wrap.title
+    .text.left #{current_subsection}
+    .text.right #{current_title}
+    .page-icon
+  
+  - @custom_menu = yield(:main_menu)
+  - if @custom_menu.present?
+    = @custom_menu
+  - else
+    .nav-bar
+      .inner-wrap
+        .nav
+          - current_menu.each do |menu_name, url|
+            %a{href: url}= menu_name
+        .search

@@ -1,19 +1,25 @@
 Portal::Application.routes.draw do
+  devise_for :members
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   root 'home#index'
   get 'test' => 'home#test'
+  
+  get 'locations' => 'pages#locations',             as: 'locations'
+  get 'locations/:subsection(/:page(/:subpage))' => 'pages#locations_pages'
+  # get 'institute' => 'pages#institute',             as: 'institute'
+  get 'enter-new-earth' => 'pages#enter_new_earth', as: 'enter'
+  get 'exchange' => 'pages#exchange',               as: 'exchange'
+  get 'festival' => 'pages#festival',               as: 'festival'
 
-  get 'enter-new-earth' => 'pages#enter_new_earth', section: 'enter', as: 'enter'
-  get 'institute' => 'pages#institute',             section: 'institute', as: 'institute'
-  get 'bank-exchange' => 'pages#bank_exchange',     section: 'exchange', as: 'exchange'
-  get 'festival' => 'pages#festival',               section: 'festival', as: 'festival'
-
-  resources 'members' do
+  resources 'members', only: [:update] do
     collection do
-      get 'declaration'
       post 'newsletter', to: 'members#newsletter_create'
     end
   end
-  
+
+  get '/institute(/:section(/:subsection(/:filename)))' => 'pages#institute', as: 'institute'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

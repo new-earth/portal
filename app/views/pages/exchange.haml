@@ -1,0 +1,51 @@
+- provide :head do
+  :sass
+    .nav-bar ul.nav
+      li
+        float: left
+
+-# provide :main_menu do
+/
+  .nav-bar
+    .inner-wrap
+      .nav.nav-tabs
+        %span.dropdown
+          %a(class="dropdown-toggle" data-toggle="dropdown" href="#") 
+            about
+            %span.caret
+          .dropdown-menu
+            %a{href: '#'} dropdowner
+
+        %a{href: '#'} x
+        %a{href: '#'} y
+        %a{href: '#'} z
+      .search
+
+.row{style: 'height: 120px'}
+  .col-sm-2{style: 'background-color: #ccc; height: 100%'}
+    Sovereign payments system with wolfs graphic
+  .col-sm-8
+    Entry info header. User Introduction Guide: "Learn in 5 steps..."
+  .col-sm-2
+    .orange{style: 'background-color: #f90; height: 40%; padding: 15px; margin-bottom: 5px'}
+      Crowd funding widget
+    .orange{style: 'background-color: #f90; height: 40%; padding: 15px'}
+      Venture Financing widget
+
+%nav#sidenav
+  %ul.nav.nav-list(data-offset-top="630" data-spy="affix")
+    - @page_contents.pluck(:link).each do |link_text|
+      %li
+        %a(data-toggle="collapse" data-parent="#top" data-target="##{link_text.parameterize.dasherize}")= link_text
+  .clearfix
+
+%section.main-content.panel-group#top
+  - @page_contents.each do |content|
+    - section_id = content.link.parameterize.dasherize
+    .panel.panel-default
+      .panel-heading
+        %h4.panel-title 
+          %a(data-toggle="collapse" data-parent="#top" href="##{section_id}")= content.title
+
+      %article.panel-collapse.collapse{id: section_id, class: (content == @page_contents.first ? 'in' : '')}
+        = $markdown.render(content.content).html_safe

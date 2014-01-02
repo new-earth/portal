@@ -23,8 +23,8 @@ Portal::Application.configure do
   config.serve_static_assets = false
 
   # Compress JavaScripts and CSS.
-  config.assets.js_compressor = :uglifier
-  config.assets.css_compressor = :sass
+  # config.assets.js_compressor = :uglifier
+  # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
@@ -37,7 +37,7 @@ Portal::Application.configure do
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
-  # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
+  config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
@@ -60,12 +60,27 @@ Portal::Application.configure do
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
   # config.assets.precompile += %w( search.js )
-  config.assets.precompile += %w( Bauhausl.ttl Bauhausm.ttf BauhausStd-Light.otf BauhausStd-Medium.otf HelveticaLTStd-Light.otf HelveticaLTStd-LightObl.otf Sensation_Light.ttf )
-  config.assets.precompile += %w( banner-vector-overlay.svg splash-vector-overlay.svg )
-  # Ignore bad email addresses and do not raise email delivery errors.
-  # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
+  config.assets.precompile += %w( favicon.ico Bauhausl.ttl Bauhausm.ttf BauhausStd-Light.otf BauhausStd-Medium.otf HelveticaLTStd-Light.otf HelveticaLTStd-LightObl.otf Sensation_Light.ttf )
+  
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.mandrillapp.com",
+    port: 587,
+    user_name: "duke@humanitad.org",
+    password: "0OIQXXm9xGU6YlNB1Xmaxg",
+    authentication: "login",
+    domain: "newearthnation.org",
+    enable_starttls_auto: true
+  }
+  config.action_mailer.default_url_options = {host: 'newearthnation.org'}
 
+  config.middleware.use ExceptionNotification::Rack,
+    :email => {
+      :email_prefix => "[New Earth Portal] ",
+      :sender_address => %{"New Earth Notifier" <notifier@newearthnation.org>},
+      :exception_recipients => %w{duke@humanitad.org}
+    }
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).
   config.i18n.fallbacks = true

@@ -6,8 +6,6 @@ gem 'rails', '4.0.2'
 # Use mysql as the database for Active Record
 gem 'mysql2'
 
-gem 'puma'
-
 gem 'rails_admin'
 gem 'paperclip'
 gem 'newrelic_rpm'
@@ -43,6 +41,10 @@ end
 # Authentication & Authorization
 gem 'devise'
 gem 'cancan'
+
+group :production do
+  gem 'puma' # doesn't compile on Windows...
+end
 
 group :development do
   gem 'capistrano-rails'

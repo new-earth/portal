@@ -16,7 +16,8 @@
 /log/*.log
 /tmp
 
-vendor/assets/components
+/config/database.yml
+/vendor/assets/components
 
 Guardfile
 .DS_Store

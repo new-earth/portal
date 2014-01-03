@@ -26,7 +26,8 @@ class PagesController < ApplicationController
       when 'law' then 
         InstituteHelper.institute_law_nav
       when 'wellness' then
-        JSON.parse(Content.where(name: "InstituteWellnessLeftNav").first.body, symbolize_names: true)
+        parse_nav_content Content.where(name: "InstituteWellnessLeftNav").first
+        # JSON.parse(Content.where(name: "InstituteWellnessLeftNav").first.body, symbolize_names: true)
       else
         []
       end

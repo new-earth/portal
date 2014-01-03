@@ -5,8 +5,8 @@ module InstituteHelper
     '/' + ["institute", params[:section], params[:subsection]].compact.join('/')
   end
 
-  def parse_content_links
-    body = Content.all[1].body
+  def parse_nav_content(content)
+    body = content.body
     nav_links = []
     raw_links = body.split("\r\n")
     

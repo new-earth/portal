@@ -1,10 +1,18 @@
-#bottom-nav
-  .icons-wrap
-    %a.locations{href: locations_path} locations
-    %a.institute{href: institute_path} institute
-    %a.new_earth{href: enter_path} new earth
-    %a.exchange{href: exchange_path} exchange
-    %a.festival{href: festival_path} festival
+#bottom-nav.navbar.navbar-default
+  .navbar-inner
+    .collapse.navbar-collapse
+      %ul.nav.navbar-nav.icons-wrap
+        %li
+          %a.locations{href: locations_path} locations
+        %li
+          %a.institute{href: institute_path} institute
+        %li
+          %a.new_earth{href: enter_path} new earth
+        %li
+          %a.exchange{href: exchange_path} exchange
+        %li
+          %a.festival{href: festival_path} festival
+
 %footer
   .inner-wrap
     .connect

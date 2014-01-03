@@ -1,16 +1,17 @@
+$bg-offset: 132px
+
+body, #top-nav, #main-nav, #header, #logo-bg, #logo, #sidenav, #main-content
+  transition: all 1s ease-in-out
+  -o-transition: all 1s ease-in-out
+  -moz-transition: all 1s ease-in-out
+  -webkit-transition: all 1s ease-in-out
+
 *
   font-family: 'Bauhaus', Verdana
 
 html, body
   margin: 0 0
   line-height: inherit
-
-
-
-
-
-#bottom-nav a
-  text-decoration: none !important
 
 #top-nav
   display: block
@@ -38,7 +39,7 @@ html, body
     float: left
 body#institute nav#top-nav
   background-color: rgba(0, 4, 96, 0.74902)
-  
+
 
 #main-nav, #main-menu
   position: absolute
@@ -48,6 +49,12 @@ body#institute nav#top-nav
   &.navbar
     border: none
     margin-bottom: 0
+  .header-label
+    font-size: 22px
+    color: #fff
+    margin-top: 12px
+    margin-bottom: 10px
+    margin-left: 15px
   .navbar-nav
     margin: 0 auto
     text-align: center
@@ -65,175 +72,64 @@ body#institute nav#top-nav
         font-size: 1em
         padding: 10px
 
-
-#main-nav, #main-menu
+#main-nav
   #main-nav-collapse.navbar-collapse.in
     .navbar-nav
       margin: 10px -15px !important
-    a
-      display: block
+      a
+        display: block
+        width: 100%
 
-
-$bg-offset: 132px
-
-#header
-  color: white
-  position: relative
-  overflow: hidden
-  height: 500px
-  background: center $bg-offset no-repeat
-  background-position: center bottom
-  /*** background-image: <SCHEME> ***/
-  @include breakpoint(large)
-    height: 450px
-  @include breakpoint(medium)
-    height: 400px
-  @include breakpoint(small)
-    height: 250px
-
-
-  .logo-bg
-    width: 100%
-    height: 238px
-    background: top center no-repeat
-    background-size: 3000px 238px
-    /*** background-image: <SCHEME> ***/
-    @include breakpoint(medium)
-      background-position: center bottom 
-      height: 220px
-      background-size: 2800px 220px
-    @include breakpoint(small)
-      background-image: none !important
-      height: 60px
-  #splash .logo-bg
-    width: 3000px
-    height: 238px
-    background-size: 3000px 238px
-#splash .logo-bg
-  width: 100%
-  height: 445px
-  background-size: 3000px 445px
-  background-position: 50% 0
-  position: relative
-
-
-  .logo
-    position: absolute
-    top: 18px
-    left: 0
-    right: 0
-    z-index: 1
-    width: 195px
-    height: 195px
-    margin: 0 auto
-    border-radius: 50%
-    background: image-url('nep_logo_209px.png')
-    background-size: 195px
-    box-shadow: 0px 0px 25px rgba(255,255,255,0.8)
-    @include breakpoint(medium)
-      width: 175px
-      height: 175px
-      background-size: 175px 175px
-    @include breakpoint(small)
-      background-image: none !important
-      width: 100%
-      height: auto
-      position: absolute
-      top: 0
-      left: 0
-      margin: 15px
-      color: #000 !important
-      font-size: 48px
-      font-weight: bold
-      opacity: 0.5
-      background: #fff
-      border-radius: 0
-#splash .logo
-  display: inline-block
-  width: 334px
-  height: 334px
-  background-size: 334px 334px
-
-
-
-
-  .inner-wrap.title
-    padding: 0 25px
-    position: relative
-    top: -175px
-    font-size: 3.0em
-    .pull-left
-      left: 0px
-    .pull-right
-      right: 0px
-    @include breakpoint(large)
-      font-size: 2.5em
-      top: -165px
-    @include breakpoint(medium)
-      font-size: 2.2em
-      top: -150px
-    @include breakpoint(small)
-      display: none
-
-  
-  .page-icon
-    position: absolute
-    top: 55px
-    right: 20px
-    width: 140px
-    height: 140px
-    background: center no-repeat
-    /*** background-image: <SCHEME> ***/
-    background-size: contain
-
-.breadcrumb
-  // font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
-  border-top: 3px solid #66A5E9
-  border-bottom-right-radius: 5px
-  border-bottom-left-radius: 5px
-  & > li, & > .active
-    font-size: 1.3em
-    font-weight: 300
-    color #555
-    @include breakpoint(small)
-      display: none
-
-
-#content
-  display: inline-block
-  padding: 30px 6px
-  font-size: 20px
-  color: black
+#bottom-nav a
+  text-decoration: none !important
 
 #bottom-nav
-  padding-top: 20px
-  padding-bottom: 20px
+  padding-top: 15px
+  padding-bottom: 15px
+  margin-bottom: 0
+  border: none
+  display: flex
   /*** background: <SCHEME> ***/
-  font-size: 42px
-
-  .icons-wrap
-    margin: 0 1.3% 0 3.7% // 0 2.5%
-    display: inline-block
-    width: 95%
+  .navbar-inner
+    margin: 0 auto !important
+  .navbar-nav.icons-wrap
+    margin: 0
+    padding-left: 0
+    padding-right: 0
+    width: auto
     white-space: nowrap
-
+    float: none
+    li
+      list-style-type: none
+      float: left
     a
+      font-size: 2em
+      width: 150px
+      @include breakpoint(medium)
+        font-size: 1.3em
+        width: 115px
+        line-height: 160px
+      @include breakpoint(small)
+        text-align: left
+        font-size: 1.2em
+        width: 60px
+        background-image: none !important
+        line-height: 1.5em
+      @include breakpoint(x-small)
+        font-size: 1em
+        width: 40px
+        background-image: none !important
+        line-height: 1.2em
       display: inline-block
-      width: 20%
       line-height: 230px
-      margin: 20px -0.6%
+      margin: 15px
       text-align: center
       white-space: nowrap
       background: center no-repeat
       text-shadow: 0px 1px 2px black
       color: #fff
-      
-      
-      @media (max-width: 1175px)
+      @media (max-width: 1900px)
         background-size: contain
-      @media (min-width: 1176px)
-        background-size: inherit    // keep images sharp
-      
       transition: text-shadow 0.2s ease
       &:hover
         text-shadow: 0 0 10px white
@@ -253,6 +149,99 @@ $bg-offset: 132px
     .festival
       //background-image: image-url('nep-icons/festival-nautilus-big.png')
       background-image: image-url('nep-icons/festival_icon_big.png')
+
+
+#header
+  color: white
+  position: relative
+  overflow: hidden
+  height: 500px
+  background: center $bg-offset no-repeat
+  background-position: center bottom
+  /*** background-image: <SCHEME> ***/
+  @include breakpoint(large)
+    height: 450px
+  @include breakpoint(medium)
+    height: 400px
+  @include breakpoint(small)
+    height: 250px
+
+  .logo-bg
+    width: 100%
+    height: 238px
+    background: top center no-repeat
+    background-size: 3000px 238px
+    /*** background-image: <SCHEME> ***/
+    @include breakpoint(medium)
+      background-position: center bottom 
+      height: 220px
+      background-size: 2800px 220px
+    @include breakpoint(small)
+      display: none
+
+  .logo
+    position: absolute
+    top: 18px
+    left: 0
+    right: 0
+    z-index: 1
+    width: 195px
+    height: 195px
+    margin: 0 auto
+    border-radius: 50%
+    background: image-url('nep_logo_209px.png')
+    background-size: 195px
+    box-shadow: 0px 0px 25px rgba(255,255,255,0.8)
+    @include breakpoint(medium)
+      width: 175px
+      height: 175px
+      background-size: 175px 175px
+    @include breakpoint(small)
+      display: none
+
+  .inner-wrap.title
+    padding: 0 25px
+    position: relative
+    top: -175px
+    font-size: 3.0em
+    .pull-left
+      left: 0px
+    .pull-right
+      right: 0px
+    @include breakpoint(large)
+      font-size: 2.5em
+      top: -165px
+    @include breakpoint(medium)
+      font-size: 2.2em
+      top: -150px
+    @include breakpoint(small)
+      display: none
+  
+  .page-icon
+    position: absolute
+    top: 55px
+    right: 20px
+    width: 140px
+    height: 140px
+    background: center no-repeat
+    /*** background-image: <SCHEME> ***/
+    background-size: contain 
+
+.breadcrumb
+  // font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  border-top: 3px solid #66A5E9
+  margin-bottom: 0
+  & > li, & > .active
+    font-size: 1.3em
+    font-weight: 300
+    color #555
+
+#content
+  display: inline-block
+  padding: 20px 6px
+  font-size: 20px
+  color: black
+
 
 footer
   position: relative
@@ -297,12 +286,14 @@ footer
     a
       padding: 0 20px
       border-left: 1px solid #787878
-      &:hover
-        color: white
+      color: #fff
     a:first-child
       border-left: none
-
-
+      
+    @include breakpoint(medium)
+      display: none !important
+  .pull-left
+    font-size: 14px
 
 
 //
@@ -343,6 +334,8 @@ footer
 #festival  #header .logo-bg
   background-image: image-url('vector/nep_logo_bg_festivals.svg') 
 
+#splash    #top-nav
+  background: #69c1ff
 #locations #top-nav
   background: #00bfe7 
 #institute #top-nav
@@ -365,6 +358,8 @@ footer
 #festival  #header .page-icon
   background-image: image-url('nep-icons/festival-nautilus-big.png') 
 
+#splash     #main-nav
+  background: rgba(86, 194, 252, 0.75) 
 #locations #main-nav
   background: rgba(0, 80, 103, 0.75) // #005067
 #institute #main-nav
@@ -376,6 +371,8 @@ footer
 #festival  #main-nav
   background: rgba(40, 34, 90, 0.75) // #28225a
 
+#splash    #bottom-nav
+  +linear-gradient(#0a0147, #0a021d)
 #locations #bottom-nav
   +linear-gradient(#002d3e, #000e1a)
 #institute #bottom-nav
@@ -387,6 +384,8 @@ footer
 #festival  #bottom-nav
   +linear-gradient(#140d48, #070521)
 
+#splash     footer
+  background: #010216 
 #locations footer
   background: #010e16 
 #institute footer

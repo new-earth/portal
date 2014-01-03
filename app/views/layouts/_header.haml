@@ -5,12 +5,23 @@
   #header
     .logo-bg
     %a.logo{href: root_path}
-      %span.visible-xs new earth project
-    .inner-wrap.title
+    .title.inner-wrap
       .text.pull-left sovereignty
       .text.pull-right new earth
       .page-icon
     = render partial: 'layouts/main_menu'
+
+- when 'splash'
+
+  #header
+    .logo-bg
+    %a.logo{href: root_path}
+    .title.inner-wrap
+      .spacer
+        %a.video.vimeo.lightbox(href="http://vimeo.com/70703279")
+          .icon
+          %span watch the video
+    = render 'layouts/main_menu'
 
 
 - when 'application'
@@ -26,13 +37,3 @@
         %span.section-text= this_subsection
         %i.institute-icon
 
-- when 'splash'
-
-  #header
-    .logo-bg
-    %a.logo{href: root_path}
-    .title.inner-wrap
-      .spacer
-        %a.video.vimeo.lightbox(href="http://vimeo.com/70703279")
-          .icon
-          %span watch the video

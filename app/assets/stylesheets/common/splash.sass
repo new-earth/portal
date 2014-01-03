@@ -16,14 +16,18 @@ $menu-height: 72px
     height: 500px + $bg-offset
     background-position: center $bg-offset
     background-image: image-url('banner-tropical-island.jpg')
-    .logo-bg
-      height: 445px
-      background-image: image-url('vector/nep_logo_bg_startpage.svg') 
     .logo
-      top: 94px
+      display: inline-block
       width: 334px
       height: 334px
+      background-size: 334px 334px
+      top: 94px
       background-image: image-url('nep_logo_334px.png')
+    .logo-bg
+      height: 445px
+      background-size: 3000px 445px
+      background-position: 50% 0
+      background-image: image-url('vector/nep_logo_bg_startpage.svg') 
     .spacer
       position: relative
       height: $header-height - $title-row-height - $menu-height
@@ -47,8 +51,6 @@ $menu-height: 72px
           border-radius: 75px
         span
           text-shadow: 0px 1px 1px black
-    .nav-bar
-      background: rgba(0, 80, 103, 0.75) // #005067
   #bottom-nav
     +linear-gradient(#002d3e, #000e1a)
   #footer
@@ -56,15 +58,10 @@ $menu-height: 72px
   #main-quote
     color: #333333
 
-  #main-menu, #main-nav
-    background: $powder-blue
+  #main-nav
     .navbar-collapse
-      padding-left: 0
-      padding-right: 0
       @media (min-width: 768px)
-        display: flex   // center icons (quick fix)
-      @media (max-width: 513px)
-        padding-top: 15px
+        display: flex !important
     .navbar-nav
       & > li > a
         padding: 40px 30px
@@ -108,34 +105,28 @@ $menu-height: 72px
   position: relative
 
   #main-quote
-    $quote-width: 400px
     position: absolute
-    margin: 0 auto
+    left: 25px
     padding-top: 77px
-    @media (min-width: $screen-md)
-      padding-top: 45px
-    @media (min-width: $quote-width)
-      width: $quote-width
-    +make-sm-column(6)
-    +make-sm-column-offset(3)
-    +make-md-column(4)
-    +make-md-column-offset(0)
-    +make-lg-column-offset(0)
+
     text-align: center
-    font-size: 16px
-    // font-weight: bold <- bold would look better, but looks blurry
-    text-shadow: 0 0 7px $powder-blue
+    font-size: 20px
+    font-weight: bold
   .toroid
     position: absolute
+    right: 25px
     width: 100%
     height: 100%
-    opacity: 0.3
-    background: image-url('toroid-3d.png') center $bg-img-offset no-repeat
-  @media (min-width: $screen-md)
+    opacity: 1
+    background: image-url('toroid-3d.png') no-repeat right
+  @include breakpoint(medium)
     #main-quote
-      font-size: 16px
+      left: auto
+      width: 100%
     .toroid
-      opacity: 1
+      opacity: .3
+      background-position: center
+    
 
 .upper-color-strip, .lower-color-strip
   min-height: 65px

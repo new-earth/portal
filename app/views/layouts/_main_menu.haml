@@ -5,6 +5,8 @@
   %nav#main-nav.navbar.navbar-default{role: 'navigation'}
     .navbar-inner
       .navbar-header
+        .navbar-text.header-label.navbar-left.visible-xs
+          new earth project
         %button.navbar-toggle{type: 'button', 'data-toggle' => 'collapse', 'data-target' => '#main-nav-collapse'}
           %span.sr-only Toggle navigation
           %span.icon-bar
@@ -17,18 +19,17 @@
               %a{href: url}= menu_name
         .search
 
-
 - when 'splash'
 
-  %nav#main-menu.navbar.navbar-default{role: 'navigation'}
+  %nav#main-nav.navbar.navbar-default{role: 'navigation'}
     .navbar-inner
       .navbar-header
-        %button.navbar-toggle{type: 'button', 'data-toggle' => 'collapse', 'data-target' => '#main-menu-collapse'}
+        %button.navbar-toggle{type: 'button', 'data-toggle' => 'collapse', 'data-target' => '#main-nav-collapse'}
           %span.sr-only Toggle navigation
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-      #main-menu-collapse.collapse.navbar-collapse
+      #main-nav-collapse.collapse.navbar-collapse
         %ul.nav.navbar-nav
           %li.locations
             %a{href: locations_path} locations

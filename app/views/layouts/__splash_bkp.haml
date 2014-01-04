@@ -3,7 +3,7 @@
   %head
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
     %title Welcome to the New Earth
-    = init_static_assets "base"
+    = render :partial => "shared/base_assets"
     :coffeescript
       $ ->
         player = new App.Views.VimeoModal(el: '#video-modal', videoSrc: "//player.vimeo.com/video/70703279?autoplay=1")

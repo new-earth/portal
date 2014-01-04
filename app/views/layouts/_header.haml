@@ -1,18 +1,58 @@
-#header
-  .logo-bg
-  %a.logo{href: root_path}
-  .inner-wrap.title
-    .text.left #{current_subsection}
-    .text.right #{current_title}
-    .page-icon
+/ <<<<<<< HEAD
+/ #header
+/   .logo-bg
+/   %a.logo{href: root_path}
+/   .inner-wrap.title
+/     .text.left #{current_subsection}
+/     .text.right #{current_title}
+/     .page-icon
   
-  - @custom_menu = yield(:main_menu)
-  - if @custom_menu.present?
-    = @custom_menu
-  - else
-    .nav-bar
-      .inner-wrap
-        .nav
-          - current_menu.each do |menu_name, url|
-            %a{href: url}= menu_name
-        .search
+/   - @custom_menu = yield(:main_menu)
+/   - if @custom_menu.present?
+/     = @custom_menu
+/   - else
+/     .nav-bar
+/       .inner-wrap
+/         .nav
+/           - current_menu.each do |menu_name, url|
+/             %a{href: url}= menu_name
+/         .search
+/ =======
+- case current_layout
+
+- when 'sections'
+
+  #header
+    .logo-bg
+    %a.logo{href: root_path}
+    .title.inner-wrap
+      .text.pull-left sovereignty
+      .text.pull-right new earth
+      .page-icon
+    = render partial: 'layouts/main_menu'
+
+- when 'splash'
+
+  #header
+    .logo-bg
+    %a.logo{href: root_path}
+    .title.inner-wrap
+      .spacer
+        %a.video.vimeo.lightbox(href="http://vimeo.com/70703279")
+          .icon
+          %span watch the video
+    = render 'layouts/main_menu'
+
+
+- when 'application'
+
+  %header#main
+    .title-row
+      .title
+        = this_section
+      .logo-wrapper
+        %a.logo{href: root_path}
+
+      .section
+        %span.section-text= this_subsection
+        %i.institute-icon

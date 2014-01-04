@@ -3,13 +3,17 @@ class PagesController < ApplicationController
   before_filter :authenticate_member!, only: [:institute]
   include InstituteHelper
   helper :exchange
+  before_action :set_sects
 
-  def locations
-  end
+  @@SECTIONS = ['locations', 'enter', 'institute', 'exchange', 'festival']
+  @@SECTION_REMAPS = {enter: 'enter new earth'}
 
   def locations_pages
     @section = "locations"
     @subsection = params[:subsection]
+  end
+
+  def locations
   end
 
   def institute
@@ -33,6 +37,7 @@ class PagesController < ApplicationController
       end
   end
 
+<<<<<<< HEAD
   def enter_new_earth
     @page_contents = PageContent.where(section: @section)
   end
@@ -40,6 +45,12 @@ class PagesController < ApplicationController
   def exchange
     @page_contents = PageContent.where(section: @section)
     # @content = ExchangeHelper.exchange_content
+=======
+  def enter
+  end
+
+  def exchange
+>>>>>>> 7753d62186f8ca92789d7f531ce138e67db48133
   end
 
   def festival
@@ -47,4 +58,23 @@ class PagesController < ApplicationController
     @page_contents = PageContent.where(section: @section)
     render 'general_accordion'
   end
+<<<<<<< HEAD
 end
+=======
+
+  protected
+
+  def set_sects
+    set_section
+
+    section = @@SECTION_REMAPS[action_name] || action_name
+    @sects = OpenStruct.new(slug: action_name.gsub(' ', '-').downcase, section: section.titleize, subslug: nil, subsection: nil)
+    add_crumb @sects.section
+  end
+
+  def set_section
+    @section = params[:section]
+  end
+  
+end
+>>>>>>> 7753d62186f8ca92789d7f531ce138e67db48133

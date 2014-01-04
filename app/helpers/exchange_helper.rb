@@ -1,6 +1,5 @@
 module ExchangeHelper
   extend self
-
   def exchange_content
     [ 
       {

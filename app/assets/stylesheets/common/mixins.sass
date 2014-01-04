@@ -26,3 +26,18 @@
 =h9
   +heading($h9-font-size)
   font-weight: bold
+
+@mixin breakpoint($point)
+  @if $point == large
+    @media (max-width: 1200px)
+      @content  
+  @else if $point == medium
+    @media (max-width: 992px)
+      @content
+  @else if $point == small
+    @media (max-width: 768px)
+      @content
+  @else if $point == x-small
+    @media (max-width: 480px)
+      @content
+

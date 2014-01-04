@@ -1,24 +1,29 @@
-#top-menu
-  .inner-wrap
-    .right
-      /
-        %a.language{href: "#"}
-          ENGLISH change language
-
-      - if member_signed_in?
-        .email
-          = current_member.email
-        = link_to 'sign out', destroy_member_session_path, method: :delete, class: "login"
-      - else
-        %a.login{href: new_member_registration_path} sign up
-        %a.login{href: new_member_session_path} log in
-
+%nav#top-nav.navbar.navbar-default{role: 'navigation'}
+  .navbar-inner
+    =# topnav_dropdown
     - if current_section && controller_name == 'pages'
-      .btn-group
-        %a.dropdown.dropdown-toggle(data-toggle="dropdown" href="#")
-          #{current_title.downcase}
-        %ul.dropdown-menu(role="menu")
-          - sections.each do |section, url|
-            - unless section == current_section
-              %li
-                %a{href: url}= section.titleize.downcase
+      %ul.nav.navbar-nav.navbar-left
+        %li.dropdown
+          %a.dropdown-toggle.open{href: '#', 'data-toggle' => 'dropdown'} 
+            = current_title.downcase
+            =# sects.section.titleize
+          %ul.dropdown-menu(role="menu")
+            - sections.each do |section, url|
+              - unless section == current_section
+                %li
+                  %a{href: url}= section.titleize.downcase
+
+    %ul.nav.navbar-nav.navbar-right
+      - if member_signed_in?
+        %li.email
+          = current_member.email
+        %li= link_to 'sign out', destroy_member_session_path, method: :delete, class: "login"
+      - else
+        %li
+          %a{href: '#', 'data-toggle' => 'modal', 'data-target' => '#loginModal'}Sign In
+        %li
+          %a.login{href: new_member_registration_path} sign up
+        %li
+          %a.login{href: new_member_session_path} log in
+
+    .clearfix

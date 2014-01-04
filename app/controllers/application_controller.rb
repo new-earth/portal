@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_section
 
   def not_found
-    raise ActionController::RoutingError.new('Not Found')
+    raise ActionController::RoutingError.new("Not Found! action: #{action_name} in controller: #{controller_name}")
   end
 
   def current_ability

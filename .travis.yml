@@ -1,0 +1,17 @@
+language: ruby
+rvm:
+  - "1.9.3"
+  - "2.0.0"
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: SnfLmec1/w1ynDlGbA/WaUC+fJrLlWtg2YwGfu6uR99Np49mTd5TVy1HGDT6Oj+gNWydy6QrKdKp+iZxJZZtCoqKUudy08nvxUYWnGlQ76YXibv4TXCGYKNjn5JRCApBeIJdL9MtQFk4fcJ7hK1yVNkwZEwi8yJMgfmGaXdLmqA=
+  on: joe-ui
+  app: neportal
+  run:
+    - "rake db:migrate"
+    - "restart"
+    - "rake cleanup"
+    - "rake assets:precompile"
+

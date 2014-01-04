@@ -1,0 +1,11 @@
+%ul.nav.navbar-nav.navbar-left
+  %li.dropdown
+    %a.dropdown-toggle.open{href: '#', 'data-toggle' => 'dropdown'} 
+      = @this_section
+      %i.icon-chevron-sign-down
+    %ul.dropdown-menu
+      = ['enter new earth', 'institute', 'bank exchange', 'festival'].each do |mi|
+        - min = mi.gsub(' ', '-')
+        %li
+          %a{href: "/#{min}"}
+            = mi

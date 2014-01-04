@@ -1,0 +1,12 @@
+%ul.nav.navbar-nav.navbar-left
+  %li.dropdown
+    %a.dropdown-toggle.open{href: '#', 'data-toggle' => 'dropdown'} 
+      = sects.section.titleize
+    %ul.dropdown-menu
+      - menu_items.each do |mi|
+        - mt = remaps[mi.downcase] || mi
+        - mt = mt.titleize
+        - ms = mi.downcase.gsub(' ', '-')
+        %li
+          %a{href: "/#{ms}"}
+            = mt

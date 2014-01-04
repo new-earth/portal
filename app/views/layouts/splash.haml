@@ -4,13 +4,7 @@
     %title Welcome to the New Earth
     %meta{content: "text/html; charset=US-ASCII", "http-equiv" => "Content-Type"}/
     %meta{content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0", name: "viewport"}/
-    
     = init_static_assets "base"
-    
-    :coffeescript
-      $ ->
-        player = new App.Views.VimeoModal(el: '#video-modal', videoSrc: "//player.vimeo.com/video/70703279?autoplay=1")
-
     = yield :head
 
   %body#splash
@@ -18,11 +12,12 @@
       %header
         = render 'layouts/top_menu'
         = render 'layouts/login_modal'
-      
-        = render partial: 'layouts/flash_messages', flash: flash
 
+        = render partial: 'layouts/flash_messages', flash: flash
         = render 'layouts/header_splash'
-  
+        =# render 'layouts/header'
+        = yield :menu
+      = flash_messages
       = yield
   
       = render 'layouts/footer'

@@ -1,5 +1,4 @@
 class MembersController < ApplicationController
-<<<<<<< HEAD
   before_filter :set_title
   respond_to :html, :json
   before_action :set_sects

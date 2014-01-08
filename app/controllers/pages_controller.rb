@@ -37,7 +37,6 @@ class PagesController < ApplicationController
       end
   end
 
-<<<<<<< HEAD
   def enter_new_earth
     @page_contents = PageContent.where(section: @section)
   end
@@ -45,22 +44,13 @@ class PagesController < ApplicationController
   def exchange
     @page_contents = PageContent.where(section: @section)
     # @content = ExchangeHelper.exchange_content
-=======
-  def enter
   end
-
-  def exchange
->>>>>>> 7753d62186f8ca92789d7f531ce138e67db48133
-  end
-
+  
   def festival
     # @content = FestivalHelper.festival_content
     @page_contents = PageContent.where(section: @section)
     render 'general_accordion'
   end
-<<<<<<< HEAD
-end
-=======
 
   protected
 
@@ -77,4 +67,3 @@ end
   end
   
 end
->>>>>>> 7753d62186f8ca92789d7f531ce138e67db48133

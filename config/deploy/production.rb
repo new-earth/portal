@@ -6,9 +6,9 @@ set :rails_env, :production
 # Supports bulk-adding hosts to roles, the primary
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
-# role :app, %w{deploy@app1.newearthnation.org}
-# role :web, %w{deploy@app1.newearthnation.org}
-# role :db,  %w{deploy@app1.newearthnation.org}
+role :app, %w{deploy@app1.newearthnation.org}
+role :web, %w{deploy@php1.newearthnation.org}
+role :db,  %w{deploy@app1.newearthnation.org}
 
 # Extended Server Syntax
 # ======================
@@ -16,7 +16,7 @@ set :rails_env, :production
 # definition into the server list. The second argument
 # something that quacks like a has can be used to set
 # extended properties on the server.
-server 'app1.newearthnation.org', user: 'deploy', roles: %w{web app db}
+# server 'app1.newearthnation.org', user: 'deploy', roles: %w{web app db}
 
 # you can set custom ssh options
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options

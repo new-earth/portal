@@ -49,15 +49,24 @@ namespace :deploy do
   after :finishing, 'deploy:cleanup'
 
   namespace :assets do
-    namespace :bower do
-      task :install do
-      on roles :web do
-        within release_path do
-          with rails_env: fetch(:rails_env) do
-            execute :bower, 'install'
-          end
+    task :sync do
+      on primary :app do
+        within shared_path do
+          # TODO: get server name and directory dynamically.
+          execute :sh, "rsync -avz public/assets deploy@php1.newearthnation.org:/srv/portal/current/public/"
         end
       end
+    end
+
+    namespace :bower do
+      task :install do
+        on roles :web do
+          within release_path do
+            with rails_env: fetch(:rails_env) do
+              execute :bower, 'install'
+            end
+          end
+        end
 
       end
     end
